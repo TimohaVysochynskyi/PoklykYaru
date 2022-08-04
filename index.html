@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="./images/logo.ico">
 </head>
 <body>
+    <div style="position: absolute; width: 100vw; height: 100vh; background-image: url(./images/header-bg2.png); background-size: cover; background-position: center;"></div>
     <div class="preloader" id="preloader">
         <h1 class="aboutus__title">
           <span>Побраимство</span>
@@ -17,7 +18,7 @@
           <span>Нацiоналiзм</span>
         </h1>
     </div>
-    <header class="header" id="header">
+    <header class="header wow" id="header">
         <nav class="header__nav">
             <a href="./index.html"><img src="./images/logo.png" alt="Логотип" class="header__logo"></a>
             <ul class="header__list">
@@ -60,20 +61,21 @@
     </header>
     <main class="container" id="container">
         <div class="about" id="about">
-            <a href="javascript:void(0)" class="whoarewe" onclick="whoAreWe()">
+            <a href="javascript:void(0)" class="whoarewe wow fadeInLeft" onclick="whoAreWe()">
                 <div class="about__col" id="whoarewe-img"></div>
                 <div class="about__col">
                     <h1 class="about__col-title" id="whoarewe-text">ХТО МИ?</h1>
                 </div>
             </a>
-            <a href="javascript:void(0)" class="whatarewedoing" onclick="whatAreWeDoing()">
+            <a href="javascript:void(0)" class="whatarewedoing wow fadeInRight" onclick="whatAreWeDoing()">
                 <div class="about__col">
                     <h1 class="about__col-title" id="whatarewedoing-text">ЧИМ МИ ЗАЙМАЄМОСЬ?</h1>
                 </div>
                 <div class="about__col" id="whatarewedoing-img"></div>
             </a>
         </div>
-        <div class="statistic">
+        <!--<a href="#" id="gototop">Top</a>-->
+        <div class="statistic wow fadeInUpBig">
             <h2 class="statistic-title">ПОКЛИК ЯРУ В ЦИФРАХ - ЦЕ: </h2>
             <div class="statistic__row">
                 <div class="statistic__col"><span>24</span><span>Згадки в ЗМІ</span></div>
@@ -84,8 +86,8 @@
         <div class="feedback-wrapper">
             <h2 class="feedback__title">ВІДГУКИ</h2>
             <hr>
-            <div class="feedback">
-                <div class="feedback__item">
+            <div class="feedback" id="feedback">
+                <div class="feedback__item wow fadeInLeft">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-major.png" class="feedback__item-img">
                     </div>
@@ -94,7 +96,7 @@
                         <p class="feedback__item-text">&nbspЇдучи на табір третє літо поспіль, я мав за честь стати ройовим. 24/7 відчував відповідальність. Хтось не почергував, хтось забув автомат, хтось не встиг на збірку. Все це тепер контролював я. Особливо запам'ятав момент, коли вночі повинен був зібрати свій рій, але десь не було однієї людини. Бігав по наметах, заглядав, рій стоїть на кулаках, а він просто був сонний і став не до свого рою. Це одна з багатьох цікавих історій на таборі. Мій рій ніколи не сумував. Було безліч кумедних історій. Але головним є те, що за такий короткий час ми стали Побратимами</p>
                     </div>
                 </div>
-                <div class="feedback__item">
+                <div class="feedback__item wow fadeInRight">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-olegshevchenko.png" class="feedback__item-img">
                     </div>
@@ -103,7 +105,7 @@
                         <p class="feedback__item-text">&nbspЗараз я з посмішкою згадую той перший раз, коли хвилювався за кожен день перебування моєї доньки на таборі. Дзвонив до бунчужного, сердився на всіх, коли не брали слухавку. Тоді я не розумів, що в дітей на цьому таборі реально немає часу на телефони. Переконався, приїхавши з дружиною на батьківський день. Зранку до вечора діти грають у різноманітні ігри, займаються фізичними вправами, відвідують гутірки з історії, домедичної допомоги, розбирають і збирають ММГ, стріляють з пневматичної гвинтівки і ще багато іншого. На третій рік до Рапунцель приєдналася Азія - моя менша донька. 2021-го року команда організації "Поклик Яру" провела свято Покрови в Холодному Яру, куди ми всією сім'єю теж потрапили. Емоції від тих подій ще й досі гріють серце. Просто уявіть: сотні людей, утворивши вогнем живу карту України, в унісон промовляють молитву українського націоналіста. Саме тоді ти розумієш — Україні бути! Майбутнє за цими юнаками та юначками</p>
                     </div>
                 </div>
-                <div class="feedback__item">
+                <div class="feedback__item wow fadeInLeft" id="point-feedback">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-volyn.png" class="feedback__item-img">
                     </div>
@@ -112,7 +114,7 @@
                         <p class="feedback__item-text">&nbspНайпомітніша зміна від перебування в команді «Поклик Яру» — починає зникати етап «а нашо, може пізніше, а воно мені треба?» у виконанні будь-чого. Натомість, з’являється стійке і холодне розуміння невідкладності роботи. Я навчилась більш якісної комунікації з різними людьми. Розв’язувати конфлікти, вирішувати важливі питання до дедлайну — фундаментальні навички у сучасному світі. Я отримала афігенне ком’юніті, людей зі спільними ідеями цінностями та поглядами. Організація «Поклик Яру» стала невід’ємною частиною мого життя і я цьому безмежно рада</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item">
+                <div class="feedback__item wow fadeInRight" id="feedback__item">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-sonce.png" class="feedback__item-img">
                     </div>
@@ -121,7 +123,7 @@
                         <p class="feedback__item-text">&nbspГортаючи стрічку в тік тоці, я наштовхнулася на відео про «Поклик Яру». Так і прийняла рішення, яке врешті дуже вплинуло на моє життя. Численні гутірки, виховні моменти від проводу, випробування і велика кількість нових для мене перешкод. Табір наштовхнув мене на переосмислення багатьох речей та змінив систему цінностей. Я стала дивитися на світ, як відповідальна і національно-свідома людина. Мені дивно, що моя свідомість стала інакшою всього за десять таборових днів. Це заслуга молодої команди «Поклик Яру». Вони передають кожному з вихованців думку про те, що всі бар'єри існують лише в нашій голові</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item2">
+                <div class="feedback__item wow fadeInLeft" id="feedback__item2">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-nadia.png" class="feedback__item-img">
                     </div>
@@ -131,7 +133,7 @@
                             Саме донька навчила мене і пояснила, як виконується Державний гімн України. Під час співу притискаємо до серця не долоню, а кулак. Зерна української ідеї, які пояснені командою «Поклик Яру», я впевнена, зростуть!</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item3">
+                <div class="feedback__item wow fadeInRight" id="feedback__item3">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-gran.png" class="feedback__item-img">
                     </div>
@@ -140,7 +142,7 @@
                         <p class="feedback__item-text">&nbspЯ загорілася ідеєю власними руками будувати майбутнє в своїй країні. Цей запал переріс у мрію і мету. І ось я в команді людей, які вже стали моєю другою родиною. Табір, заходи, вишколи, збірки. Все це дає досвід, який набагато цінніший за гроші. Як на мене, люди, які готові повністю і безкорисливо віддаватися справі, будуть якісніше і відданіше її виконувати. «Поклик Яру» — організація, що впевнено крокує до своєї мети. Ми беремо відповідальність за майбутнє нашої Держави і власними руками будуємо свою долю</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item4">
+                <div class="feedback__item wow fadeInLeft" id="feedback__item4">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-lingvist.png" class="feedback__item-img">
                     </div>
@@ -149,7 +151,7 @@
                         <p class="feedback__item-text">&nbspНа «Поклик Яру» свої традиції, філософія, принципи. Наприклад, новачкам ми вигадуємо особливі псевда, які підходять до особистих якостей учасника. Тут друзі на таборі — друзі назавжди. Ми називаємо один одного побратимами. Тут ти вдосконалюєшся і вчишся брати відповідальність за себе, свої вчинки. Урешті-решт, зміни проходять в Холодному Яру, а це незрівнянна атмосфера. Я люблю табір «Поклик Яру». Ви знаєте, де мене знайти влітку</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item5">
+                <div class="feedback__item wow fadeInRight" id="feedback__item5">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-ruslana.png" class="feedback__item-img">
                     </div>
@@ -159,7 +161,7 @@
                             І це не дивно. Це місце, де їх розуміють. Це місце, де їх виховують, дисциплінують. Разом з цим, їхні думки поважають, а до них ставляться, як до особистостей. Батькам важливо, коли старші товариші ставляться до підлітка, як до рівного. Виховники «Поклику Яру» не перестають тримати зв'язок з вихованцями табору й протягом року. Тому у дітей там є справжні друзі. А це багато чого вартує!</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item6">
+                <div class="feedback__item wow fadeInLeft" id="feedback__item6">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-roman.png" class="feedback__item-img">
                     </div>
@@ -168,7 +170,7 @@
                         <p class="feedback__item-text">&nbspРозуміючи, що у роботі з молоддю необхідна системність, вирішив наважитися на кардинальний крок. Разом з ідейними друзями реалізував наш перший літній національно-патріотичний табір. Знаковою для мене подією стало придбання власної території для табору і створення громадської організації у 2020 році. Тоді я зрозумів, що колишні вихованці виросли і готові брати відповідальність за Державу, виховуючи молоде покоління далі</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item7">
+                <div class="feedback__item wow fadeInRight" id="feedback__item7">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-neznaika.png" class="feedback__item-img">
                     </div>
@@ -178,7 +180,7 @@
                             Я й уявити раніше не могла, що колись буду ночувати в таких умовах. Вранці, коли ми вийшли з лісу, для мене не існувало більше таких дрібниць, як некомфортні умови. Команда «Поклик Яру» допомогла перебороти себе і  стала моєю Родиною</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item8">
+                <div class="feedback__item wow fadeInLeft" id="feedback__item8">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-serhii.png" class="feedback__item-img">
                     </div>
@@ -187,7 +189,7 @@
                         <p class="feedback__item-text">&nbspЧесно кажучи, дізнавшись про спартанські умови в таборі, були деякі побоювання, що дівчата не витримають і будуть проситися додому. Та завдяки правильній мотивації і організації таборового процесу, вони навпаки були в захваті від вражень. Гутірки з історії та домедичної допомоги, навички виживання в лісі і ще багато іншого розширили кругозір моїх доньок. Завдяки табору дівчата стали витривалими, самостійними і вирішили продовжувати свою діяльність вже як члени організації. Із року в рік команда «Поклик Яру» доводить, що Холодний Яр — це місце, де виховують справді відповідальну молодь, якою може пишатися Україна. Відтепер «Поклик Яру» став пріоритетом в житті моїх доньок і я цим пишаюся</p>
                     </div>
                 </div>
-                <div class="feedback__item" id="feedback__item9">
+                <div class="feedback__item wow fadeInRight" id="feedback__item9">
                     <div class="feedback__item-col">
                         <img src="./images/feedback-istoryk.png" class="feedback__item-img">
                     </div>
@@ -198,13 +200,13 @@
                 </div>
                 <div class="feedback__gradient"></div>
             </div>
-            <a href="javascript:void(0)" id="showfeedbackbtn" class="feedback__title feedback__btn" onclick="showFeedback()">БІЛЬШЕ ВІДГУКІВ</a>
+            <a href="#point-feedback" id="showfeedbackbtn" class="feedback__title feedback__btn" onclick="showFeedback()">БІЛЬШЕ ВІДГУКІВ</a>
             <hr>
         </div>
 
-        <div class="map"><a href="https://www.google.com.ua/maps/place/%D0%9F%D0%BE%D0%BA%D0%BB%D0%B8%D0%BA+%D0%AF%D1%80%D1%83+-+%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE-%D0%BF%D0%B0%D1%82%D1%80%D1%96%D0%BE%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9+%D1%82%D0%B0%D0%B1%D1%96%D1%80/@49.1558184,32.278744,17z/data=!3m1!4b1!4m5!3m4!1s0x40d1253807924971:0xb1f0e53c3d064e50!8m2!3d49.1557855!4d32.2809419?hl=uk&authuser=0" target="blank"></a></div>
+        <div class="map wow bounceIn"><a href="https://www.google.com.ua/maps/place/%D0%9F%D0%BE%D0%BA%D0%BB%D0%B8%D0%BA+%D0%AF%D1%80%D1%83+-+%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE-%D0%BF%D0%B0%D1%82%D1%80%D1%96%D0%BE%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9+%D1%82%D0%B0%D0%B1%D1%96%D1%80/@49.1558184,32.278744,17z/data=!3m1!4b1!4m5!3m4!1s0x40d1253807924971:0xb1f0e53c3d064e50!8m2!3d49.1557855!4d32.2809419?hl=uk&authuser=0" target="blank"></a></div>
 
-        <footer class="footer">
+        <footer class="footer wow fadeInUp">
             <div class="footer-block">
                 <div class="footer__col">
                     <nav class="footer__nav">
@@ -230,6 +232,10 @@
             </div>
         </footer>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+      </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/script.js"></script>
 </body>

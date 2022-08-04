@@ -1,7 +1,27 @@
 window.onload = setTimeout(function(){
     $("#preloader").slideUp("slow");
+    document.querySelector('body').style.overflow = "scroll";
 }, 2000);
 
+/*$(document).ready(function(){
+    // Добавить плавную прокрутку до всех ссылок
+    $('#gototop').on('click', function(event) {
+  
+      if (this.hash !== "") {
+
+        event.preventDefault();
+  
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+    });
+  });
+*/
 if(window.screen.width > 968){
     $('.whoarewe').hover( function(){
         function textAnimate(){
@@ -122,6 +142,7 @@ function showFeedback(){
         document.getElementById('feedback__item7').style.display = "flex";
         document.getElementById('feedback__item8').style.display = "flex";
         document.getElementById('feedback__item9').style.display = "flex";
+        $('.feedback__gradient').fadeOut();
     } else{
         document.getElementById('showfeedbackbtn').innerText = "БІЛЬШЕ ВІДГУКІВ";
         document.getElementById('feedback__item4').style.display = "none";
@@ -130,6 +151,7 @@ function showFeedback(){
         document.getElementById('feedback__item7').style.display = "none";
         document.getElementById('feedback__item8').style.display = "none";
         document.getElementById('feedback__item9').style.display = "none";
+        $('.feedback__gradient').fadeIn();
         if(window.screen.width <= 968){
             document.getElementById('feedback__item').style.display = "none";
             document.getElementById('feedback__item2').style.display = "none";
