@@ -819,6 +819,10 @@ body{
     .feedback__item{
         width: 95%;
     }
+
+    .footer{
+        padding: 120px 0px;
+    }
     .footer-block:first-child{
         width: 100%;
     }
