@@ -105,16 +105,16 @@ function showFeedback(){
         document.getElementById('feedback__item9').style.display = "flex";
     } else{
         document.getElementById('showfeedbackbtn').innerText = "БІЛЬШЕ ВІДГУКІВ";
-        document.getElementById('feedback__item').style.display = "none";
-        document.getElementById('feedback__item2').style.display = "none";
-        document.getElementById('feedback__item3').style.display = "none";
         document.getElementById('feedback__item4').style.display = "none";
         document.getElementById('feedback__item5').style.display = "none";
         document.getElementById('feedback__item6').style.display = "none";
+        document.getElementById('feedback__item7').style.display = "none";
+        document.getElementById('feedback__item8').style.display = "none";
+        document.getElementById('feedback__item9').style.display = "none";
         if(window.screen.width <= 968){
-            document.getElementById('feedback__item7').style.display = "none";
-            document.getElementById('feedback__item8').style.display = "none";
-            document.getElementById('feedback__item9').style.display = "none";
+            document.getElementById('feedback__item').style.display = "none";
+            document.getElementById('feedback__item2').style.display = "none";
+            document.getElementById('feedback__item3').style.display = "none";
         }
     }
 }
