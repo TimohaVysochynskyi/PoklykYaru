@@ -45,12 +45,10 @@ $('.whatarewedoing').hover( function(){
 function aboutUsHeader(){
     if(window.screen.width > 968){
         if(document.getElementById('aboutusheader2').style.display == "block"){
-            document.getElementById('aboutusheader').style.borderColor = "rgba(0, 0, 0, 0)";
             document.getElementById('aboutusheader').style.borderRadius = "24.5px";
             document.getElementById('aboutusheader2').style.display = "none";
             document.getElementById('aboutusheader3').style.display = "none";
         }else{
-            document.getElementById('aboutusheader').style.borderColor = "#293C43";
             document.getElementById('aboutusheader').style.borderRadius = "20px 20px 0px 0px";
             document.getElementById('aboutusheader2').style.display = "block";
             document.getElementById('aboutusheader3').style.display = "block";
@@ -66,10 +64,8 @@ function eventHeader(){
             document.getElementById('eventheader5').style.display = "none";
             document.getElementById('eventheader6').style.display = "none";
             document.getElementById('eventheader7').style.display = "none";
-            document.getElementById('eventheader').style.borderColor = "rgba(0, 0, 0, 0)";
             document.getElementById('eventheader').style.borderRadius = "24.5px";
         } else {
-            document.getElementById('eventheader').style.borderColor = "#293C43";
             document.getElementById('eventheader').style.borderRadius = "20px 20px 0px 0px";
             document.getElementById('eventheader2').style.display = "block";
             document.getElementById('eventheader3').style.display = "block";
@@ -83,13 +79,11 @@ function eventHeader(){
 function merchHeader(){
     if(window.screen.width > 968){
         if(document.getElementById('merchheader2').style.display == "block"){
-            document.getElementById('merchheader').style.borderColor = "rgba(0, 0, 0, 0)";
             document.getElementById('merchheader').style.borderRadius = "24.5px";
             document.getElementById('merchheader2').style.display = "none";
             document.getElementById('merchheader3').style.display = "none";
             document.getElementById('merchheader4').style.display = "none";
         } else {
-            document.getElementById('merchheader').style.borderColor = "#293C43";
             document.getElementById('merchheader').style.borderRadius = "20px 20px 0px 0px";
             document.getElementById('merchheader2').style.display = "block";
             document.getElementById('merchheader3').style.display = "block";
@@ -117,8 +111,10 @@ function showFeedback(){
         document.getElementById('feedback__item4').style.display = "none";
         document.getElementById('feedback__item5').style.display = "none";
         document.getElementById('feedback__item6').style.display = "none";
-        document.getElementById('feedback__item7').style.display = "none";
-        document.getElementById('feedback__item8').style.display = "none";
-        document.getElementById('feedback__item9').style.display = "none";
+        if(window.screen.width <= 968){
+            document.getElementById('feedback__item7').style.display = "none";
+            document.getElementById('feedback__item8').style.display = "none";
+            document.getElementById('feedback__item9').style.display = "none";
+        }
     }
 }
