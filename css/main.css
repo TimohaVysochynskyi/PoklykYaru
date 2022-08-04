@@ -835,14 +835,24 @@ body{
 /*##########    TABLET    ##########*/
 
 @media screen  and (max-width: 768px){
+    .statistic{
+        height: 80vh;
+    }
     .statistic-title{
-        width: 85%;
-        font-size: 28px;
+        width: 100%;
+        font-size: 20px;
+    }
+    .statistic__row{
+        height: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
     .statistic__col{
-        width: 200px;
-        height: 135px;
-        bottom: -30vh;
+        position: static;
+        width: 90%;
+        height: 27%;
+        margin: 5px 0px;
     }
     .feedback__item{
         width: 95%;
