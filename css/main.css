@@ -208,7 +208,7 @@ body{
     position: relative;
     box-shadow: 2px 4px 5px #000000bb;
 }
-.header__register-timer > span{
+.header__register-timer-text{
     font-family: Gagalin;
     letter-spacing: 2px;
     font-weight: 1000;
@@ -218,7 +218,7 @@ body{
     color: rgba(255, 255, 255, 0.79);
     margin: 0px 3px;
 }
-.header__register-timer > span > span{
+.header__register-timer-text:last-child{
     color: #72838A;
     font-family: Gagalin;
 }
