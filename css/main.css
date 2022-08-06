@@ -211,16 +211,19 @@ body{
 .header__register-timer-text{
     font-family: Gagalin;
     letter-spacing: 2px;
-    font-weight: 1000;
+    font-weight: 100;
     font-size: 5vh;
     line-height: 69px;
     text-align: center;
     color: rgba(255, 255, 255, 0.79);
     margin: 0px 3px;
+    -webkit-text-stroke: 0.4px #333;
+    text-shadow: 0px 0px 6px #000;
 }
 .header__register-timer-text:last-child{
     color: #72838A;
     font-family: Gagalin;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
 }
 .header__register-img{
     position: absolute;
@@ -748,7 +751,7 @@ body{
         display: flex;
         justify-content: center;
     }
-    .header__register-timer > span{
+    .header__register-timer-text{
         font-size: 50px;
     }
     .header__register-img{
@@ -757,7 +760,7 @@ body{
         transform: rotateZ(-70deg);
     }
     .header__register-title{
-        top: -25vh;
+        top: -20vh;
         right: 0;
         width: 100%;
         font-size: 7vh;
@@ -777,6 +780,8 @@ body{
         padding: 50px 20px 50px 40px;
         margin: 10px 0px;
         border-radius: 50px;
+        height: 65vh;
+        
     }
     .about__col{
         width: 80%;
@@ -796,7 +801,7 @@ body{
         height: 70px;
     }
     .about__col-title{
-        font-size: 38px;
+        font-size: 58px;
     }
     .statistic{
         height: 90vh;
@@ -839,6 +844,13 @@ body{
 /*##########    TABLET    ##########*/
 
 @media screen  and (max-width: 768px){
+    .whoarewe,
+    .whatarewedoing{
+        height: 40vh;
+    }
+    .about__col-yiyle{
+        font-size: 32px;
+    }
     .statistic{
         height: 80vh;
     }
@@ -896,11 +908,12 @@ body{
     .header__link{
         font-size: 2.2vh;
     }
-    .header__register-timer > span{
+    .header__register-timer-text{
         font-size: 4vh;
     }
     .header__register-title{
-        font-size: 5vh;
+        font-size: 4.9vh;
+        top: -18vh;
     }
     .header__register-img{
         width: 40px;
@@ -908,10 +921,10 @@ body{
     }
     .whoarewe,
     .whatarewedoing{
-        height: auto;
         padding: 50px 20px 50px 40px;
         margin: 10px 0px;
         border-radius: 50px;
+        height: 55vh;
     }
     .whoarewe::after,
     .whatarewedoing::before{
@@ -923,7 +936,7 @@ body{
         height: auto;
     }
     .about__col-title{
-        font-size: 20px;
+        font-size: 32px;
         width: 100%;
     }
     .statistic{
@@ -996,6 +1009,9 @@ body{
     .header__register-timer{
         padding: 0px 30px;
     }
+    .header__register-timer-text{
+        font-size: 32px;
+    }
     .statistic{
         height: 90vh;
     }
@@ -1003,7 +1019,7 @@ body{
         height: 45vh;
     }
     .about__col-title{
-        font-size: 18px;
+        font-size: 28px;
     }
 }
 
@@ -1012,6 +1028,13 @@ body{
 /*##########    SMALL mobile    ##########*/
 
 @media screen  and (max-width: 320px){
+    .whoarewe,
+    .whatarewedoing{
+        height: 66vh;
+    }
+    .about__col-title{
+        font-size: 22px;
+    }
     .aboutus__title > span{
         font-size: 30px;
         font-weight: 600;
@@ -1019,10 +1042,16 @@ body{
     .header__register-timer{
         padding: 0px 15px;
     }
+    .header__register-timer-text{
+        font-size: 28px;
+    }
+    .header__register-title{
+        top: -26vh;
+    }
     .header__register-img{
-        height: 30px;
-        width: 30px;
-        top: -20px;
+        height: 40px;
+        width: 40px;
+        top: -30px;
     }
     .map{
         height: 38vh;
