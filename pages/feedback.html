@@ -1,36 +1,24 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поклик Яру | Головна</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="icon" type="image/x-icon" href="./images/logo.ico">
-    <style>
-        body{
-            overflow: hidden;
-        }
-    </style>
+    <title>Поклик Яру | Відгуки</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.ico">
 </head>
 <body>
-    <div class="preloader" id="preloader">
-        <h1 class="aboutus__title">
-          <span>Побраимство</span>
-          <span>Дисциплiна</span>
-          <span>Нацiоналiзм</span>
-        </h1>
-    </div>
-    <div style="position: absolute; width: 100%; height: 100vh; background-image: url(./images/header-bg2.png); background-size: cover; background-position: top;"></div>
-    <header class="header" id="header">
+    <header class="header">
         <nav class="header__nav">
-            <a href="./index.html"><img src="./images/logo.png" alt="Логотип" class="header__logo"></a>
+            <a href="../index.html"><img src="../images/logo.png" alt="Логотип" class="header__logo"></a>
             <ul class="header__list">
                 <li>
                     <a href="#" class="header__link" id="aboutusheader" onclick="aboutUsHeader()">про нас</a>
                     <a href="#" class="header__link" id="aboutusheader2">історія</a>
-                    <a href="./pages/feedback.html" class="header__link" id="aboutusheader3">відгуки та змі</a>
+                    <a href="#" class="header__link" id="aboutusheader3">відгуки та змі</a>
                 </li>
                 <li><a href="#" class="header__link">табір</a></li>
                 <li>
@@ -52,50 +40,62 @@
                 <li><a href="#" class="header__link">комерційні заходи</a></li>
             </ul>
         </nav>
-        <section class="header__registration">
-            <div class="header__register-timer-wrapper">
-                <div class="header__register-timer">
-                    <span> <span id="days" class="header__register-timer-text">000</span><span class="header__register-timer-text">ДН. </span> </span>
-                    <span> <span id="hours" class="header__register-timer-text">00</span><span class="header__register-timer-text">ГОД. </span> </span>
-                    <span> <span id="minutes" class="header__register-timer-text">00</span><span class="header__register-timer-text">ХВ. </span> </span>
-                    <img src="./images/header-arrow.png" class="header__register-img">
-                    <h1 class="header__register-title">РЕЄСТРАЦІЮ НА НОВУ ЗМІНУ БУДЕ ВІДКРИТО ЧЕРЕЗ</h1>
-                </div>
-            </div>
+        <section class="header__info">
+            <h1 class="header__info-title">ЗГАДКИ В ЗМІ</h1>
+            <h2 class="header__info-subtitle">ВІДГУКИ</h2>
         </section>
     </header>
-    <main class="container" id="container">
-        <a href="#" id="totop" class="totop wow fadeInRight"><img src="./images/totop.png" class="totop-img"></a>
-        <div class="about" id="about">
-            <a href="javascript:void(0)" class="whoarewe wow fadeInLeft" onclick="whoAreWe()">
-                <div class="about__col" id="whoarewe-img"></div>
-                <div class="about__col">
-                    <h1 class="about__col-title" id="whoarewe-text">ХТО МИ?</h1>
-                </div>
-            </a>
-            <a href="javascript:void(0)" class="whatarewedoing wow fadeInRight" onclick="whatAreWeDoing()">
-                <div class="about__col">
-                    <h1 class="about__col-title" id="whatarewedoing-text">ЧИМ МИ ЗАЙМАЄМОСЬ?</h1>
-                </div>
-                <div class="about__col" id="whatarewedoing-img"></div>
-            </a>
+    <main class="container">
+        <!--<div class="zmi">
+            <?php for($i = 1; $i <= 36; $i=$i+1): ?>
+                <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi<? echo $i ?>.png);"></a>
+            <? endfor; ?>
+        </div>-->
+        <div class="zmi">
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi1.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi2.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi3.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi4.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi5.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi6.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi7.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi8.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi9.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi10.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi11.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi12.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi13.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi14.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi15.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi16.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi17.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi18.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi19.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi20.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi21.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi22.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi23.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi24.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi25.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi26.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi27.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi28.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi29.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi30.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi31.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi32.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi33.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi34.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi35.png);"></a>
+            <a href="javascript:void(0)" class="zmi__item" style="background-image: url(../images/zmi/zmi36.png);"></a>
         </div>
-        <!--<a href="#" id="gototop">Top</a>-->
-        <div class="statistic wow fadeInUp">
-            <h2 class="statistic-title">ПОКЛИК ЯРУ В ЦИФРАХ - ЦЕ: </h2>
-            <div class="statistic__row">
-                <div class="statistic__col"><span>24</span><span>Згадки в ЗМІ</span></div>
-                <div class="statistic__col"><span>509</span><span>учасників</span></div>
-                <div class="statistic__col"><span style="color: #293C43cc;">16</span><span>заходів</span></div>
-            </div>
-        </div>
-        <div class="feedback-wrapper">
+        <div class="feedback-wrapper" style="margin-top: 20px;">
             <h2 class="feedback__title">ВІДГУКИ</h2>
             <hr>
             <div class="feedback" id="feedback">
                 <div class="feedback__item wow fadeInLeft">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-major.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-major.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">МАЖОР, ройовий рою «Холодноярський вітер»</h4>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="feedback__item wow fadeInRight">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-olegshevchenko.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-olegshevchenko.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ОЛЕГ ШЕВЧЕНКО, батько подруги Рапунцель та Азії</h4>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="feedback__item wow fadeInLeft" id="point-feedback">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-volyn.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-volyn.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ПОДРУГА ВОЛИНЬ — член команди «Поклик Яру»</h4>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="feedback__item wow fadeInRight" id="feedback__item">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-sonce.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-sonce.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ПОДРУГА СОНЦЕ — рій імені Василя Чучупаки</h4>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="feedback__item wow fadeInLeft" id="feedback__item2">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-nadia.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-nadia.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">НАДІЯ ЗАМРИГА — мама подруги Волинь</h4>
@@ -141,7 +141,7 @@
                 </div>
                 <div class="feedback__item wow fadeInRight" id="feedback__item3">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-gran.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-gran.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ПОДРУГА ГРАНЬ — виховник команди «Поклик Яру»</h4>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="feedback__item wow fadeInLeft" id="feedback__item4">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-lingvist.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-lingvist.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ДРУГ ЛІНГВІСТ — хорунжий рою імені Євгена Коновальця</h4>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="feedback__item wow fadeInRight" id="feedback__item5">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-ruslana.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-ruslana.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">РУСЛАНА ЧЕВІРОВА — мама друга Лінгвіста, Ємо, Шрека</h4>
@@ -169,7 +169,7 @@
                 </div>
                 <div class="feedback__item wow fadeInLeft" id="feedback__item6">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-roman.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-roman.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ДРУГ РОМАН — голова організації «Поклик Яру»</h4>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="feedback__item wow fadeInRight" id="feedback__item7">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-neznaika.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-neznaika.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ПОДРУГА НЕЗНАЙКА— рій імені Василя Чучупаки</h4>
@@ -188,7 +188,7 @@
                 </div>
                 <div class="feedback__item wow fadeInLeft" id="feedback__item8">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-serhii.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-serhii.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">СЕРГІЙ ГУСЄВ — батько подруги Катани та Гусьмін</h4>
@@ -197,7 +197,7 @@
                 </div>
                 <div class="feedback__item wow fadeInRight" id="feedback__item9">
                     <div class="feedback__item-col">
-                        <img src="./images/feedback/feedback-istoryk.png" class="feedback__item-img">
+                        <img src="../images/feedback/feedback-istoryk.png" class="feedback__item-img">
                     </div>
                     <div class="feedback__item-col">
                         <h4 class="feedback__item-title">ДРУГ ІСТОРИК — координатор організації «Поклик Яру»</h4>
@@ -206,23 +206,21 @@
                 </div>
                 <div class="feedback__gradient"></div>
             </div>
-            <a href="./pages/feedback.html" id="showfeedbackbtn" class="feedback__title feedback__btn">БІЛЬШЕ ВІДГУКІВ</a>
+            <a href="javascript:void(0)" id="showfeedbackbtn" class="feedback__title feedback__btn" onclick="showFeedback()">БІЛЬШЕ ВІДГУКІВ</a>
             <hr>
         </div>
-
-        <div class="map wow bounceIn"><a href="https://www.google.com.ua/maps/place/%D0%9F%D0%BE%D0%BA%D0%BB%D0%B8%D0%BA+%D0%AF%D1%80%D1%83+-+%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE-%D0%BF%D0%B0%D1%82%D1%80%D1%96%D0%BE%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D0%B9+%D1%82%D0%B0%D0%B1%D1%96%D1%80/@49.1558184,32.278744,17z/data=!3m1!4b1!4m5!3m4!1s0x40d1253807924971:0xb1f0e53c3d064e50!8m2!3d49.1557855!4d32.2809419?hl=uk&authuser=0" target="blank"></a></div>
     </main>
-    <footer class="footer wow fadeInUp">
+    <footer class="footer wow fadeInUp" style="margin-top: 50px;">
         <div class="footer-block">
             <div class="footer__col">
                 <nav class="footer__nav">
                     <ul class="footer__list">
-                        <li><a href="#" class="footer__link"><img src="./images/yt-link.png" alt=""></a></li>
-                        <li><a href="#" class="footer__link"><img src="./images/pt-link.png" alt=""></a></li>
-                        <li><a href="#" class="footer__link"><img src="./images/tt-link.png" alt=""></a></li>
-                        <li><a href="#" class="footer__link"><img src="./images/tg-link.png" alt=""></a></li>
-                        <li><a href="#" class="footer__link"><img src="./images/fc-link.png" alt=""></a></li>
-                        <li><a href="#" class="footer__link"><img src="./images/inst-link.png" alt=""></a></li>
+                        <li><a href="#" class="footer__link"><img src="../images/yt-link.png" alt=""></a></li>
+                        <li><a href="#" class="footer__link"><img src="../images/pt-link.png" alt=""></a></li>
+                        <li><a href="#" class="footer__link"><img src="../images/tt-link.png" alt=""></a></li>
+                        <li><a href="#" class="footer__link"><img src="../images/tg-link.png" alt=""></a></li>
+                        <li><a href="#" class="footer__link"><img src="../images/fc-link.png" alt=""></a></li>
+                        <li><a href="#" class="footer__link"><img src="../images/inst-link.png" alt=""></a></li>
                     </ul>
                 </nav>
             </div>
@@ -240,12 +238,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
-        window.onload = setTimeout(function(){
-            $("#preloader").slideUp("slow");
-            document.querySelector('body').style.overflow = "scroll";
-        }, 2000);
       </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

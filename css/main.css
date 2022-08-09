@@ -1012,6 +1012,10 @@ body{
     .header__register-timer-text{
         font-size: 32px;
     }
+    .header__register-title{
+        top: -120px;
+        font-size: 30px;
+    }
     .statistic{
         height: 90vh;
     }
@@ -1030,7 +1034,7 @@ body{
 @media screen  and (max-width: 320px){
     .whoarewe,
     .whatarewedoing{
-        height: 66vh;
+        height: 100vh;
     }
     .about__col-title{
         font-size: 22px;
@@ -1046,7 +1050,7 @@ body{
         font-size: 28px;
     }
     .header__register-title{
-        top: -26vh;
+        top: -110px;
     }
     .header__register-img{
         height: 40px;

@@ -1,8 +1,3 @@
-window.onload = setTimeout(function(){
-    $("#preloader").slideUp("slow");
-    document.querySelector('body').style.overflow = "scroll";
-}, 2000);
-
 /*$(document).ready(function(){
     // Добавить плавную прокрутку до всех ссылок
     $('#gototop').on('click', function(event) {
