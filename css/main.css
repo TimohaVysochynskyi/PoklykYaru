@@ -897,7 +897,7 @@ body{
 
 /*##########    BIG mobile    ##########*/
 
-@media screen  and (max-width: 425px){
+@media screen  and (max-width: 505px){
     .aboutus__title > span{
         font-size: 36px;
         font-weight: 600;
