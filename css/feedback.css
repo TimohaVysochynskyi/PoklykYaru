@@ -128,7 +128,7 @@
 .zmi-swiper{
     height: 80vh !important;
     margin-top: 50px;
-    width: 90vw;
+    width: 91.5vw;
     padding: 25px !important;
     margin-left: auto;
     margin-right: auto;
@@ -137,7 +137,7 @@
     z-index: 1;
     text-align: center;
     font-size: 18px;
-    height: calc((100% - 40px) / 2) !important;
+    height: calc((100% - 30px) / 2) !important;
     display: flex;
     justify-content: center;
     align-items: center;

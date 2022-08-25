@@ -535,12 +535,12 @@ body{
 .map{
     display: flex;
     justify-content: center;
-    padding-top: 30px;
     position: relative;
+    padding-top: 30px;
 }
 .map > img{
     z-index: 0;
-    height: 70vh;
+    height: 110vh;
     position: relative;
 }
 .map > a{

@@ -27,7 +27,7 @@ let swiper3 = new Swiper(".zmi-swiper2", {
   grid: {
     rows: 2,
   },
-  spaceBetween: 40,
+  spaceBetween: 30,
   pagination: {
     el: ".swiper-zmi2-pagination",
     clickable: true,

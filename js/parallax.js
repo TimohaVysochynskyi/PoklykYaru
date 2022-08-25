@@ -2,7 +2,7 @@ function cssParallax(cont, el, radiusVal){
   $(cont).mousemove(function(event) {
       
       cx = Math.ceil($(window).width() / 2.0);
-      cy = Math.ceil($(window).height() / 2.0);
+      cy = Math.ceil($(window).height() / 0.8);
       dx = event.pageX - cx;
       dy = event.pageY - cy;
       
@@ -17,6 +17,6 @@ function cssParallax(cont, el, radiusVal){
 }
 
 $(document).ready(function() {
-  cssParallax('.parallax-container', '.parallax-base', 2);
+  cssParallax('.parallax-container', '.parallax-base', 4);
   cssParallax('.parallax-container.first', '.parallax-base', 20);
 });
