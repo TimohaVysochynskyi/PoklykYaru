@@ -29,3 +29,9 @@ html{
     z-index: 99;
     display: none;
 }
+.parallax-container {
+    -webkit-perspective: 1500;
+    -moz-perspective: 1500px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
