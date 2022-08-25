@@ -429,6 +429,7 @@ body{
 .feedback-wrapper > hr{
     width: 100%;
     border: 2px solid #293C43;
+    background-color: #293C43;
 }
 .feedback__title{
     font-weight: 800;
