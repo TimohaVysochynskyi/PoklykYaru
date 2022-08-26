@@ -445,6 +445,7 @@ body{
     position: relative;
     bottom: -30px;
     border: 2px solid #293C43;
+    box-shadow: 6px 6px 6px #32383b;
 }
 .feedback__btn{
     text-decoration: none;
@@ -596,6 +597,8 @@ body{
 .footer__link > img{
     width: 38px;
     height: 38px;
+    border-radius: 100px;
+        box-shadow: 2px 2px 5px #000;
 }
 .footer__adress{
     font-weight: 700;
