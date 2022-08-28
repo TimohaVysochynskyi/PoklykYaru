@@ -44,3 +44,106 @@
     background-color: #293c43ef;
     transition: 0.35s;
 }
+.event__list-wrapper{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.event-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.event__row{
+    padding: 80px;
+}
+.event__row:first-child{
+    background-image: url(../images/events/event.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+.event__info{
+    position: relative;
+    top: 400px;
+}
+.event-paralelogram{
+    width: 70%;
+    height: 200px;
+    transform: skew(-30deg);
+    background: #293c43d0;
+}
+.event-title{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 72px;
+    position: absolute;
+    top: 30px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    left: -10px;
+}
+.event-time{
+    color: #FFD537;
+    font-size: 72px;
+    font-weight: 900;
+    position: absolute;
+    bottom: -40px;
+    left: 50px;
+}
+.event__row:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+}
+.event__col{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.event__col:first-child{
+    flex-direction: column;
+    width: 60%;
+}
+.event__col>img{
+    width: 70%;
+    border-radius: 2.5px;
+}
+.event-text{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0px;
+    text-shadow: 0px 0px 4px #555;
+}
+.event__btn{
+    padding: 16px 25px;
+    color: #FFD537;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    background-color: #293c43;
+    border-radius: 100px;
+    box-shadow: 2px 2px 8px #293c43d0;
+    transition: 0.3s;
+}
+.event__btn:hover{
+    box-shadow: -2px -2px 12px #293c43d0;
+    background-color: #293c43d0;
+    transition: 0.3s;
+}
+.event-paralelogram-bg{
+    width: 100%;
+    height: 60%;
+    transform: skew(-30deg);
+    background: #293c43af;
+    position: absolute;
+    z-index: -1;
+}
