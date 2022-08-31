@@ -1,13 +1,12 @@
 body{
     background: #72838A;
+    overflow: hidden !important;
 }
-
-
 
 /*##########    HEADER    ##########*/
 
 .header{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-image: url(../images/header-bg.png);
     background-size: cover;
@@ -19,33 +18,17 @@ body{
     animation-iteration-count: infinite;
     filter: contrast(120%);
 }
-@keyframes fade {
-    0%{
-        background-image: url(../images/header-bg.png);
-    }
-    25%{
-        background-image: url(../images/header-bg.png);
-    }
-    33%{
-        background-image: url(../images/header-bg2.png);
-    }
-    58%{
-        background-image: url(../images/header-bg2.png);
-    }
-    66%{
-        background-image: url(../images/header-bg3.png);
-    }
-    91%{
-        background-image: url(../images/header-bg3.png);
-    }
-    100%{
-        background-image: url(../images/header-bg.png);
-    }
-}
 .header__nav{
+    width: 100%;
     min-height: 15%;
     display: flex;
     justify-content: space-around;
+    position: fixed;
+    top: 0;
+    filter: contrast(120%);
+    z-index: 999;
+    border-radius: 0px 0px 40px 40px;
+    background-color: rgba(250, 250, 250, 0.5);
 }
 .header__logo{
     width: 120px;
@@ -720,6 +703,8 @@ body{
     .header__nav{
         justify-content: center;
         flex-wrap:  wrap;
+        position: absolute;
+        background: none;
     }
     .header__logo{
         width: 110px;
@@ -1064,5 +1049,34 @@ body{
     }
     .map > img{
         height: 33vh;
+    }
+}
+@keyframes fade {
+    0% {
+        background-image: url(../images/header-bg.png);
+    }
+
+    25% {
+        background-image: url(../images/header-bg.png);
+    }
+
+    33% {
+        background-image: url(../images/header-bg2.png);
+    }
+
+    58% {
+        background-image: url(../images/header-bg2.png);
+    }
+
+    66% {
+        background-image: url(../images/header-bg3.png);
+    }
+
+    91% {
+        background-image: url(../images/header-bg3.png);
+    }
+
+    100% {
+        background-image: url(../images/header-bg.png);
     }
 }
