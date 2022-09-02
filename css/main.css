@@ -972,7 +972,7 @@ body{
         height: 120px;
     }
     .map > img{
-        height: 40vh;
+        height: 40vh !important;
     }
     .footer{
         height: auto;
