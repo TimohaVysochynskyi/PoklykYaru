@@ -952,11 +952,16 @@ body{
         width: 90%;
         margin: 5px 0px;
     }
+    .feedback{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .feedback__item{
         flex-wrap: wrap;
         justify-content: center;
         height: auto;
         margin: 2% 0%;
+        width: 95%;
     }
     .feedback__item-title{
         line-height: 20px;
