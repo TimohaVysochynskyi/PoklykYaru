@@ -253,7 +253,7 @@ body{
     background: #293C43;
     border-radius: 254.5px;
     width: 85%;
-    height: 275px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -300,17 +300,18 @@ body{
     width: 70%;
     background-size: cover;
     background-position: center;
-    transform: scale(1.185) translateX(-12px);
 }
 .whoarewe > .about__col:first-child{
     background-image: url(../images/whoarewe-img.png);
-    width: 300px;
+    width: 350px;
+    transform: scale(1.3);
 }
 .whatarewedoing > .about__col:last-child{
     background-image: url(../images/whatarewedoing-img.png);
-    width: 300px;
+    width: 350px;
     position: relative;
     right: -28px;
+    transform: scale(1.3);
 }
 .about__col-title{
     text-align: center;
