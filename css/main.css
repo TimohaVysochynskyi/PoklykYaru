@@ -221,8 +221,8 @@ body{
     right: -50%;
     top: -130%;
     position: absolute;
-    width: 400px;
-    font-size: 5.5vh;
+    width: 500px;
+    font-size: 40px;
     font-weight: 750;
     line-height: 92%;
     text-align: center;
@@ -326,7 +326,7 @@ body{
 /*##########    STATISTIC    ##########*/
 
 .statistic{
-    height: 55vh;
+    height: 500px;
     width: 100%;
     background-image: url(../images/statistic-bg.png);
     background-size: cover;
@@ -359,7 +359,7 @@ body{
 }
 .statistic__row{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 90%;
     height: 55vh;
 }
@@ -373,7 +373,7 @@ body{
     align-items: center;
     justify-content: center;
     position: relative;
-    bottom: -31vh;
+    bottom: -320px;
 }
 .statistic__col > span{
     height: 50%;
