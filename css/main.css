@@ -617,6 +617,10 @@ body{
     position: fixed;
     z-index: 9999;
 }
+.preloader__gif{
+    width: 330px;
+    height: 330px;
+}
 .aboutus__title:first-child,
 .aboutus__title:nth-child(2),
 .aboutus__title:last-child {
