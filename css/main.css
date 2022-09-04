@@ -217,7 +217,7 @@ body{
     top: 20px;
 }
 .header__register-title{
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     right: -50%;
     top: -130%;
     position: absolute;
@@ -764,7 +764,7 @@ body{
         right: 0;
         width: 100%;
         font-size: 7vh;
-        transform: rotateZ(3deg);
+        transform: rotateZ(3deg)
     }
     .about{
         height: auto;
