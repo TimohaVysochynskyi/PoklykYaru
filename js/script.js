@@ -24,8 +24,8 @@ if(window.screen.width > 968){
             document.getElementById('whoarewe-text').style.fontSize = "26px";
             document.getElementById('whoarewe-text').style.fontWeight = "600";
             document.getElementById('whoarewe-text').style.textAlign = "left";
-            document.getElementById('whoarewe-text').style.transform = "translateX(-20vw)";
-            document.getElementById('whoarewe-text').style.width = "100%";
+            document.getElementById('whoarewe-text').style.transform = "translateX(-25vw)";
+            document.getElementById('whoarewe-text').style.width = "85%";
         }
         setTimeout(textAnimate, 400);
         document.getElementById('whoarewe-img').style.transform = "translateX(60vw) scale(1.3)";

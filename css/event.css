@@ -24,7 +24,6 @@
 }
 
 .event__link {
-    color: #fff;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: .5px;
@@ -88,7 +87,6 @@
 
 .event-title {
     text-transform: uppercase;
-    color: #fff;
     font-size: 72px;
     position: absolute;
     top: 30px;
@@ -132,7 +130,6 @@
 }
 
 .event-text {
-    color: #fff;
     font-size: 20px;
     font-weight: 500;
     margin: 10px 0;
