@@ -199,4 +199,4 @@ document.addEventListener('DOMContentLoaded', function() {
     countdownTimer();
     // вызываем функцию countdownTimer каждую секунду
     timerId = setInterval(countdownTimer, 1000);
-  });
+});

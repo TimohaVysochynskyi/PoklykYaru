@@ -154,9 +154,8 @@
     background-position: center;
     text-decoration: none !important;
     border-radius: 10px;
-    transition: .3s
+    transition: .3s;
 }
-
 .swiper-button-next,
 .swiper-button-prev {
     display: block;
@@ -175,7 +174,9 @@
 .feedback__item-title {
     color: #000
 }
-
+.feedback__item-text{
+    justify-content: justify;
+}
 @media screen and (max-width: 968px) {
     .zmi__item {
         width: 95%

@@ -9,10 +9,10 @@ if(window.screen.width > 968){
 }
 let swiper = new Swiper(".feedback-swiper", {
     slidesPerView: slidesPerView,
-    autoplay: {
-        delay: 10000,
+    /*autoplay: {
+        delay: 15000,
         disableOnInteraction: false,
-  },
+  },*/
   grid: {
     rows: rows,
   },
