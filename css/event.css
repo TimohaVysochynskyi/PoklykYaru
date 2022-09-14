@@ -18,6 +18,9 @@
 .event__list-mobile{
     display: none;
 }
+.header__info-event-title{
+    display: none;
+}
 .event__list {
     display: flex;
     justify-content: center;
