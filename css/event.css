@@ -1,3 +1,11 @@
+.header__info-title {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 200px;
+}
+.header__info-title > span{
+    display: none;
+}
 .event__nav {
     display: flex;
     justify-content: center;
@@ -7,7 +15,9 @@
     position: relative;
     bottom: 100px
 }
-
+.event__list-mobile{
+    display: none;
+}
 .event__list {
     display: flex;
     justify-content: center;
@@ -163,4 +173,75 @@
     background: #293c43af;
     position: absolute;
     z-index: -1
+}
+@media screen and (max-width: 968px) {
+    .header__info-event-title{
+        margin-top: 15px;
+        background-color: #293c43af;
+        padding: 10px 30px;
+        width: 95vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        font-weight: 600;
+        width: 96.5vw;
+        margin-bottom: -2px;
+        border: 2px solid #293c43af;
+        transition: .3s;
+    }
+    .header__info-event-title > img{
+        width: 40px;
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+    .header__info{
+        margin-top: 300px;
+        height: 80%;
+        justify-content: flex-start;
+    }
+    .header__info-title{
+        align-items: center;
+        margin: 0px;
+    }
+    .header__info-title > span{
+        display: block;
+        font-size: 32px;
+    }
+    .event__nav{
+        display: none;
+    }
+    .event__list-mobile{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        list-style: none;
+        font-weight: 700;
+        border: 2px solid #1d282c;
+        border-radius: 0px 0px 10px 10px;
+    }
+    .event__list-mobile > li{
+        display: flex;
+        justify-content: center;
+        width: 95vw;
+    }
+    .event__link-mobile{
+        text-decoration: none;
+        padding: 10px 16px;
+        background-color: #293c43;
+        width: 100%;
+        text-align: center;
+    }
+    .event__list-mobile>li{
+        border-top: 2px solid #1d282c;
+    }
+    .event__list-mobile>li:first-child{
+        border: none;
+    }
+    .event__list-mobile > li:last-child > .event__link-mobile{
+        border-radius: 0px 0px 8px 8px;
+    }
 }

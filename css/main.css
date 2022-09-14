@@ -511,7 +511,7 @@ body {
 .feedback__item {
     display: flex;
     width: 45%;
-    height: 300px;
+    height: 330px;
     background-color: #DEB92D;
     border-radius: 55px 55px 55px 0;
     margin: .5% 1.5%;
@@ -567,7 +567,7 @@ body {
     margin-top: 15px;
     text-align: justify;
     color: #1b292c;
-    width: 80%;
+    width: 85%;
     transform: translateX(50px) scaleX(1.0);
 }
 .feedback__item-text > span{

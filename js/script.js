@@ -200,3 +200,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // вызываем функцию countdownTimer каждую секунду
     timerId = setInterval(countdownTimer, 1000);
 });
+
+let eventListShown = false;
+function showEventList() { 
+    if (eventListShown == false) {
+        $('.event__list-mobile').slideDown(300);
+        document.getElementById('eventListButton').style.border = "2px solid #1d282c";
+        document.getElementById('eventListButton').style.borderRadius = "16px 16px 0px 0px";
+        eventListShown = true;
+    } else { 
+        $('.event__list-mobile').slideUp(300);
+        document.getElementById('eventListButton').style.border = "2px solid #293c43af";
+        document.getElementById('eventListButton').style.borderRadius = "16px";
+        eventListShown = false;
+    }
+    
+}
