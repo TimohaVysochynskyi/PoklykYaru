@@ -207,10 +207,12 @@ function showEventList() {
     if (eventListShown == false) {
         $('.event__list-mobile').slideDown(300);
         $('.event__list-mobile').show(300);
+        document.getElementById('event__list-arrow').style.transform = "rotateZ(180deg)";
         document.getElementById('eventListButton').style.border = "2px solid #1d282c";
         document.getElementById('eventListButton').style.borderRadius = "16px 16px 0px 0px";
         eventListShown = true;
     } else { 
+        document.getElementById('event__list-arrow').style.transform = "rotateZ(0deg)";
         $('.event__list-mobile').slideUp(300);
         $('.event__list-mobile').hide(300);
         document.getElementById('eventListButton').style.border = "2px solid #293c43af";

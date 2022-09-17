@@ -198,13 +198,15 @@ body {
     color: #293C43;
     transition: .3s
 }
-.header-filter{
+
+.header-filter {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 99;
     backdrop-filter: blur(2px) brightness(80%) !important;
 }
+
 .header__registration {
     height: 70%;
     width: 100%;
@@ -519,6 +521,7 @@ body {
     transition: .3s;
     position: relative;
 }
+
 .feedback__item-col {
     display: flex;
     flex-direction: column;
@@ -528,18 +531,20 @@ body {
 .feedback__item-col:first-child {
     width: 13%
 }
+
 .feedback__item-col:nth-child(2) {
     width: 80%;
     height: 90%;
     justify-content: unset;
     padding-top: 40px;
 }
+
 .feedback__item-img {
     width: 200px;
     transform: translateY(-20px) translateX(-20px);
 }
 
-.feedback__item-gradient{
+.feedback__item-gradient {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -557,10 +562,12 @@ body {
     font-weight: 900;
     transform: translateX(50px);
 }
-.feedback__item-title > span{
+
+.feedback__item-title>span {
     color: #293C43;
     font-size: 16px;
 }
+
 .feedback__item-text {
     font-weight: 700;
     font-size: 12.5px;
@@ -570,7 +577,8 @@ body {
     width: 85%;
     transform: translateX(50px) scaleX(1.0);
 }
-.feedback__item-text > span{
+
+.feedback__item-text>span {
     display: none;
 }
 
@@ -919,9 +927,30 @@ body {
     .feedback__item:nth-child(6) {
         display: none
     }
-
     .feedback__item {
-        width: 95%
+        width: 95%;
+        padding: 20px;
+    }
+    .feedback__item-col:first-child {
+        align-items: center;
+    }
+    .feedback__item-col:last-child{
+        width: 90%;
+    }
+    .feedback__item-title{
+        text-align: center;
+    }
+    .feedback__item-text{
+        width: 100%;
+    }
+    .feedback__item-title,
+    .feedback__item-text,
+    .feedback__item-img {
+        transform: none;
+    }
+
+    .feedback__item-img {
+        transform: scale(1.1);
     }
 
     .footer {
@@ -1206,19 +1235,24 @@ body {
     0% {
         background-image: url(../images/header-bg.png);
     }
-    30%{
+
+    30% {
         background-image: url(../images/header-bg.png);
     }
+
     33% {
         background-image: url(../images/header-bg2.png);
     }
-    63%{
+
+    63% {
         background-image: url(../images/header-bg2.png);
     }
+
     66% {
         background-image: url(../images/header-bg3.png);
     }
-    96%{
+
+    96% {
         background-image: url(../images/header-bg3.png);
     }
 }
