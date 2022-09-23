@@ -34,7 +34,7 @@
 }
 
 .event__list>li {
-    width: 420px;
+    width: 520px;
     height: 80px;
     margin: 20px
 }
@@ -72,26 +72,37 @@
 }
 
 .event-block {
+    margin: 90px 0px;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+}
+.event-block:nth-child(1) .event__row:first-child {
+    background-image: url(../images/events/event.png);
+}
+.event-block:nth-child(2) .event__row:first-child {
+    background-image: url(../images/events/event2.png);
+}
+.event-block:nth-child(3) .event__row:first-child {
+    background-image: url(../images/events/event5.png);
+}
+.event-block:nth-child(4) .event__row:first-child {
+    background-image: url(../images/events/event6.png);
 }
 
 .event__row {
     padding: 80px
 }
-
-.event__row:first-child {
-    background-image: url(../images/events/event.png);
+.event__row:first-child{
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 100%
+    width: 100%;
 }
-
 .event__info {
     position: relative;
-    top: 400px
+    bottom: -60%;
+    padding: 10px;
 }
 
 .event-paralelogram {
@@ -103,7 +114,7 @@
 
 .event-title {
     text-transform: uppercase;
-    font-size: 72px;
+    font-size: 64px;
     position: absolute;
     top: 30px;
     font-weight: 900;
@@ -116,7 +127,7 @@
     font-size: 72px;
     font-weight: 900;
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     left: 50px
 }
 
@@ -163,7 +174,8 @@
     background-color: #293c43;
     border-radius: 100px;
     box-shadow: 2px 2px 8px #293c43d0;
-    transition: .3s
+    transition: .3s;
+    margin-top: -10px;
 }
 
 .event__btn:hover {
@@ -206,6 +218,7 @@
         margin-top: 300px;
         height: 80%;
         justify-content: flex-start;
+        padding: 10px;
     }
     .header__info-title{
         align-items: center;
@@ -278,14 +291,15 @@
         text-align: center;
         position: relative;
         top: 0;
+        left: 0;
         filter: contrast(115%);
     }
     .event-time{
         font-size: 26px;
         font-weight: 800;
         position: relative;
+        text-align: center;
         top: 0;
-        left: 150px;
         filter: contrast(105%);
     }
     .event__row:nth-child(2){
