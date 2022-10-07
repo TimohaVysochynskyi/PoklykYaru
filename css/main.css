@@ -479,6 +479,11 @@ body {
     border: 2px solid #293C43;
     background-color: #293C43
 }
+.default-title__wrapper-y > hr{
+    width: 100%;
+    border: 2px solid #FFD537;
+    background-color: #FFD537
+}
 
 .feedback__title {
     font-family: Montserrat;

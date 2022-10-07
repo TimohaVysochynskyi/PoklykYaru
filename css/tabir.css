@@ -45,3 +45,36 @@
     color: #FFD537;
     font-family: 700;
 }
+
+
+.tabir__features{
+    background-image: url(../images/tabir/features-bg.png);
+    height: 90vh;
+}
+.tabir__features-list{
+    backdrop-filter: contrast(70%) brightness(80%);
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px 20px 50px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tabir__features-list > li{
+    margin: 12px 0px;
+}
+.tabir__feature-title{
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0px 0px 10px #1b292c;
+    line-height: 35px;
+}
+.tabir__feature-text{
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0px 0px 5px #1b292c;
+    margin-left: 2em;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+}
