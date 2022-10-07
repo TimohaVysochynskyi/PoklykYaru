@@ -477,15 +477,13 @@ body {
 .default-title__wrapper > hr {
     width: 100%;
     border: 2px solid #293C43;
-    background-color: #293C43
 }
 .default-title__wrapper-y > hr{
     width: 100%;
     border: 2px solid #FFD537;
-    background-color: #FFD537
 }
 
-.feedback__title {
+.default-title {
     font-family: Montserrat;
     font-weight: 800;
     letter-spacing: .5px;
@@ -501,7 +499,8 @@ body {
     position: relative;
     bottom: -30px;
     border: 2px solid #293C43;
-    box-shadow: 6px 6px 6px #32383b
+    box-shadow: 6px 6px 6px #32383b;
+    text-decoration: none;
 }
 
 .feedback__btn {

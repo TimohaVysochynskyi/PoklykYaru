@@ -78,3 +78,36 @@
     letter-spacing: 0.4px;
     font-weight: 500;
 }
+
+
+.registration-wrapper{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(../images/tabir/registration-bg.png);
+}
+.registration__course{
+    width: 38%;
+    height: 30%;
+    background-color: #293C43BF;
+    border: 3px solid #FFD537;
+    border-radius: 150px;
+    padding: 50px;
+    margin: 0px 50px;
+}
+.registration__course-title{
+    font-family: 'Montserrat';
+    color: #DEB92D;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+.registration__course-option{
+    margin-left: 50px;
+    line-height: 25px;
+    color: #DEB92D;
+}
