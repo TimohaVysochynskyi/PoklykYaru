@@ -1232,27 +1232,4 @@ body {
 }
 
 @keyframes fade {
-    0% {
-        background-image: url(../images/header-bg.png);
-    }
-
-    30% {
-        background-image: url(../images/header-bg.png);
-    }
-
-    33% {
-        background-image: url(../images/header-bg2.png);
-    }
-
-    63% {
-        background-image: url(../images/header-bg2.png);
-    }
-
-    66% {
-        background-image: url(../images/header-bg3.png);
-    }
-
-    96% {
-        background-image: url(../images/header-bg3.png);
-    }
 }
