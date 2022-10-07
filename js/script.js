@@ -17,6 +17,9 @@
     });
   });
 */
+
+new WOW().init(); //Element loading animation
+
 if(window.screen.width > 968){
     $('.whoarewe').hover( function(){
         function textAnimate(){

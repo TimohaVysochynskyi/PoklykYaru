@@ -1,11 +1,10 @@
+@import url(secondary.css);
+
 .header__info-title {
-    display: flex;
     align-items: flex-start;
     margin-bottom: 200px;
 }
-.header__info-title > span{
-    display: none;
-}
+
 .event__nav {
     display: flex;
     justify-content: center;
@@ -24,6 +23,7 @@
 .header__info-event-title > img{
     transition: .3s;
 }
+
 .event__list {
     display: flex;
     justify-content: center;
@@ -32,13 +32,11 @@
     width: 100%;
     list-style: none
 }
-
 .event__list>li {
     width: 520px;
     height: 80px;
     margin: 20px
 }
-
 .event__link {
     text-decoration: none;
     font-weight: 700;
@@ -54,7 +52,6 @@
     height: 100%;
     transition: .5s
 }
-
 .event__link:hover {
     box-shadow: 0 0 20px #293c43;
     font-size: 18px;

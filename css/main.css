@@ -3,6 +3,16 @@ body {
     overflow: hidden !important
 }
 
+.preloader-eraser{
+    width: 50px;
+    height: 50px;
+    background-color: #2a373d;
+    filter: contrast(103%);
+    position: relative;
+    bottom: calc(300px/2);
+    left: 60px;
+}
+
 .header {
     width: 100vw;
     height: 100vh;
@@ -11,9 +21,12 @@ body {
     background-position: top;
     display: flex;
     flex-direction: column;
-    animation-name: fade;
-    animation-duration: 8s;
+    /*animation-name: fade;*/
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
     animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: linear;
     filter: contrast(120%);
 }
 
@@ -449,13 +462,19 @@ body {
 }
 
 .feedback-wrapper {
-    margin-top: 15vh;
     display: flex;
     align-items: center;
     flex-direction: column
 }
 
-.feedback-wrapper>hr {
+.default-title__wrapper{
+    width: 100vw;
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.default-title__wrapper > hr {
     width: 100%;
     border: 2px solid #293C43;
     background-color: #293C43
@@ -471,7 +490,8 @@ body {
     font-size: 24px;
     text-transform: uppercase;
     color: #DEB92D;
-    width: 200px;
+    width: auto;
+    min-width: 200px;
     text-align: center;
     position: relative;
     bottom: -30px;
@@ -697,7 +717,7 @@ body {
 
 .preloader__gif {
     width: 330px;
-    height: 330px
+    height: 330px;
 }
 
 .aboutus__title:first-child,
@@ -1232,4 +1252,27 @@ body {
 }
 
 @keyframes fade {
+    0% {
+        background-image: url(../images/header-bg.png);
+    }
+
+    30% {
+        background-image: url(../images/header-bg.png);
+    }
+
+    33% {
+        background-image: url(../images/header-bg2.png);
+    }
+
+    63% {
+        background-image: url(../images/header-bg2.png);
+    }
+
+    66% {
+        background-image: url(../images/header-bg3.png);
+    }
+
+    96% {
+        background-image: url(../images/header-bg3.png);
+    }
 }
