@@ -1,6 +1,49 @@
+@import url(secondary.css);
 .header__info{
     height: 50%;
 }
 .feedback__title{
     bottom: 0px;
+}
+.tabir__video-wrapper{
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(41, 60, 67, 0.75);
+}
+.tabir__video{
+    width: 70%;
+    height: 65%;
+    filter: contrast(60%);
+}
+.tabir__video-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+.video__message-col:first-child{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.video__message-col:last-child{
+    width: 90%;
+}
+.video__message-number,
+.video__message-text{
+    font-family: Montserrat;
+    color: #fff;
+    font-weight: 800;
+    font-size: 68px;
+}
+.video__message-number{
+    font-family: FuturaLT-Bold;
+    font-size: 144px;
+    color: #FFD537;
+    font-family: 700;
+}
+.video__message-text{
 }

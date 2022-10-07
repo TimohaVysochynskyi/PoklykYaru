@@ -18,7 +18,10 @@ html {
     font-family: Gagalin;
     src: url(../font/Gagalin-Regular.otf)
 }
-
+@font-face {
+    font-family: FuturaLT-Bold;
+    src: url(../font/FuturaLT/FuturaLT-Bold.ttf)
+}
 .parallax-container {
     -webkit-perspective: 1500;
     -moz-perspective: 1500px;

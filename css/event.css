@@ -58,7 +58,7 @@
     border-radius: 100px;
     border: 3px solid #293c43;
     background-color: #293c43ef;
-    transition: .35s
+    transition: .45s
 }
 
 .event__list-wrapper {
@@ -134,24 +134,28 @@
     transform: skew(-30deg);
     background: #293c43d0
 }
-
+.event-block:nth-child(2)>.event__row:first-child>.event__info>.event-title{
+    font-size: 52px;
+    width: 100vw;
+}
 .event-title {
+    position: absolute;
     text-transform: uppercase;
     font-size: 64px;
-    position: absolute;
     top: 30px;
     font-weight: 900;
     letter-spacing: .5px;
-    left: -10px
+    left: -10px;
+    text-shadow: 0px 0px 10px #1d282c;
 }
 
 .event-time {
-    color: #FFD537;
-    font-size: 72px;
-    font-weight: 900;
     position: absolute;
-    bottom: -30px;
-    left: 50px
+    color: #FFD537;
+    font-size: 64px;
+    font-weight: 900;
+    left: 50px;
+    bottom: 15px;
 }
 
 .event__row:nth-child(2) {
