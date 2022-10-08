@@ -823,6 +823,10 @@ body {
 }
 
 @media screen and (max-width: 968px) {
+    .header{
+        background-size: auto;
+        background-position: center;
+    }
     .header__nav {
         justify-content: center;
         flex-wrap: wrap;
