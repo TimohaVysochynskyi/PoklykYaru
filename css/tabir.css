@@ -5,6 +5,7 @@
 .feedback__title{
     bottom: 0px;
 }
+
 .tabir__video-wrapper{
     height: 130vh;
     display: flex;
@@ -18,6 +19,47 @@
     height: 65%;
     filter: contrast(60%);
 }
+.tabir__video-player{
+    width: 100%;
+    height: 100%;
+    background: none;
+    filter: brightness(90%);
+    border-radius: 8px;
+}
+.tabir-video__controls {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    align-items: center;
+    transition: opacity .2s;
+}
+.tabir-video__controls {
+    opacity: 0.5;
+}
+.tabir__video:hover .tabir-video__controls {
+    opacity: 1;
+}
+
+.tabir-video__control-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: .8;
+    transition: all .2s;
+}
+.tabir-video__control-button:hover {
+    opacity: 1;
+}
+.tabir-video__control-button img {
+    width: 90px;
+    height: 90px;
+}
+
 .tabir__video-message{
     display: flex;
     justify-content: center;
