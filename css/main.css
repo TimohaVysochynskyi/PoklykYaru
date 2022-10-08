@@ -474,13 +474,22 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.default-title__wrapper-y{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .default-title__wrapper > hr {
     width: 100%;
     border: 2px solid #293C43;
+    background-color: #293C43;
 }
 .default-title__wrapper-y > hr{
     width: 100%;
     border: 2px solid #FFD537;
+    background-color: #FFD537;
 }
 
 .default-title {
