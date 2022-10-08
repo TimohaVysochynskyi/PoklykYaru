@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../assets/3d-slider-style.css">
+    <link rel="modulepreload" href="../assets/3d-slider-library.js">
 </head>
 <body>
     <header class="header">
@@ -66,6 +69,7 @@
                     <div class="video__message-col"><h1 class="video__message-text">Причин відвідати табір Поклик Яру</h1></div>
                 </div>
         </div>
+
         <div class="default-title__wrapper-y">
             <hr>
         </div>
@@ -97,9 +101,11 @@
                 </li>
             </ul>
         </div>
+
         <div class="default-title__wrapper" style="position: relative; margin: 0px;">
             <h2 class="default-title" style="position: absolute; top: -25px; height: 50px;">Реєстрація</h2><hr style="border-color: #FFD537;">
         </div>
+
         <div class="registration-wrapper">
             <div class="registration-wrapper__row">
                 <div class="registration__course">
@@ -145,6 +151,114 @@
                 </div>
             </div>
         </div>
+
+        <div id="app">
+            <div class="swiper swiper-carousel swiper-initialized swiper-horizontal swiper-pointer-events">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-visible swiper-slide-prev" data-swiper-slide-index="0">
+                        <!-- elements with  "swiper-carousel-animate-opacity" class will have animated opacity -->
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+        
+                    </div>
+                    <div class="swiper-slide swiper-slide-visible swiper-slide-active" data-swiper-slide-index="1">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-visible swiper-slide-next" data-swiper-slide-index="2">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="3">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="4">
+                        <div class="swiper-carousel-animate-opacity">
+                            <img src="">
+                            <div class="slide-content">
+                                <h2>Slide title</h2>
+                                <p>Slide description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet"></span>
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                <span class="swiper-pagination-bullet"></span>
+                <span class="swiper-pagination-bullet"></span>
+                <span class="swiper-pagination-bullet"></span>
+            </div>
+        </div>
     </main>
     <footer class="footer wow fadeInUp" style="margin-top: 50px;">
             <div class="footer-block">
@@ -182,6 +296,9 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon="{&quot;token&quot;: &quot;07e9b2efafbd4b458690b79234a62148&quot;}"></script>
+    <script type="module" crossorigin="" src="../assets/3d-slider-control.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/video-player.js"></script>
 </body>

@@ -841,7 +841,7 @@ body {
 
     .header__list {
         flex-wrap: wrap;
-        justify-content: center
+        justify-content: center;
     }
 
     .header__list>li {
@@ -849,6 +849,12 @@ body {
         width: auto
     }
 
+    .header__link{
+        color: #dbd6c5 !important;
+        font-size: 16px !important;
+        text-shadow: 1px 1px 2px #111;
+        letter-spacing: 0.4px;
+    }
     .header__link:first-child {
         font-size: 14px;
         width: auto;
@@ -1008,7 +1014,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-
+    .header__link{
+        font-size: larger;
+    }
     .whoarewe,
     .whatarewedoing {
         height: 40vh
