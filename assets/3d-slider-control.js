@@ -57,5 +57,8 @@ new e(".swiper", {
     },
     pagination: {
         el: ".swiper-pagination"
+    },
+    autoplay: {
+        delay: 8000
     }
 });

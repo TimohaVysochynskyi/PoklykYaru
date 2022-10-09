@@ -181,6 +181,20 @@ a.default-title:hover{
     transition: 0.3s;
 }
 
+.disciplines-wrapper{
+    margin: 50px 30px;
+}
+.tabir__slider-wrapper__title{
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 0.45px;
+    text-align: center;
+    margin: 70px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
 @media screen and (max-width: 968px){
     .tabir__video-wrapper{
         height: auto;

@@ -19,9 +19,6 @@
     z-index: 1
 }
 
-.swiper-vertical>.swiper-wrapper {
-    flex-direction: column
-}
 
 .swiper-wrapper {
     position: relative;
@@ -36,14 +33,6 @@
 .swiper-android .swiper-slide,
 .swiper-wrapper {
     transform: translate(0)
-}
-
-.swiper-pointer-events {
-    touch-action: pan-y
-}
-
-.swiper-pointer-events.swiper-vertical {
-    touch-action: pan-x
 }
 
 .swiper-slide {
@@ -136,11 +125,6 @@
 .swiper-css-mode>.swiper-wrapper>.swiper-slide {
     scroll-snap-align: start start
 }
-
-.swiper-horizontal.swiper-css-mode>.swiper-wrapper {
-    scroll-snap-type: x mandatory
-}
-
 .swiper-vertical.swiper-css-mode>.swiper-wrapper {
     scroll-snap-type: y mandatory
 }
@@ -149,15 +133,6 @@
     content: "";
     flex-shrink: 0;
     order: 9999
-}
-
-.swiper-centered.swiper-horizontal>.swiper-wrapper>.swiper-slide:first-child {
-    margin-inline-start: var(--swiper-centered-offset-before)
-}
-
-.swiper-centered.swiper-horizontal>.swiper-wrapper:before {
-    height: 100%;
-    width: var(--swiper-centered-offset-after)
 }
 
 .swiper-centered.swiper-vertical>.swiper-wrapper>.swiper-slide:first-child {
@@ -187,7 +162,6 @@
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 10px;
     left: 0;
@@ -284,26 +258,20 @@ button.swiper-pagination-bullet {
     transition: .2s transform, .2s top
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px)
 }
 
-.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     left: 50%;
     transform: translate(-50%);
     white-space: nowrap
 }
 
-.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     transition: .2s transform, .2s left
 }
 
-.swiper-horizontal.swiper-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
-    transition: .2s transform, .2s right
-}
 
 .swiper-pagination-progressbar {
     background: rgba(0, 0, 0, .25);
@@ -325,7 +293,6 @@ button.swiper-pagination-bullet {
     transform-origin: right top
 }
 
-.swiper-horizontal>.swiper-pagination-progressbar,
 .swiper-pagination-progressbar.swiper-pagination-horizontal,
 .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
 .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
@@ -337,7 +304,6 @@ button.swiper-pagination-bullet {
 
 .swiper-vertical>.swiper-pagination-progressbar,
 .swiper-pagination-progressbar.swiper-pagination-vertical,
-.swiper-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
 .swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite {
     width: 4px;
     height: 100%;
@@ -412,29 +378,6 @@ button.swiper-pagination-bullet {
     display: none
 }
 
-.swiper-virtual .swiper-slide {
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0)
-}
-
-.swiper-virtual.swiper-css-mode .swiper-wrapper:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    pointer-events: none
-}
-
-.swiper-virtual.swiper-css-mode.swiper-horizontal .swiper-wrapper:after {
-    height: 1px;
-    width: var(--swiper-virtual-size)
-}
-
-.swiper-virtual.swiper-css-mode.swiper-vertical .swiper-wrapper:after {
-    width: 1px;
-    height: var(--swiper-virtual-size)
-}
-
 .swiper-carousel {
     position: relative;
     margin: 0 auto;
@@ -466,11 +409,11 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-carousel .swiper-slide {
-    width: 520px;
-    height: 380px;
+    width: 630px;
+    height: 410px;
     border-radius: 8px;
     background: #18212b;
-    max-width: calc(100% - 48px)
+    max-width: calc(100% - 48px);
 }
 
 .swiper-carousel .swiper-carousel-animate-opacity {
@@ -505,12 +448,12 @@ button.swiper-pagination-bullet {
     margin: 0;
     font-weight: bold;
     font-size: 24px;
-    line-height: 1.1
+    line-height: 1.1;
 }
 
 .swiper-carousel .slide-content p {
     margin: 8px 0 0;
-    opacity: .65;
+    opacity: .7;
     font-size: 14px;
     font-weight: 500;
     display: -webkit-box;
@@ -520,7 +463,6 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 640px) {
-
     .swiper-carousel .swiper-button-next,
     .swiper-carousel .swiper-button-prev {
         display: none !important
