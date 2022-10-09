@@ -731,6 +731,7 @@ body {
 .preloader__gif {
     width: 330px;
     height: 330px;
+    border-radius: 500px;
 }
 
 .aboutus__title:first-child,
