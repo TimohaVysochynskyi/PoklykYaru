@@ -161,8 +161,7 @@
 }
 
 .swiper-pagination-fraction,
-.swiper-pagination-custom,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
+.swiper-pagination-custom {
     bottom: 10px;
     left: 0;
     width: 100%
@@ -258,20 +257,6 @@ button.swiper-pagination-bullet {
     transition: .2s transform, .2s top
 }
 
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px)
-}
-
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-    left: 50%;
-    transform: translate(-50%);
-    white-space: nowrap
-}
-
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
-    transition: .2s transform, .2s left
-}
-
 
 .swiper-pagination-progressbar {
     background: rgba(0, 0, 0, .25);
@@ -293,7 +278,6 @@ button.swiper-pagination-bullet {
     transform-origin: right top
 }
 
-.swiper-pagination-progressbar.swiper-pagination-horizontal,
 .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
 .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
     width: 100%;
@@ -303,8 +287,7 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-vertical>.swiper-pagination-progressbar,
-.swiper-pagination-progressbar.swiper-pagination-vertical,
-.swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite {
+.swiper-pagination-progressbar.swiper-pagination-vertical {
     width: 4px;
     height: 100%;
     left: 0;
