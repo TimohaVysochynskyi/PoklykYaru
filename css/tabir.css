@@ -90,6 +90,8 @@
 
 .tabir__features{
     background-image: url(../images/tabir/features-bg.png);
+    background-size: cover;
+    background-position: center;
     height: 90vh;
 }
 .tabir__features-list{
@@ -126,6 +128,8 @@
     height: 100vh;
     width: 100%;
     background-image: url(../images/tabir/registration-bg.png);
+    background-size: cover;
+    background-position: center;
 }
 .registration-wrapper__row:first-child{
     display: flex;
