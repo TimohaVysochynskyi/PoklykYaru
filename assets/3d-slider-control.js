@@ -5,7 +5,7 @@ import {
     P as t
 } from "./3d-slider-library.js";
 
-new e(".swiper", {
+new e(".disciplines-swiper", {
     modules: [s, r, t, function({
         swiper: e,
         on: s
@@ -52,11 +52,11 @@ new e(".swiper", {
     loopedSlides: 5,
     slidesPerView: "auto",
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+        nextEl: ".disciplines-swiper-button-next",
+        prevEl: ".disciplines-swiper-button-prev"
     },
     pagination: {
-        el: ".swiper-pagination"
+        el: ".disciplines-swiper-pagination"
     },
     autoplay: {
         delay: 8000
