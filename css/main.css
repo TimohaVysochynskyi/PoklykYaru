@@ -16,16 +16,16 @@ body {
 .header {
     width: 100vw;
     height: 100vh;
-    background-image: url(../images/header-bg.png);
+    background-image: url(../images/header&footer/header-bg.png);
     background-size: cover;
     background-position: top;
     display: flex;
     flex-direction: column;
-    /*animation-name: fade;*/
-    animation-duration: 10s;
+    animation-name: fade;
+    animation-duration: 20s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
-    animation-delay: 1s;
+    animation-delay: 5s;
     animation-timing-function: linear;
     filter: contrast(120%);
 }
@@ -1279,26 +1279,26 @@ body {
 
 @keyframes fade {
     0% {
-        background-image: url(../images/header-bg.png);
+        background-image: url(../images/header&footer/header-bg.png);
     }
 
     30% {
-        background-image: url(../images/header-bg.png);
+        background-image: url(../images/header&footer/header-bg.png);
     }
 
     33% {
-        background-image: url(../images/header-bg2.png);
+        background-image: url(../images/header&footer/header-bg2.png);
     }
 
     63% {
-        background-image: url(../images/header-bg2.png);
+        background-image: url(../images/header&footer/header-bg2.png);
     }
 
     66% {
-        background-image: url(../images/header-bg3.png);
+        background-image: url(../images/header&footer/header-bg3.png);
     }
 
     96% {
-        background-image: url(../images/header-bg3.png);
+        background-image: url(../images/header&footer/header-bg3.png);
     }
 }
