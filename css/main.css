@@ -1277,7 +1277,7 @@ body {
     }
 }
 
-@keyframes fade {
+/*@keyframes fade {
     0% {
         background-image: url(../images/header&footer/header-bg.png);
     }
@@ -1301,4 +1301,4 @@ body {
     96% {
         background-image: url(../images/header&footer/header-bg3.png);
     }
-}
+}*/

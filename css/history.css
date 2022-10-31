@@ -1,0 +1,66 @@
+@import url(secondary.css);
+.header__info{
+	height: 50%;
+}
+.history__year-wrapper{
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+.history__year-row{
+	height:  12vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.history__year-row:last-child{
+	height: 88vh;
+	width: 100vw;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+}
+.history__year-title{
+	font-family: Montserrat;
+	font-size: 48px;
+	color: #FFD537;
+	font-weight: 800;
+	text-shadow: 1px 1px 5px #333;
+	position: relative;
+	z-index: 1;
+}
+.history__year-title-line{
+	background-color: #72838A;
+	border: 7px solid #72838A;
+	width: 100vw;
+	position: relative;
+	z-index: 2;
+}
+.history__year-text{
+	font-size: 18px;
+	font-weight: 600;
+	width: 40vw;
+	color: #eee;position: relative;
+	z-index: 1;
+}
+.history__year-paralelogram-wrapper{
+	position: absolute;
+	right: 100px;
+	top: 0;
+	margin: 30px;
+}
+.history__year-paralelogram{
+	width: 80vw;
+	height: 70vh;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: -100px;
+	background-color: rgba(41, 60, 67, 0.75);
+	transform: skew(-20deg);
+	border-radius: 2px;
+}

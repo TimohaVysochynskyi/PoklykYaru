@@ -19,6 +19,10 @@ html {
     src: url(../font/Gagalin-Regular.otf)
 }
 @font-face {
+    font-family: MarkerFelt;
+    src: url(../font/MarkerFelt.ttf)
+}
+@font-face {
     font-family: FuturaLT-Bold;
     src: url(../font/FuturaLT/FuturaLT-Bold.ttf)
 }
