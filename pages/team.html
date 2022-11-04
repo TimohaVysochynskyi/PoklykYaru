@@ -9,6 +9,12 @@
     <link rel="icon" type="image/x-icon" href="../images/header&footer/logo.ico">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/team.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../assets/3d-slider-style.css">
+    <link rel="modulepreload" href="../assets/3d-slider-library.js">
 </head>
     <header class="header">
         <section class="header__info">
@@ -19,19 +25,11 @@
         <a href="../index.html"><img src="../images/header&footer/logo.png" alt="Логотип" class="header__logo"></a>
         <ul class="header__list">
             <li>
-                <a href="#" class="header__link" id="aboutusheader" onclick="aboutUsHeader()">про нас</a>
-                <a href="./history.html" class="header__link" id="aboutusheader2">історія</a>
-                <a href="./feedback.html" class="header__link" id="aboutusheader3">відгуки та змі</a>
+                <a href="./aboutus.html" class="header__link" id="aboutusheader">про нас</a>
             </li>
             <li><a href="./tabir.html" class="header__link">табір</a></li>
             <li>
                 <a href="./event.html" class="header__link" id="eventheader" onclick="eventHeader()">заходи</a>
-                <!--<a href="#" class="header__link" id="eventheader2">ЩЕДРУЙ ДЛЯ ЗАХИСНИКІВ</a>
-                            <a href="#" class="header__link" id="eventheader3">СМОЛОСКИПНА ХОДА ІМ. В. ЧУЧУПАКИ</a>
-                            <a href="#" class="header__link" id="eventheader4">КВЕСТ “ЛЕГЕНДА ХОЛОДНОГО ЯРУ”</a>
-                            <a href="#" class="header__link" id="eventheader5">ТАБІР “ПОКЛИК ЯРУ”</a>
-                            <a href="#" class="header__link" id="eventheader6">ПОКРОВА В ХОЛОДНОМУ ЯРУ</a>
-                            <a href="#" class="header__link" id="eventheader7">ЗИМОВИЙ ПОХІД</a>-->
             </li>
             <li>
                 <a href="#" class="header__link" id="merchheader" onclick="merchHeader()">мерч</a>
@@ -48,7 +46,79 @@
     <main class="container">
         <div class="team__text-wrapper">
             <div class="team__paralelogram"></div>
+            <!-- Текста -->
             <p class="team__text">ПОКЛИК ЯРУ — організація, яка створена вмотивованою молоддю. <br><br> Студенти, школярі, молоді вчителі. Середній вік 18-20 років. Молодь, яка об’єднана цінностями Побратимства, Дисципліни і Патріотизму. Більшість з нас, були вихованцями “Поклик Яру”. <br> Ми щиро переконані, що виховання сильних поколінь залежить від молодих і амбітних юнаків та юначок, які вірять в цю державу та готові віддавати свою молодість на гуртування майбутніх еліт. <br><br> Якісний склад команди для нас понад усе. Виховуючи відповідальну молодь, потрібно бути прикладом для юних вихованців. Ми не найкращі і не досконалі, проте знаємо, що всього можна навчитись. Тому саморозвиток, системність, цілі, чіткий розподіл обов'язків, планування і численні вишколи - постійні супутники нашої команди. <br><br> Ще одним доказом ідейності виховника є відсутність поняття "зарплата". Ми працюємо на волонтерських засадах і це принцип "Поклик Яру". <br><br> Ми працюємо на волонтерських засадах і це принцип "Поклик Яру". Ми переконані, що виховання відповідальної молоді - найкоротший спосіб до процвітаючої Держави. Сьогодні ми взяли відповідальність за наше покоління. Завтра - вони візьмуть відповідальність за нашу Державу. <br><br>Наша команда втілить в життя заповіти Шевченка та Чучупаки. Холодний Яр готуватиме нових борців!</p>
+        </div>
+
+
+        <!-- 3Д слайдер. Тут краще нічого не міняти -->
+        <div class="team-wrapper">
+            <div id="app">
+                <div class="swiper swiper-carousel team-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/впоряд.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/тактика.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/домедичка.JPG">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/ммг.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/виживання.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/правознавство.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/стрільба.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/історія.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/орієнтування.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/самозахист.jpg">
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-carousel-animate-opacity">
+                                <img src="../images/tabir/disciplines/туризм.jpg">
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                <div class="team-swiper-button-prev swiper-button-prev"></div>
+                <div class="team-swiper-button-next swiper-button-next"></div>
+                <div class="team-swiper-pagination swiper-pagination-bullets swiper-pagination"></div>
+            </div>
         </div>
     </main>
 
@@ -82,8 +152,16 @@
             <h3 class="footer__license">Дизайн сайту Olha Skarzhynets, графічний дизайн Катя Вспишка, верстка сайту Дон</h3>
         </div>
     </footer>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./js/script.js"></script>
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon="{&quot;token&quot;: &quot;07e9b2efafbd4b458690b79234a62148&quot;}"></script>
+    <script type="module" crossorigin="" src="../assets/3d-team-control.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

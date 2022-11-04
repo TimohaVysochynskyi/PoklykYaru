@@ -26,8 +26,83 @@
     font-size: 52px
 }
 
+
+.aboutus-wraper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.aboutus__item{
+    width: 70vw;
+    height: 45vh;
+    border-radius: 300px;
+    box-shadow: 0px 0px 10px #444;
+    background-size: cover;
+    background-position: center;
+    margin: 25px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    text-decoration: none;
+}
+.aboutus__item:hover{
+    transform: scale(1.01);
+    transition: .3s;
+    cursor: pointer;
+}
+.aboutus__item:first-child{
+    background-image: url(../images/aboutus/team.png);
+}
+.aboutus__item:nth-child(2){
+    background-image: url(../images/aboutus/history.png);
+}
+
+.aboutus__item:last-child{
+    background-image: url(../images/aboutus/feedback.png);
+}
+.aboutus__item-title{
+    font-size: 52px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-shadow: 0px 0px 25px #444;
+}
+
 @media screen and (max-width: 968px) {
     .header__info {
         height: 75%;
+    }
+    .container{
+        margin-top: 100px;
+    }
+    .aboutus__item{
+        width: 95vw;
+    }
+    .aboutus__item-title{
+        font-size: 48px
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .container{
+        margin-top: 220px;
+    }
+    .aboutus__item{
+        height: 30vh;
+    }
+    .aboutus__item-title{
+        font-size: 32px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .container{
+        margin-top: 250px;
+    }
+}
+@media screen and (max-width: 321px) {
+    .aboutus__item-title{
+        font-size: 28px;
     }
 }

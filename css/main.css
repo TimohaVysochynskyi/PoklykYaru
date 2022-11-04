@@ -121,18 +121,6 @@ body {
     border-color: #293C43
 }
 
-.header__list>li:first-child>.header__link:nth-child(2) {
-    top: 60px;
-    border-top: none;
-    border-bottom: none;
-    border-radius: 0
-}
-
-.header__list>li:first-child>.header__link:last-child {
-    top: 92px;
-    border-radius: 0 0 20px 20px;
-    border-top: none
-}
 
 .header__list>li:nth-child(3)>.header__link {
     width: 200px
