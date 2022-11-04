@@ -1,1 +1,28 @@
 @import url(secondary.css);
+
+.team__text-wrapper{
+	width: 100vw;
+	height: 60vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.team__text{
+	width: 80vw;
+	font-weight: 600;
+	font-size: 16px;
+	position: relative;
+	z-index: 1;
+	text-align: justify;
+}
+.team__paralelogram{
+	z-index: 0;
+	width: 70vw;
+	height: 50vh;
+	position: absolute;
+	left: -10vw;
+	top: 0;
+	background: rgba(41, 60, 67, 0.75);
+	transform: skew(-25deg);
+}
