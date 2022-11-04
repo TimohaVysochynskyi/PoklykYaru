@@ -1,3 +1,5 @@
+//обертання якось об'єкта
+
 function cssParallax(cont, el, radiusVal){
   $(cont).mousemove(function(event) {
       

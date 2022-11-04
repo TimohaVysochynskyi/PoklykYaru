@@ -222,5 +222,4 @@ function showEventList() {
         document.getElementById('eventListButton').style.borderRadius = "16px";
         eventListShown = false;
     }
-    
 }
