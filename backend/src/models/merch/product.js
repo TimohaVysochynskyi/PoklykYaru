@@ -1,44 +1,32 @@
 import { initMongoDB } from '../../db/initMongoDB.js';
 import mongoose from 'mongoose';
 
-const { merch } = await initMongoDB(); // Assuming `db1` is for 'merch' database
+import { variationSchema } from './variationSchema.js';
 
-const variationSchema = new mongoose.Schema({
-  size: {
-    type: [String],
-    required: false,
-  },
-  color: {
-    type: [String],
-    required: false,
-  },
-});
+const { merch } = await initMongoDB();
 
-const productsSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-    min: 0,
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  images: {
-    type: [String],
-    validate: {
-      validator: function (v) {
-        return v.length > 0;
-      },
-      message: 'At least one image is required.',
+const productSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    images: {
+      type: [String],
+      required: true,
     },
     variations: [variationSchema],
     stock: {
@@ -57,6 +45,10 @@ const productsSchema = new mongoose.Schema({
       default: 0,
     },
   },
-});
+  {
+    timestamps: true,
+    versionKey: false,
+  },
+);
 
-export const ProductsCollection = merch.model('product', productsSchema);
+export const ProductsCollection = merch.model('product', productSchema);
