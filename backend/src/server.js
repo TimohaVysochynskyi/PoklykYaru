@@ -22,9 +22,9 @@ export const setupServer = () => {
   app.use(pino({ transport: { target: 'pino-pretty' } }));
   app.use(cookieParser());
 
-  app.get('/merch', merchRouter);
-  app.get('/movement', movementRouter);
-  app.get('/events', eventRouter);
+  app.use('/merch', merchRouter);
+  app.use('/movement', movementRouter);
+  app.use('/events', eventRouter);
 
   app.use(notFoundHandler);
 

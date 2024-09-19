@@ -1,7 +1,7 @@
-import { initMongoDB } from '../../db/initMongoDB.js';
 import mongoose from 'mongoose';
+import { env } from '../../utils/env.js';
 
-const { movement } = await initMongoDB();
+const movement = mongoose.connection.useDb(env('MONGODB_MOVEMENT_DB'));
 
 const memberSchema = new mongoose.Schema(
   {

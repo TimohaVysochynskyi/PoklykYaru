@@ -1,7 +1,7 @@
-import { initMongoDB } from '../../db/initMongoDB.js';
 import mongoose from 'mongoose';
+import { env } from '../../utils/env.js';
 
-const { event_management } = await initMongoDB();
+const event_management = mongoose.connection.useDb(env('MONGODB_EVENTS_DB'));
 
 const registerSchema = new mongoose.Schema(
   {
@@ -37,7 +37,7 @@ const registerSchema = new mongoose.Schema(
   { timestamps: true, versionKey: false },
 );
 
-export const RegistersSchema = event_management.model(
+export const RegistersCollection = event_management.model(
   'register',
   registerSchema,
 );

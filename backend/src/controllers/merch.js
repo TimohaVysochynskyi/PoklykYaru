@@ -5,19 +5,25 @@ import {
   addProduct,
   updateProduct,
   deleteProduct,
+} from '../services/merch/products.js';
+import {
   getAllOrders,
   getOrderById,
   addOrder,
   updateOrder,
   deleteOrder,
+} from '../services/merch/orders.js';
+import {
   getAllCustomers,
   getCustomerById,
   deleteCustomer,
+} from '../services/merch/customers.js';
+import {
   registerCustomer,
   loginCustomer,
   refreshCustomer,
   logoutCustomer,
-} from '../services/merch.js';
+} from '../services/merch/auth.js';
 
 import { THIRTY_DAYS } from '../constants/index.js';
 

@@ -1,9 +1,9 @@
-import { initMongoDB } from '../../db/initMongoDB';
 import mongoose from 'mongoose';
+import { env } from '../../utils/env.js';
 
 import { cartSchema } from './cartSchema.js';
 
-const { merch } = await initMongoDB();
+const merch = mongoose.connection.useDb(env('MONGODB_MERCH_DB'));
 
 const orderSchema = new mongoose.Schema(
   {
