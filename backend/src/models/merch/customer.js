@@ -39,4 +39,10 @@ const customerSchema = new mongoose.Schema(
   },
 );
 
+customerSchema.methods.toJSON = function () {
+  const obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
+
 export const CustomersCollection = merch.model('customer', customerSchema);

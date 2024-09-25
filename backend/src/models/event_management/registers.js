@@ -17,6 +17,11 @@ const registerSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    event: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'events',
+      required: true,
+    },
     workPlace: {
       type: String,
       required: true,

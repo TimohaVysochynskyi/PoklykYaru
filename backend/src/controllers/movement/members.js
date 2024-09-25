@@ -5,10 +5,9 @@ import {
   addMember,
   updateMember,
   deleteMember,
-} from '../services/movement/members.js';
+} from '../../services/movement/members.js';
 
-// `members` controllers
-
+// Admin
 export const getAllMembersController = async (req, res, next) => {
   const members = await getAllMembers();
 

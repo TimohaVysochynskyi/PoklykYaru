@@ -5,10 +5,16 @@ export const getAllCustomers = async () => {
 
   return customers;
 };
-export const getCustomerById = async () => {
-  return 0;
+export const getCustomerById = async (customerId) => {
+  const customer = await CustomersCollection.findOne({ _id: customerId });
+
+  return customer;
 };
 
-export const deleteCustomer = async () => {
-  return 0;
+export const deleteCustomer = async (customerId) => {
+  const customer = await CustomersCollection.findOneAndDelete({
+    _id: customerId,
+  });
+
+  return customer;
 };

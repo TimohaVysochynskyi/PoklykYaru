@@ -6,18 +6,30 @@ export const getAllMembers = async () => {
   return members;
 };
 
-export const getMemberById = async () => {
-  return 0;
+export const getMemberById = async (memberId) => {
+  const member = await MembersCollection.findOne({ _id: memberId });
+
+  return member;
 };
 
-export const addMember = async () => {
-  return 0;
+export const addMember = async (payload) => {
+  const member = await MembersCollection.create(payload);
+
+  return member;
 };
 
-export const updateMember = async () => {
-  return 0;
+export const updateMember = async (memberId, payload, options = {}) => {
+  const member = await MembersCollection.findByIdAndUpdate(
+    { _id: memberId },
+    payload,
+    { new: true, includeResultMetadata: false, ...options },
+  );
+
+  return member;
 };
 
-export const deleteMember = async () => {
-  return 0;
+export const deleteMember = async (memberId) => {
+  const member = await MembersCollection.findByIdAndDelete({ _id: memberId });
+
+  return member;
 };

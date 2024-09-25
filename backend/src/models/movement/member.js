@@ -22,7 +22,8 @@ const memberSchema = new mongoose.Schema(
       required: true,
     },
     level: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'levels',
       required: true,
     },
     completedDisciplines: {

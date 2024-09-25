@@ -4,9 +4,7 @@ import pino from 'pino-http';
 
 import { env } from './utils/env.js';
 
-import merchRouter from './routers/merch.js';
-import movementRouter from './routers/movement.js';
-import eventRouter from './routers/event_management.js';
+import router from './routers/index.js';
 
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
@@ -22,9 +20,7 @@ export const setupServer = () => {
   app.use(pino({ transport: { target: 'pino-pretty' } }));
   app.use(cookieParser());
 
-  app.use('/merch', merchRouter);
-  app.use('/movement', movementRouter);
-  app.use('/events', eventRouter);
+  app.use('/', router);
 
   app.use(notFoundHandler);
 

@@ -5,7 +5,7 @@ import { variationSchema } from './variationSchema.js';
 export const cartSchema = new mongoose.Schema({
   product: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'product',
+    ref: 'products',
     required: true,
   },
   variation: variationSchema,
