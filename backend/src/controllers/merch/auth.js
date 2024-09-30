@@ -3,6 +3,8 @@ import {
   loginCustomer,
   refreshCustomer,
   logoutCustomer,
+  requestResetToken,
+  resetPassword,
 } from '../../services/merch/auth.js';
 
 import { THIRTY_DAYS } from '../../constants/index.js';
@@ -68,4 +70,24 @@ export const logoutCustomerController = async (req, res, next) => {
   res.clearCookie('refreshToken');
 
   res.status(204).send();
+};
+
+export const requestResetEmailController = async (req, res, next) => {
+  await requestResetToken(req.body.email);
+
+  res.json({
+    message: 'Reset password email was successfully sent!',
+    status: 200,
+    data: {},
+  });
+};
+
+export const resetPasswordController = async (req, res, next) => {
+  await resetPassword(req.body);
+
+  res.json({
+    message: 'Password was successfully reset!',
+    status: 200,
+    data: {},
+  });
 };

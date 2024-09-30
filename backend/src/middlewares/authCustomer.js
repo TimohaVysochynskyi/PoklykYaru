@@ -40,5 +40,7 @@ export const authCustomer = async (req, res, next) => {
     return;
   }
 
+  req.customer = customer;
+
   next();
 };

@@ -1,0 +1,9 @@
+{
+  "public_key": "sandbox_i63858731643",
+  "version": "3",
+  "action": "pay",
+  "amount": "505",
+  "currency": "UAH",
+  "description": "test",
+  "order_id": "000001"
+}

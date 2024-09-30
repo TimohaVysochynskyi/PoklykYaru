@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liqpay Paying form</title>
+</head>
+
+<body>
+    <form method="POST" action="https://www.liqpay.ua/api/3/checkout" accept-charset="utf-8">
+        <input type="hidden" name="data"
+            value="eyJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOjEwMDAsImN1cnJlbmN5IjoiVUFIIiwiZGVzY3JpcHRpb24iOiLQndC+0LLQtSDQt9Cw0LzQvtCy0LvQtdC90L3RjyDQt9GWINGB0YLQvtGA0ZbQvdC60Lgg0LzQtdGA0YfQsCIsIm9yZGVyX2lkIjoxNzI3NjA4NjM5NDgxLCJ2ZXJzaW9uIjozLCJsbmd1YWdlIjoidWsiLCJjdXN0b21lciI6IjY2ZjkzMmEyNzE4ZDk5ZGMyM2YxNDhjYyIsInNlbmRlcl9jaXR5Ijoi0JrQuNGX0LIiLCJzZW5kZXJfcG9zdGFsX2NvZGUiOiLQndCfIOKEljI3MyIsInByb2R1Y3RfZGVzY3JpcHRpb24iOiLQpNGD0YLQsdC+0LvQutCwICfQndC1INC90LjQuScg0YfQvtGA0L3QsDsg0KTRg9GC0LHQvtC70LrQsCAn0IbQtNC10Y8nIiwicHVibGljX2tleSI6InNhbmRib3hfaTYzODU4NzMxNjQzIn0=" /><input
+            type="hidden" name="signature" value="SCl+cD90tMU1qmbwsVG6lomGEaw=" />
+        <script type="text/javascript" src="https://static.liqpay.ua/libjs/sdk_button.js"></script>
+        <sdk-button label="Сплатити" background="#77CC5D" onClick="submit()"></sdk-button>
+    </form>
+</body>
+
+</html>

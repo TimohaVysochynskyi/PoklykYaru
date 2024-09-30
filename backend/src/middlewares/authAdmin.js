@@ -33,12 +33,14 @@ export const authAdmin = async (req, res, next) => {
     next(createHttpError(401, 'Access token expired'));
   }
 
-  const customer = await AdminsCollection.findById(session.adminId);
+  const admin = await AdminsCollection.findById(session.adminId);
 
-  if (!customer) {
+  if (!admin) {
     next(createHttpError(401));
     return;
   }
+
+  req.admin = admin;
 
   next();
 };
