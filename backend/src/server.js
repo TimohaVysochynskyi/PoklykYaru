@@ -8,6 +8,9 @@ import router from './routers/index.js';
 
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+
+import { UPLOAD_DIR } from './constants/index.js';
+
 import cookieParser from 'cookie-parser';
 
 export const setupServer = () => {
@@ -15,6 +18,7 @@ export const setupServer = () => {
 
   const app = express();
   app.use(express.json());
+  app.use('/uploads', express.static(UPLOAD_DIR));
 
   app.use(cors());
   app.use(pino({ transport: { target: 'pino-pretty' } }));

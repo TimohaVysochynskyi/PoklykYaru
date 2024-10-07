@@ -40,6 +40,7 @@ export const updateItem = async (customerId, payload) => {
   );
 
   item.quantity += 1;
+  item.price = item.product.price * item.quantity;
 
   await customer.save();
 

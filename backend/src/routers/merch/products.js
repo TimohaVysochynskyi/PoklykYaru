@@ -5,6 +5,7 @@ import { validateBody } from '../../middlewares/validateBody.js';
 import { isValidId } from '../../middlewares/isValidId.js';
 import { authCustomer } from '../../middlewares/authCustomer.js';
 import { authAdmin } from '../../middlewares/authAdmin.js';
+import { upload } from '../../middlewares/multer.js';
 
 import {
   getAllProductsController,
@@ -34,6 +35,7 @@ router.get(
 router.post(
   '/',
   authAdmin,
+  upload.array('images', 10),
   validateBody(addProductSchema),
   ctrlWrapper(addProductController),
 );
