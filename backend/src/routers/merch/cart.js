@@ -17,8 +17,8 @@ const router = Router();
 router.use('/', authCustomer);
 
 router.get('/', ctrlWrapper(getAllItemsController));
-router.post('/', ctrlWrapper(addItemController));
-router.patch('/', ctrlWrapper(updateItemController));
-router.delete('/:id', isValidId, ctrlWrapper(deleteItemController));
+router.post('/add', ctrlWrapper(addItemController));
+router.post('/update', ctrlWrapper(updateItemController));
+router.delete('/', isValidId, ctrlWrapper(deleteItemController));
 
 export default router;

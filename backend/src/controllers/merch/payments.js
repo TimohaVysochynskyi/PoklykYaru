@@ -26,12 +26,12 @@ export const getAllPaymentsController = async (req, res, next) => {
 };
 
 export const getPaymentsByIdController = async (req, res, next) => {
-  const { id } = req.params;
-  const payments = await getPaymentsById(id);
+  const customerId = req.customer._id;
+  const payments = await getPaymentsById(customerId);
 
   res.status(200).send({
     status: 200,
-    message: `Successfully found payments with id ${id}`,
+    message: `Successfully found payments of customer ${customerId}`,
     data: payments,
   });
 };

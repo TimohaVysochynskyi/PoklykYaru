@@ -10,14 +10,10 @@ import {
 } from '../../controllers/merch/customers.js';
 
 const router = Router();
+router.use('/', authAdmin);
 
 // Admin
-router.get('/', authAdmin, ctrlWrapper(getAllCustomersController));
-router.get(
-  '/:id',
-  isValidId,
-  authAdmin,
-  ctrlWrapper(getCustomerByIdController),
-);
+router.get('/', ctrlWrapper(getAllCustomersController));
+router.get('/:id', isValidId, ctrlWrapper(getCustomerByIdController));
 
 export default router;

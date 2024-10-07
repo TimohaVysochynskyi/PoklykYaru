@@ -2,9 +2,9 @@ import { Router } from 'express';
 
 import { ctrlWrapper } from '../../utils/ctrlWrapper.js';
 import { validateBody } from '../../middlewares/validateBody.js';
-import { isValidId } from '../../middlewares/isValidId.js';
+//import { isValidId } from '../../middlewares/isValidId.js';
 import { authCustomer } from '../../middlewares/authCustomer.js';
-// import { authAdmin } from '../../middlewares/authAdmin.js';
+import { authAdmin } from '../../middlewares/authAdmin.js';
 
 import {
   getAllPaymentsController,
@@ -16,8 +16,7 @@ import { paymentFormSchema } from '../../validation/merch/payments.js';
 
 const router = Router();
 
-router.get('/', ctrlWrapper(getAllPaymentsController));
-router.get('/:id', isValidId, ctrlWrapper(getPaymentsByIdController));
+router.get('/', authAdmin, ctrlWrapper(getAllPaymentsController));
 
 router.post(
   '/form',
@@ -25,5 +24,6 @@ router.post(
   validateBody(paymentFormSchema),
   ctrlWrapper(paymentFormController),
 );
+router.post('/', authCustomer, ctrlWrapper(getPaymentsByIdController));
 
 export default router;

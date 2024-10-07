@@ -20,27 +20,22 @@ import {
 
 const router = Router();
 
+router.use('/', authAdmin);
+
 // Admin
-router.get('/', authAdmin, ctrlWrapper(getAllMembersController));
-router.get('/:id', isValidId, authAdmin, ctrlWrapper(getMemberByIdController));
+router.get('/', ctrlWrapper(getAllMembersController));
+router.get('/:id', isValidId, ctrlWrapper(getMemberByIdController));
 router.post(
   '/',
-  authAdmin,
   validateBody(addMemberSchema),
   ctrlWrapper(addMemberController),
 );
 router.patch(
   '/:id',
   isValidId,
-  authAdmin,
   validateBody(updateMemberSchema),
   ctrlWrapper(updateMemberController),
 );
-router.delete(
-  '/:id',
-  isValidId,
-  authAdmin,
-  ctrlWrapper(deleteMemberController),
-);
+router.delete('/:id', isValidId, ctrlWrapper(deleteMemberController));
 
 export default router;
