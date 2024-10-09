@@ -35,7 +35,7 @@ router.get(
 router.post(
   '/',
   authAdmin,
-  upload.array('images', 10),
+  upload.array('images', 8),
   validateBody(addProductSchema),
   ctrlWrapper(addProductController),
 );
@@ -43,6 +43,7 @@ router.patch(
   '/:id',
   isValidId,
   authAdmin,
+  upload.array('images', 8),
   validateBody(updateProductSchema),
   ctrlWrapper(updateProductController),
 );

@@ -48,9 +48,9 @@ export const updateItemController = async (req, res, next) => {
 
 export const deleteItemController = async (req, res, next) => {
   const customerId = req.customer._id;
-  const item = await deleteItem(customerId, req.body);
+  const cart = await deleteItem(customerId, req.body);
 
-  if (!item) {
+  if (!cart) {
     return next(createHttpError(404, 'Cart item not found'));
   }
 

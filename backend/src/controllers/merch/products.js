@@ -6,6 +6,7 @@ import {
   updateProduct,
   deleteProduct,
 } from '../../services/merch/products.js';
+import { saveFileToUploadDir } from '../../utils/saveFileToUploadDir.js';
 
 // User & Admin
 export const getAllProductsController = async (req, res, next) => {
@@ -35,7 +36,26 @@ export const getProductByIdController = async (req, res, next) => {
 
 // Admin
 export const addProductController = async (req, res, next) => {
-  const product = await addProduct(req.body);
+  const images = req.files;
+
+  const payload = {
+    name: req.body.name,
+    description: req.body.description,
+    price: req.body.price,
+    category: req.body.category,
+    variations: {
+      size: JSON.parse(req.body.size),
+      color: JSON.parse(req.body.color),
+    },
+    stock: req.body.stock,
+  };
+
+  let imagesUrls;
+
+  if (images) {
+    imagesUrls = await saveFileToUploadDir(images, 'merch');
+  }
+  const product = await addProduct({ ...payload, images: imagesUrls });
 
   res.status(201).send({
     status: 200,
@@ -46,7 +66,27 @@ export const addProductController = async (req, res, next) => {
 
 export const updateProductController = async (req, res, next) => {
   const { id } = req.params;
-  const product = await updateProduct(id, req.body);
+  const images = req.files;
+
+  const payload = {
+    name: req.body.name,
+    description: req.body.description,
+    price: req.body.price,
+    category: req.body.category,
+    variations: {
+      size: JSON.parse(req.body.size),
+      color: JSON.parse(req.body.color),
+    },
+    stock: req.body.stock,
+  };
+
+  let imagesUrls;
+
+  if (images) {
+    imagesUrls = await saveFileToUploadDir(images, 'merch');
+  }
+
+  const product = await updateProduct(id, { ...payload, images: imagesUrls });
 
   if (!product) {
     return next(createHttpError(404, 'Product not found'));

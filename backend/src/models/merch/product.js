@@ -29,10 +29,9 @@ const productSchema = new mongoose.Schema(
       type: [String],
       required: true,
     },
-    variations: [variationSchema],
+    variations: variationSchema,
     stock: {
       type: Number,
-      required: true,
       default: 0,
     },
     inStock: {
@@ -52,4 +51,4 @@ const productSchema = new mongoose.Schema(
   },
 );
 
-export const ProductsCollection = merch.model('product', productSchema);
+export const ProductsCollection = merch.model('products', productSchema);

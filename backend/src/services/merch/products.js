@@ -1,5 +1,7 @@
 import { ProductsCollection } from '../../models/merch/product.js';
 
+import { deleteFileFromUploadDir } from '../../utils/deleteFileFromUploadDir.js';
+
 export const getAllProducts = async () => {
   const products = await ProductsCollection.find();
 
@@ -28,6 +30,8 @@ export const updateProduct = async (productId, payload, options = {}) => {
 };
 export const deleteProduct = async (productId) => {
   const product = await ProductsCollection.findOneAndDelete({ _id: productId });
+  console.log(product);
+  await deleteFileFromUploadDir(product.images, 'merch');
 
   return product;
 };

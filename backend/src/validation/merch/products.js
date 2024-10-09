@@ -5,8 +5,8 @@ export const addProductSchema = Joi.object({
   description: Joi.string().required(),
   price: Joi.number().integer().min(0).required(),
   category: Joi.string().required(),
-  images: Joi.array().items(Joi.string()).required(),
-  variations: Joi.object().required(),
+  size: Joi.string().required(),
+  color: Joi.string().required(),
   stock: Joi.number().required(),
 });
 
@@ -15,7 +15,7 @@ export const updateProductSchema = Joi.object({
   description: Joi.string(),
   price: Joi.number().integer().min(0),
   category: Joi.string(),
-  images: Joi.array().items(Joi.string()),
-  variations: Joi.object(),
+  size: Joi.string(),
+  color: Joi.string(),
   stock: Joi.number(),
 });

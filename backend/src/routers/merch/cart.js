@@ -2,7 +2,6 @@ import { Router } from 'express';
 
 import { ctrlWrapper } from '../../utils/ctrlWrapper.js';
 //import { validateBody } from '../../middlewares/validateBody.js';
-import { isValidId } from '../../middlewares/isValidId.js';
 import { authCustomer } from '../../middlewares/authCustomer.js';
 
 import {
@@ -19,6 +18,6 @@ router.use('/', authCustomer);
 router.get('/', ctrlWrapper(getAllItemsController));
 router.post('/add', ctrlWrapper(addItemController));
 router.post('/update', ctrlWrapper(updateItemController));
-router.delete('/', isValidId, ctrlWrapper(deleteItemController));
+router.delete('/', ctrlWrapper(deleteItemController));
 
 export default router;
