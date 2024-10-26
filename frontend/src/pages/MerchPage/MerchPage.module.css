@@ -1,0 +1,26 @@
+.head,
+.merchWrapper {
+  padding: 50px 70px;
+}
+.title {
+  font-family: "Buduj Bold";
+  font-size: 125px;
+  color: var(--alt-main-color);
+  text-align: center;
+  padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 40px;
+}
+.title span {
+  font-family: "Buduj Black-Height";
+  text-transform: uppercase;
+  color: var(--dark-accent-color);
+}
+.text {
+  font-family: "Futura Bold";
+  font-size: 30px;
+  color: rgba(89, 101, 100, 0.81);
+}

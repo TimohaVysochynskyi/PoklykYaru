@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+}
+.image {
+  height: 210px;
+  width: 140px;
+  object-fit: cover;
+}
+.content {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+.name {
+  font-family: "Buduj SemiBold";
+  text-transform: uppercase;
+  color: var(--alt-main-color);
+}
+.description {
+  font-family: "Futura Bold";
+  font-size: 15px;
+  color: var(--secondary-color);
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+.price {
+  color: var(--alt-main-color);
+  font-size: 15px;
+  font-family: "Futura Bold";
+}
+.col:last-child {
+  flex-direction: row;
+  align-items: start;
+  gap: 0 45px;
+}
+.quantityWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+.quantity {
+  font-family: "Futura Bold";
+  font-size: 15px;
+}
+.quantityButton,
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quantityActionCharacter {
+  width: 10px;
+  height: 10px;
+  color: var(--main-text-color);
+}
+.quantityButtonSecondary {
+  cursor: unset;
+}
+.quantityButtonSecondary .quantityActionCharacter {
+  color: var(--secondary-color);
+}
+.deleteButton {
+  position: relative;
+  top: -6px;
+}
+.delete {
+  width: 30px;
+  height: 30px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.size {
+  position: relative;
+  min-width: 50px;
+  max-width: 80px;
+}
+.sizeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 8px;
+  font-family: "Futura Bold";
+  font-size: 20px;
+  color: var(--alt-main-color);
+  padding: 5px;
+  width: 100%;
+}
+.sizeButtonOpened {
+  border: 1px solid var(--alt-main-color);
+  border-radius: 1px 1px 0 0;
+}
+.arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--secondary-color);
+}

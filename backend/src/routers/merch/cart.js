@@ -18,6 +18,6 @@ router.use('/', authCustomer);
 router.get('/', ctrlWrapper(getAllItemsController));
 router.post('/add', ctrlWrapper(addItemController));
 router.post('/update', ctrlWrapper(updateItemController));
-router.delete('/', ctrlWrapper(deleteItemController));
+router.post('/delete', ctrlWrapper(deleteItemController));
 
 export default router;

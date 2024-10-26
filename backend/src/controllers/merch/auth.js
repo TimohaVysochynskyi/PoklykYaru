@@ -11,53 +11,77 @@ import { THIRTY_DAYS } from '../../constants/index.js';
 
 // User
 export const registerCustomerController = async (req, res, next) => {
-  const customer = await registerCustomer(req.body);
+  const data = await registerCustomer(req.body);
+
+  res.cookie('refreshToken', data.session.refreshToken, {
+    httpOnly: true,
+    sameSite: 'None',
+    secure: true,
+    expires: new Date(Date.now() + THIRTY_DAYS),
+  });
+  res.cookie('sessionId', data.session._id, {
+    httpOnly: true,
+    sameSite: 'None',
+    secure: true,
+    expires: new Date(Date.now() + THIRTY_DAYS),
+  });
 
   res.status(201).send({
     status: 201,
     message: 'Successfully registered a customer',
-    data: customer,
+    customer: data.customer,
+    accessToken: data.session.accessToken,
   });
 };
 
 export const loginCustomerController = async (req, res, next) => {
-  const session = await loginCustomer(req.body);
+  const data = await loginCustomer(req.body);
 
-  res.cookie('refreshToken', session.refreshToken, {
+  res.cookie('refreshToken', data.session.refreshToken, {
     httpOnly: true,
-    expires: new Date(Date.now() + THIRTY_DAYS),
+    sameSite: 'None',
+    secure: true,
+    maxAge: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', session._id, {
+  res.cookie('sessionId', data.session._id, {
     httpOnly: true,
-    expires: new Date(Date.now() + THIRTY_DAYS),
+    sameSite: 'None',
+    secure: true,
+    maxAge: new Date(Date.now() + THIRTY_DAYS),
   });
 
   res.status(200).send({
     status: 200,
     message: 'Successfully logged in a customer',
-    data: { accessToken: session.accessToken },
+    customer: data.customer,
+    accessToken: data.session.accessToken,
   });
 };
 
 export const refreshCustomerController = async (req, res, next) => {
-  const session = await refreshCustomer({
+  const data = await refreshCustomer({
     sessionId: req.cookies.sessionId,
     refreshToken: req.cookies.refreshToken,
   });
 
-  res.cookie('refreshToken', session.refreshToken, {
+  res.cookie('refreshToken', data.session.refreshToken, {
     httpOnly: true,
-    expires: new Date(Date.now() + THIRTY_DAYS),
+    sameSite: 'None',
+    secure: true,
+    maxAge: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', session._id, {
+  res.cookie('sessionId', data.session._id, {
     httpOnly: true,
-    expires: new Date(Date.now() + THIRTY_DAYS),
+    sameSite: 'None',
+    secure: true,
+    maxAge: new Date(Date.now() + THIRTY_DAYS),
   });
 
   res.status(200).send({
     status: 200,
     message: 'Successfully refreshed a session',
-    data: { accessToken: session.accessToken },
+    customer: data.customer,
+    accessToken: data.session.accessToken,
   });
 };
 

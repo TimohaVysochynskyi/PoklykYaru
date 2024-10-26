@@ -1,26 +1,27 @@
 import { CustomersCollection } from '../../models/merch/customer.js';
 import { ProductsCollection } from '../../models/merch/product.js';
-import { getProductById } from './products.js';
+//import { getProductById } from './products.js';
 
 export const getAllItems = async (customerId) => {
   const customer = await CustomersCollection.findById(customerId);
   const cart = customer.cart;
-  const response = [];
-  for (let i = 0; i < cart.length; i++) {
-    let cartItem = cart[i].toObject();
-    const product = await getProductById(cartItem.product);
+  // const response = [];
+  // for (let i = 0; i < cart.length; i++) {
+  //   let cartItem = cart[i].toObject();
+  //   const product = await getProductById(cartItem.product);
 
-    const productData = {
-      name: product.name,
-      description: product.description,
-      price: product.price,
-    };
-    cartItem.productData = productData;
+  //   const productData = {
+  //     name: product.name,
+  //     description: product.description,
+  //     price: product.price,
+  //   };
+  //   cartItem.productData = productData;
 
-    response.push(cartItem);
-  }
+  //   response.push(cartItem);
+  // }
 
-  return response;
+  // return response;
+  return cart;
 };
 
 export const addItem = async (customerId, payload) => {
@@ -34,7 +35,7 @@ export const addItem = async (customerId, payload) => {
   );
 
   if (existingItem) {
-    updateItem(customerId, payload);
+    return updateItem(customerId, { ...payload, action: 'increment' });
   }
 
   const cartItem = { ...payload, price: payload.quantity * product.price };
@@ -43,12 +44,13 @@ export const addItem = async (customerId, payload) => {
 
   await customer.save();
 
-  return cartItem;
+  return customer.cart;
 };
 
 export const updateItem = async (customerId, payload) => {
   const customer = await CustomersCollection.findById(customerId);
   const product = await ProductsCollection.findById(payload.product);
+  const action = payload.action;
 
   const cartItem = customer.cart.find(
     (item) =>
@@ -60,12 +62,31 @@ export const updateItem = async (customerId, payload) => {
     return 'Cart item not found';
   }
 
-  cartItem.quantity += 1;
-  cartItem.price = product.price * cartItem.quantity;
+  switch (action) {
+    case 'increment':
+      cartItem.quantity += 1;
+      cartItem.price = product.price * cartItem.quantity;
+      break;
+    case 'decrement':
+      cartItem.quantity -= 1;
+      cartItem.price = product.price * cartItem.quantity;
+      break;
+    case 'size':
+      cartItem.variation.size = payload.newVariation.size;
+      break;
+    case 'color':
+      cartItem.variation.color = payload.newVariation.color;
+      break;
+
+    default:
+      cartItem.quantity += 1;
+      cartItem.price = product.price * cartItem.quantity;
+      break;
+  }
 
   await customer.save();
 
-  return cartItem;
+  return customer.cart;
 };
 
 export const deleteItem = async (customerId, payload) => {

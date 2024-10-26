@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import pino from 'pino-http';
+//import pino from 'pino-http';
 
 import { env } from './utils/env.js';
 
@@ -20,8 +20,13 @@ export const setupServer = () => {
   app.use(express.json());
   app.use('/uploads', express.static(UPLOAD_DIR));
 
-  app.use(cors());
-  app.use(pino({ transport: { target: 'pino-pretty' } }));
+  app.use(
+    cors({
+      origin: ['http://merch.localhost:5173'], // дозволяє запити з фронтенд-домену
+      credentials: true, // дозволяє передавати кукі
+    }),
+  );
+  //app.use(pino({ transport: { target: 'pino-pretty' } }));
   app.use(cookieParser());
 
   app.use('/', router);

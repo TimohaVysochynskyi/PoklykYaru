@@ -1,9 +1,21 @@
-import { Oval } from 'react-loader-spinner';
+import { Oval } from "react-loader-spinner";
 
-// import css from './Loader.module.css';
+import css from "./Loader.module.css";
 
-export default function Loader() {
-    return <>
-        <Oval visible={true} height="80" width="80" color="#4fa94d" ariaLabel="oval-loading" wrapperStyle={{}} wrapperClass="" />
+type Props = {
+  size: string;
+};
+
+export default function Loader({ size }: Props) {
+  return (
+    <>
+      <Oval
+        visible={true}
+        height={size}
+        width={size}
+        ariaLabel="oval-loading"
+        wrapperClass={css.container}
+      />
     </>
+  );
 }

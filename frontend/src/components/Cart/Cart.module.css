@@ -1,0 +1,159 @@
+.modal {
+  min-height: 300px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid var(--alt-main-color);
+  outline: none;
+  position: relative;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-image: url(../../assets/bg.jpeg) !important; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.row:first-child {
+  padding: 10px;
+  border-bottom: 1px solid var(--alt-main-color);
+  align-items: center;
+}
+.title {
+  color: black;
+  font-family: "Futura Bold";
+  text-transform: uppercase;
+  font-size: 16px;
+  z-index: 2;
+}
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.close {
+  width: 24px;
+  height: 24px;
+  color: var(--secondary-color);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  height: 100%;
+}
+.item {
+  position: relative;
+  min-height: 100px;
+}
+.col:first-child {
+  width: calc(100% - 480px);
+}
+.col:last-child {
+  width: 480px;
+  border-left: 1px solid var(--alt-main-color);
+}
+.sideRow {
+  border-bottom: 1px solid var(--alt-main-color);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sideRow:nth-child(2) {
+  padding: 10px 20px;
+}
+.sideRow:last-child {
+  border-bottom: none;
+  flex-direction: column;
+  gap: 18px;
+}
+.text,
+.price {
+  font-family: "Futura bold";
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.price {
+  color: var(--alt-main-color);
+}
+.arrowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.arrow {
+  width: 28px;
+  height: 28px;
+}
+.form {
+  width: 100%;
+}
+.buttonDark,
+.buttonLight {
+  width: 100%;
+  padding: 10px;
+  min-height: 38px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Futura Heavy";
+  font-size: 16px;
+  border: none;
+  background: none;
+  position: relative;
+  transition: 0.3s;
+  z-index: 1;
+}
+.buttonDark {
+  background-color: black;
+  animation: darkButton 1s;
+  color: white;
+}
+.buttonLight {
+  color: var(--main-text-color);
+}
+.buttonIsLoading {
+  animation: grayButton 2.5s;
+}
+.disableModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.toastText {
+  font-family: "Futura Bold";
+  text-transform: uppercase;
+}
+
+@keyframes grayButton {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: var(--secondary-color);
+  }
+}
+@keyframes darkButton {
+  from {
+    background-color: var(--secondary-color);
+  }
+  to {
+    background-color: black;
+  }
+}

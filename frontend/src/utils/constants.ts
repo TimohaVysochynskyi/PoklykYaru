@@ -1,22 +1,22 @@
 import AppRouter from "../routers/AppRouter";
 import MerchRouter from "../routers/MerchRouter";
-import MainBar from "../components/AppBar/MainBar";
-import MerchBar from "../components/AppBar/MerchBar";
+import MainNavigation from "../components/Navigation/MainNavigation";
+import MerchNavigation from "../components/Navigation/MerchNavigation";
 
 export const APPS = [
     {
         subdomain: "www",
         app: AppRouter,
-        bar: MainBar,
+        navigation: MainNavigation,
         main: true
     },
     {
         subdomain: "merch",
         app: MerchRouter,
-        bar: MerchBar,
+        navigation: MerchNavigation,
         main: false
     }
 ];
 
 export const appDomain: string = "localhost:5173";
-export const apiDomain: string = "localhost:3000"
+export const apiDomain: string = "http://localhost:3000"

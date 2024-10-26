@@ -2,6 +2,6 @@ import { RootState } from "../store";
 
 export const selectIsLoggedIn = (state: RootState) => state.auth.isLoggedIn;
 
-export const selectUser = (state) => state.auth.user;
+export const selectCustomer = (state: RootState) => state.auth.customer;
 
-export const selectIsRefreshing = (state) => state.auth.isRefreshing;
+export const selectIsRefreshing = (state: RootState) => state.auth.isRefreshing;

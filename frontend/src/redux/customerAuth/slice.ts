@@ -1,23 +1,41 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, refreshUser } from './operations';
+import { register, login, logOut, refreshCustomer } from './operations';
 
-type InitialState = {
-    user: {
-        name: string | null;
-        email: string | null
-    };
-    token: string | null;
-    isLoggedIn: boolean; isRefreshing: boolean
+type CustomerPayloadType = {
+    firstName: string | null;
+    lastName: string | null;
+    phoneNumber: string | null;
+    email: string | null;
 }
 
-const initialState: InitialState = {
-    user: {
-        name: null,
-        email: null,
+type InitialStateType = {
+    customer: CustomerPayloadType;
+    accessToken: string | null;
+    isLoggedIn: boolean;
+    isRefreshing: boolean;
+}
+
+const initialState: InitialStateType = {
+    customer: {
+        firstName: null,
+        lastName: null,
+        phoneNumber: null,
+        email: null
     },
-    token: null,
+    accessToken: null,
     isLoggedIn: false,
     isRefreshing: false,
+}
+
+const parseCustomerData = (payload: CustomerPayloadType) => {
+    const customerData = {
+        firstName: payload.firstName,
+        lastName: payload.lastName,
+        phoneNumber: payload.phoneNumber,
+        email: payload.email,
+    }
+
+    return customerData
 }
 
 const authSlice = createSlice({
@@ -27,29 +45,30 @@ const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(register.fulfilled, (state, action) => {
-                state.user = action.payload.user;
-                state.token = action.payload.token;
+                state.customer = parseCustomerData(action.payload.customer);
+                state.accessToken = action.payload.accessToken;
                 state.isLoggedIn = true;
             })
-            .addCase(logIn.fulfilled, (state, action) => {
-                state.user = action.payload.user;
-                state.token = action.payload.token;
+            .addCase(login.fulfilled, (state, action) => {
+                state.customer = parseCustomerData(action.payload.customer);
+                state.accessToken = action.payload.accessToken;
                 state.isLoggedIn = true;
             })
             .addCase(logOut.fulfilled, (state) => {
-                state.user = { name: null, email: null };
-                state.token = null;
+                state.customer = { firstName: null, lastName: null, phoneNumber: null, email: null };
+                state.accessToken = null;
                 state.isLoggedIn = false;
             })
-            .addCase(refreshUser.pending, (state) => {
+            .addCase(refreshCustomer.pending, (state) => {
                 state.isRefreshing = true;
             })
-            .addCase(refreshUser.fulfilled, (state, action) => {
-                state.user = action.payload;
+            .addCase(refreshCustomer.fulfilled, (state, action) => {
+                state.customer = parseCustomerData(action.payload.customer);
+                state.accessToken = action.payload.accessToken;
                 state.isLoggedIn = true;
                 state.isRefreshing = false;
             })
-            .addCase(refreshUser.rejected, (state) => {
+            .addCase(refreshCustomer.rejected, (state) => {
                 state.isRefreshing = false;
             });
     },

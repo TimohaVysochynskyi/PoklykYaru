@@ -1,34 +1,25 @@
 import { NavLink } from "react-router-dom";
-import clsx from "clsx";
 
 import { appDomain } from "../../utils/constants";
 
 import css from "./Navigation.module.css";
 
-type LinkClassType = {
-  isActive: boolean;
-};
-
 export default function MainNavigation() {
-  const linkClass = ({ isActive }: LinkClassType): string => {
-    return clsx(css.link, isActive && css.active);
-  };
-
   return (
     <>
       <ul className={css.list}>
         <li className={css.item}>
-          <NavLink to="/" className={linkClass}>
+          <NavLink to="/" className={css.link}>
             Головна
           </NavLink>
         </li>
         <li className={css.item}>
-          <NavLink to="/about" className={linkClass}>
+          <NavLink to="/about" className={css.link}>
             Про нас
           </NavLink>
         </li>
         <li className={css.item}>
-          <NavLink to="/help" className={linkClass}>
+          <NavLink to="/help" className={css.link}>
             Допомога
           </NavLink>
         </li>

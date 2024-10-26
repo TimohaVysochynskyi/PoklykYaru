@@ -1,0 +1,31 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 35px;
+}
+.item {
+  width: 100%;
+}
+.button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0;
+  border: 0.5px solid var(--alt-main-color);
+  border-right: 1px solid var(--alt-main-color);
+  border-left: 1px solid var(--alt-main-color);
+  padding: 5px;
+  background-color: var(--tertiary-color);
+  font-family: "Futura Demi";
+  font-size: 20px;
+  color: var(--alt-main-color);
+}
+.item:first-child .button {
+  border-top: 1px solid var(--alt-main-color);
+}
+.item:last-child .button {
+  border-bottom: 1px solid var(--alt-main-color);
+  border-radius: 0 0 1px 1px;
+}

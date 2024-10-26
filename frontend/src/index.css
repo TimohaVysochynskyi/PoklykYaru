@@ -1,0 +1,88 @@
+:root {
+  --alt-main-color: rgba(42, 61, 68, 1);
+  --dark-accent-color: rgba(222, 185, 43, 1);
+  --tertiary-color: rgba(213, 207, 186, 1);
+  --main-text-color: rgba(27, 41, 44, 1);
+  --secondary-color: rgba(90, 114, 119, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Buduj Regular";
+}
+
+body {
+  background-image: url("./assets/bg.jpeg");
+  background-size: cover;
+}
+
+.bg-filter {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(240, 235, 219, 0.4);
+  position: fixed;
+  z-index: -1;
+}
+
+@font-face {
+  font-family: "Buduj Regular";
+  src: url("./fonts/BudujSansTRIAL-Regular.ttf");
+}
+@font-face {
+  font-family: "Buduj Regular-Height";
+  src: url("./fonts/BudujSansTRIAL-RegularHeight.ttf");
+}
+@font-face {
+  font-family: "Buduj Semibold";
+  src: url("./fonts/BudujSansTRIAL-Semibold.ttf");
+}
+@font-face {
+  font-family: "Buduj Semibold-Height";
+  src: url("./fonts/BudujSansTRIAL-SemiboldHeight.ttf");
+}
+@font-face {
+  font-family: "Buduj Bold";
+  src: url("./fonts/BudujSansTRIAL-Bold.ttf");
+}
+@font-face {
+  font-family: "Buduj Bold-Height";
+  src: url("./fonts/BudujSansTRIAL-BoldHeight.ttf");
+}
+@font-face {
+  font-family: "Buduj Black";
+  src: url("./fonts/BudujSansTRIAL-Black.ttf");
+}
+@font-face {
+  font-family: "Buduj Black-Height";
+  src: url("./fonts/BudujSansTRIAL-BlackHeight.ttf");
+}
+@font-face {
+  font-family: "Futura Light";
+  src: url("./fonts/FuturaPT-Light.ttf");
+}
+@font-face {
+  font-family: "Futura Book";
+  src: url("./fonts/FuturaPT-Book.ttf");
+}
+@font-face {
+  font-family: "Futura Medium";
+  src: url("./fonts/FuturaPT-Medium.ttf");
+}
+@font-face {
+  font-family: "Futura Demi";
+  src: url("./fonts/FuturaPT-Demi.ttf");
+}
+@font-face {
+  font-family: "Futura Heavy";
+  src: url("./fonts/FuturaPT-Heavy.ttf");
+}
+@font-face {
+  font-family: "Futura Bold";
+  src: url("./fonts/FuturaPT-Bold.ttf");
+}
+@font-face {
+  font-family: "Futura ExtraBold";
+  src: url("./fonts/FuturaPT-ExtraBold.ttf");
+}

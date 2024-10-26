@@ -1,18 +1,31 @@
-// import { NavLink } from "react-router-dom";
-// import clsx from "clsx";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { PiShoppingCartSimpleFill } from "react-icons/pi";
+
+import { openCart } from "../../redux/cart/slice";
+import { selectIsLoggedIn } from "../../redux/customerAuth/selectors";
+import { selectCart } from "../../redux/cart/selectors";
 
 import { appDomain } from "../../utils/constants";
 
 import css from "./Navigation.module.css";
 
-// type LinkClassType = {
-//   isActive: boolean;
-// };
-
 export default function MerchNavigation() {
-  // const linkClass = ({ isActive }: LinkClassType): string => {
-  //   return clsx(css.link, isActive && css.active);
-  // };
+  const [cartLength, setCartLength] = useState(0);
+
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const cart = useSelector(selectCart);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setCartLength(cart.length);
+    }
+  }, [isLoggedIn, cart]);
+
+  const handleOpenCart = async () => {
+    dispatch(openCart());
+  };
 
   return (
     <>
@@ -27,6 +40,18 @@ export default function MerchNavigation() {
             Допомога
           </a>
         </li>
+        {isLoggedIn && (
+          <li className={css.item}>
+            <button
+              type="button"
+              className={css.cartButton}
+              onClick={handleOpenCart}
+            >
+              <PiShoppingCartSimpleFill className={css.cart} />
+              <span className={css.link}>({cartLength.toString()})</span>
+            </button>
+          </li>
+        )}
       </ul>
     </>
   );

@@ -27,9 +27,14 @@ export const registerCustomer = async (payload) => {
 
   const encryptedPasword = await bcrypt.hash(payload.password, 10);
 
-  return await CustomersCollection.create({
+  await CustomersCollection.create({
     ...payload,
     password: encryptedPasword,
+  });
+
+  return loginCustomer({
+    phoneNumber: payload.phoneNumber,
+    password: payload.password,
   });
 };
 
@@ -47,13 +52,18 @@ export const loginCustomer = async (payload) => {
   const accessToken = crypto.randomBytes(30).toString('base64');
   const refreshToken = crypto.randomBytes(30).toString('base64');
 
-  return await SessionsCollection.create({
+  const session = await SessionsCollection.create({
     customerId: customer._id,
     accessToken,
     refreshToken,
     accessTokenValidUntil: new Date(Date.now() + FIFTEEN_MINUTES),
     refreshTokenValidUntil: new Date(Date.now() + THIRTY_DAYS),
   });
+
+  return {
+    customer: customer,
+    session: session,
+  };
 };
 
 export const refreshCustomer = async ({ sessionId, refreshToken }) => {
@@ -72,19 +82,22 @@ export const refreshCustomer = async ({ sessionId, refreshToken }) => {
   const newAccessToken = crypto.randomBytes(30).toString('base64');
   const newRefreshToken = crypto.randomBytes(30).toString('base64');
 
-  const newSession = {
+  await SessionsCollection.deleteOne({ refreshToken });
+
+  const newSession = await SessionsCollection.create({
+    customerId: session.customerId,
     accessToken: newAccessToken,
     refreshToken: newRefreshToken,
     accessTokenValidUntil: new Date(Date.now() + FIFTEEN_MINUTES),
     refreshTokenValidUntil: new Date(Date.now() + THIRTY_DAYS),
-  };
-
-  await SessionsCollection.deleteOne({ _id: sessionId, refreshToken });
-
-  return await SessionsCollection.create({
-    customerId: session.customerId,
-    ...newSession,
   });
+
+  const customer = await CustomersCollection.findById(session.customerId);
+
+  return {
+    session: newSession,
+    customer,
+  };
 };
 
 export const logoutCustomer = async (sessionId) => {

@@ -8,7 +8,7 @@ export const authCustomer = async (req, res, next) => {
 
   if (!authHeader) {
     next(createHttpError(401, 'Please provide Authorization header'));
-    return;
+    return; // Ось тут return, щоб не продовжувати код
   }
 
   const bearer = authHeader.split(' ')[0];
@@ -26,12 +26,13 @@ export const authCustomer = async (req, res, next) => {
     return;
   }
 
-  // const isAccessTokenExpired =
-  //   new Date() > new Date(session.accessTokenValidUntil);
+  const isAccessTokenExpired =
+    new Date() > new Date(session.accessTokenValidUntil);
 
-  // if (isAccessTokenExpired) {
-  //   next(createHttpError(401, 'Access token expired'));
-  // }
+  if (isAccessTokenExpired) {
+    next(createHttpError(401, 'Access token expired'));
+    return;
+  }
 
   const customer = await CustomersCollection.findById(session.customerId);
 

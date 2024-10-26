@@ -1,6 +1,8 @@
 import { Suspense } from "react";
+
 import Layout from "../Layout/Layout";
 import Loader from "../Loader/Loader";
+import AppBar from "../AppBar/AppBar";
 
 import { getApp } from "../../utils/helpers";
 
@@ -19,7 +21,7 @@ export default function App() {
             </div>
           }
         >
-          <CurrentApp.bar />
+          <AppBar Navigation={CurrentApp.navigation} />
           <CurrentApp.app />
         </Suspense>
       </Layout>

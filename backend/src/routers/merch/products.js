@@ -3,7 +3,6 @@ import { Router } from 'express';
 import { ctrlWrapper } from '../../utils/ctrlWrapper.js';
 import { validateBody } from '../../middlewares/validateBody.js';
 import { isValidId } from '../../middlewares/isValidId.js';
-import { authCustomer } from '../../middlewares/authCustomer.js';
 import { authAdmin } from '../../middlewares/authAdmin.js';
 import { upload } from '../../middlewares/multer.js';
 
@@ -24,12 +23,7 @@ const router = Router();
 
 // User
 router.get('/', ctrlWrapper(getAllProductsController));
-router.get(
-  '/:id',
-  isValidId,
-  authCustomer,
-  ctrlWrapper(getProductByIdController),
-);
+router.get('/:id', isValidId, ctrlWrapper(getProductByIdController));
 
 // Admin
 router.post(
