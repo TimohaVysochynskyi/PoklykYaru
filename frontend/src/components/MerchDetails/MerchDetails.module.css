@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 75vh;
+}
+.col {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.col:nth-child(2) {
+  width: 420px;
+  min-width: 420px;
+}
+.details {
+  height: 100%;
+  border: 2px solid var(--alt-main-color);
+  display: flex;
+  flex-direction: column;
+}
+.col:first-child .details {
+  height: auto;
+  padding: 20px;
+  gap: 10px 0;
+  border-radius: 0 0 0 50px;
+}
+.col:last-child .details {
+  border-radius: 0 50px 50px 0;
+  justify-content: space-between;
+}
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  padding: 20px;
+}
+.detailsSection:nth-child(2) {
+  border-top: 2px solid var(--alt-main-color);
+}
+.title {
+  font-size: 20px;
+  font-family: "Buduj Black";
+  text-transform: uppercase;
+  color: var(--alt-main-color);
+}
+.text {
+  font-size: 14px;
+  font-family: "Futura Demi";
+  color: var(--alt-main-color);
+}
+
+.price {
+  font-family: "Futura Bold";
+  font-size: 18px;
+  color: var(--alt-main-color);
+}
+.button {
+  border: none;
+  border-top: 2px solid var(--alt-main-color);
+  border-radius: 0 0 50px 0;
+  padding: 20px;
+  background-color: var(--bright-accent-color);
+  text-transform: uppercase;
+  font-family: "Futura Bold";
+  font-size: 20px;
+  color: var(--alt-main-color);
+  cursor: pointer;
+  outline: none;
+}

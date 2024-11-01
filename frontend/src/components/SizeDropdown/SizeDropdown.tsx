@@ -2,7 +2,7 @@ import css from "./SizeDropdown.module.css";
 
 type Props = {
   sizeSelection: (size: string) => void;
-  sizes: Array<string>;
+  sizes: string[];
   selectedSize: string;
 };
 

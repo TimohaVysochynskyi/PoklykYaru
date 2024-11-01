@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { CartItemType } from '../../types/Product.types';
-import { UpdateCartItemResponseType } from './types';
+import { CartItemType, UpdateCartItemResponseType } from '../../types/Cart.types';
 
 export const fetchCart = createAsyncThunk('cart/get', async (_, thunkAPI) => {
     try {

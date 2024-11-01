@@ -3,10 +3,15 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 
+// redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { register } from "../../redux/customerAuth/operations";
 
+// types
+import { RegisterCustomerType } from "../../types/Auth.types";
+
+// styles
 import css from "./AuthForm.module.css";
 
 const RegisterCustomerSchema = Yup.object().shape({
@@ -28,14 +33,6 @@ const RegisterCustomerSchema = Yup.object().shape({
     .required("Потрібно заповнити поле!"),
   email: Yup.string().email("Має бути дійсною електронною поштою"),
 });
-
-type RegisterCustomerType = {
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  password: string;
-  email: string | null;
-};
 
 export default function RegisterForm() {
   const id = useId();

@@ -1,6 +1,7 @@
 :root {
   --alt-main-color: rgba(42, 61, 68, 1);
   --dark-accent-color: rgba(222, 185, 43, 1);
+  --bright-accent-color: rgba(253, 214, 44, 1);
   --tertiary-color: rgba(213, 207, 186, 1);
   --main-text-color: rgba(27, 41, 44, 1);
   --secondary-color: rgba(90, 114, 119, 1);
@@ -16,6 +17,7 @@
 body {
   background-image: url("./assets/bg.jpeg");
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .bg-filter {
@@ -24,6 +26,12 @@ body {
   background-color: rgba(240, 235, 219, 0.4);
   position: fixed;
   z-index: -1;
+}
+
+.swiper-vertical > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-vertical {
+  right: 0 !important;
+  width: 5px !important;
 }
 
 @font-face {

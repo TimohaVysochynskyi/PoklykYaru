@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.mainSwiper {
+  width: 80%;
+  margin: 0;
+  overflow-x: visible;
+}
+
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 16px);
+  overflow: hidden;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  width: auto;
+}
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 5px 0;
+  width: 45px;
+  height: 100%;
+  margin-left: 10px;
+  overflow-y: auto;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 65px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.active {
+  opacity: 1;
+}

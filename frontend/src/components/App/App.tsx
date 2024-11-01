@@ -17,7 +17,7 @@ export default function App() {
         <Suspense
           fallback={
             <div className={css.loaderWrapper}>
-              <Loader />
+              <Loader size="80" />
             </div>
           }
         >

@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  gap: 0 15px;
+  list-style: none;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px 0;
+}
+.color {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--alt-main-color);
+  cursor: pointer;
+}
+.line {
+  width: 12px;
+  height: 2px;
+  position: relative;
+  background-color: var(--secondary-color);
+}

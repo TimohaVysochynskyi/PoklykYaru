@@ -2,25 +2,13 @@ export type ProductType = {
     _id: string;
     name: string;
     description: string;
-    images: Array<string>;
+    images: string[];
     price: number;
+    composition: string;
     variations: {
-        size: Array<string>;
-        color: Array<string>;
+        size: string[];
+        color: string[];
     };
     createdAt: string;
     updatedAt: string;
 };
-
-type CartItemVariationType = {
-    size: Array<string>;
-    color: Array<string>
-}
-
-export type CartItemType = {
-    product: string;
-    variation: CartItemVariationType;
-    quantity: number;
-    price: number;
-    newVariation?: CartItemVariationType;
-}

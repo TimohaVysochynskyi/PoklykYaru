@@ -1,24 +1,28 @@
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
+import clsx from "clsx";
+import toast from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
 import { IoCloseOutline } from "react-icons/io5";
 
+// components
 import CartItem from "../CartItem/CartItem";
-
-import { AppDispatch } from "../../redux/store";
-import { selectCart } from "../../redux/cart/selectors";
-import { closeCart } from "../../redux/cart/slice";
-import { paymentForm } from "../../redux/payments/operations";
-
-import { SendPaymentType } from "../../types/Payments.types";
-import { CartItemType } from "../../types/Product.types";
-
-import css from "./Cart.module.css";
-import { selectPaymentFormData } from "../../redux/payments/selectors";
 import Loader from "../Loader/Loader";
-import clsx from "clsx";
+
+// redux
+import { AppDispatch } from "../../redux/store";
+import { closeCart } from "../../redux/cart/slice";
 import { cancelPayment } from "../../redux/payments/slice";
-import toast from "react-hot-toast";
+import { paymentForm } from "../../redux/payments/operations";
+import { selectCart } from "../../redux/cart/selectors";
+import { selectPaymentFormData } from "../../redux/payments/selectors";
+
+// types
+import { SendPaymentType } from "../../types/Payments.types";
+import { CartItemType } from "../../types/Cart.types";
+
+// styles
+import css from "./Cart.module.css";
 
 Modal.setAppElement("#root");
 
@@ -62,7 +66,7 @@ export default function Cart({ isOpen }: Props) {
     });
 
     toast.promise(form, {
-      loading: "Saving...",
+      loading: "Формування замовлення...",
       success: <p className={css.toastText}>Замовлення сформоване!</p>,
       error: <p className={css.toastText}>Не вдалося сформувати замовлення.</p>,
     });
@@ -91,7 +95,7 @@ export default function Cart({ isOpen }: Props) {
           <div className={css.col}>
             <ul className={css.list}>
               {items.map((item: CartItemType) => (
-                <li key={item.product} className={css.item}>
+                <li key={item.productData._id} className={css.item}>
                   <CartItem item={item} />
                 </li>
               ))}

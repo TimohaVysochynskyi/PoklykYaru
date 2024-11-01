@@ -1,27 +1,28 @@
 import { CustomersCollection } from '../../models/merch/customer.js';
 import { ProductsCollection } from '../../models/merch/product.js';
-//import { getProductById } from './products.js';
+import { getProductById } from './products.js';
+
+const getProductData = async (cart) => {
+  const response = [];
+  for (let i = 0; i < cart.length; i++) {
+    let cartItem = cart[i].toObject();
+    const product = await getProductById(cartItem.product);
+
+    cartItem.productData = product;
+
+    response.push(cartItem);
+  }
+
+  return response;
+};
 
 export const getAllItems = async (customerId) => {
   const customer = await CustomersCollection.findById(customerId);
   const cart = customer.cart;
-  // const response = [];
-  // for (let i = 0; i < cart.length; i++) {
-  //   let cartItem = cart[i].toObject();
-  //   const product = await getProductById(cartItem.product);
 
-  //   const productData = {
-  //     name: product.name,
-  //     description: product.description,
-  //     price: product.price,
-  //   };
-  //   cartItem.productData = productData;
+  const cartData = await getProductData(cart);
 
-  //   response.push(cartItem);
-  // }
-
-  // return response;
-  return cart;
+  return cartData;
 };
 
 export const addItem = async (customerId, payload) => {
@@ -44,7 +45,9 @@ export const addItem = async (customerId, payload) => {
 
   await customer.save();
 
-  return customer.cart;
+  const cartData = await getProductData(customer.cart);
+
+  return cartData;
 };
 
 export const updateItem = async (customerId, payload) => {
@@ -86,7 +89,9 @@ export const updateItem = async (customerId, payload) => {
 
   await customer.save();
 
-  return customer.cart;
+  const cartData = await getProductData(customer.cart);
+
+  return cartData;
 };
 
 export const deleteItem = async (customerId, payload) => {
@@ -102,5 +107,7 @@ export const deleteItem = async (customerId, payload) => {
 
   await customer.save();
 
-  return customer.cart;
+  const cartData = await getProductData(customer.cart);
+
+  return cartData;
 };

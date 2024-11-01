@@ -22,7 +22,7 @@ export const setupServer = () => {
 
   app.use(
     cors({
-      origin: ['http://merch.localhost:5173'], // дозволяє запити з фронтенд-домену
+      origin: [`http://merch.${env('CLIENT_DOMAIN')}`], // дозволяє запити з фронтенд-домену
       credentials: true, // дозволяє передавати кукі
     }),
   );

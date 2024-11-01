@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { apiDomain } from '../../utils/constants';
 import { RootState } from '../store';
 
-import { RegisterCustomerType, LoginCustomerType, ResponseType } from '../customerAuth/types';
+import { RegisterCustomerType, LoginCustomerType, ResponseType } from '../../types/Auth.types';
 
 axios.defaults.baseURL = `${apiDomain}/merch/`;
 axios.defaults.withCredentials = true;

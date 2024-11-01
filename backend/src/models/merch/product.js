@@ -20,6 +20,10 @@ const productSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
+    composition: {
+      type: String,
+      required: true,
+    },
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'productCategories',

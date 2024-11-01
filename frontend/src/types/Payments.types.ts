@@ -1,7 +1,7 @@
-import { CartItemType } from "./Product.types";
+import { CartItemType } from "./Cart.types";
 
 export type SendPaymentType = {
-    orderProducts: Array<CartItemType>,
+    orderProducts: CartItemType[],
     totalPrice: number;
 }
 

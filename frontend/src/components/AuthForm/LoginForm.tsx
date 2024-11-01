@@ -3,10 +3,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 
+// redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { login } from "../../redux/customerAuth/operations";
 
+// styles
 import css from "./AuthForm.module.css";
 
 const RegisterCustomerSchema = Yup.object().shape({

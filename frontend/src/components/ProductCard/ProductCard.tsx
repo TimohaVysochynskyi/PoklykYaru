@@ -1,19 +1,25 @@
 import { useState } from "react";
 import clsx from "clsx";
+import toast from "react-hot-toast";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useDispatch } from "react-redux";
 
+// components
 import SizeDropdown from "../SizeDropdown/SizeDropdown";
 
-import { addItem } from "../../redux/cart/operations";
+// redux
+import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
-import { CartItemType, ProductType } from "../../types/Product.types";
-
-import css from "./ProductCard.module.css";
-import toast from "react-hot-toast";
 import { openCart } from "../../redux/cart/slice";
-import { Link, useLocation } from "react-router-dom";
+import { addItem } from "../../redux/cart/operations";
+
+// types
+import { ProductType } from "../../types/Product.types";
+import { CartItemType } from "../../types/Cart.types";
+
+// styles
+import css from "./ProductCard.module.css";
 
 type Props = {
   product: ProductType;
@@ -41,19 +47,22 @@ export default function ProductCard({
   };
 
   const handleAddToCart = async (cartItem: CartItemType) => {
-    dispatch(addItem(cartItem)).then(() => {
-      toast(() => (
-        <div className={css.toastWrapper}>
-          <p className={css.toastText}>Товар додано</p>
-          <button
-            onClick={() => dispatch(openCart())}
-            className={css.cartButton}
-          >
-            <AiOutlineShoppingCart className={css.cart} />
-          </button>
-        </div>
-      ));
-    });
+    dispatch(addItem(cartItem))
+      .unwrap()
+      .then(() => {
+        toast(() => (
+          <div className={css.toastWrapper}>
+            <p className={css.toastText}>Товар додано</p>
+            <button
+              onClick={() => dispatch(openCart())}
+              className={css.cartButton}
+            >
+              <AiOutlineShoppingCart className={css.cart} />
+            </button>
+          </div>
+        ));
+      })
+      .catch((error) => toast.error(error));
   };
 
   return (

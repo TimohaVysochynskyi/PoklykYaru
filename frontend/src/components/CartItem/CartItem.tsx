@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
-import Loader from "../Loader/Loader";
+// components
 import SizeDropdown from "../SizeDropdown/SizeDropdown";
 
-import { AppDispatch } from "../../redux/store";
+// redux
 import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
 import { deleteItem, updateItem } from "../../redux/cart/operations";
 
-import { fetchProductWithId } from "../../services/merch/products";
+// types
+import { CartItemType } from "../../types/Cart.types";
 
-import { ProductType, CartItemType } from "../../types/Product.types";
-
+// styles
 import css from "./CartItem.module.css";
 
 type Props = {
@@ -23,11 +24,8 @@ type Props = {
 
 export default function CartItem({
   item,
-  item: { product, variation, quantity },
+  item: { variation, quantity, productData },
 }: Props) {
-  const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(
-    null
-  );
   const [size, setSize] = useState(variation.size[0]);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -63,34 +61,18 @@ export default function CartItem({
     quantity <= 1 && css.quantityButtonSecondary
   );
 
-  useEffect(() => {
-    async function fetchProduct(productId: string) {
-      try {
-        const response = await fetchProductWithId(productId);
-        setSelectedProduct(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchProduct(product);
-  }, [product]);
-
-  if (!selectedProduct) {
-    return <Loader />; // Поки дані не завантажені, показуємо повідомлення про завантаження
-  }
-
   return (
     <>
       <div className={css.container}>
         <img
-          src={`http://${selectedProduct.images[0]}`}
+          src={`http://${productData.images[0]}`}
           alt="Картинка"
           className={css.image}
         />
         <div className={css.content}>
           <div className={css.col}>
-            <p className={css.name}>{selectedProduct.name}</p>
-            <p className={css.description}>{selectedProduct.description}</p>
+            <p className={css.name}>{productData.name}</p>
+            <p className={css.description}>{productData.description}</p>
             <div className={css.variation}>
               <div className={css.size}>
                 <button
@@ -110,7 +92,7 @@ export default function CartItem({
                 {showDropdown && (
                   <SizeDropdown
                     sizeSelection={handleChangeSize}
-                    sizes={selectedProduct.variations.size}
+                    sizes={productData.variations.size}
                     selectedSize={size}
                   />
                 )}
@@ -118,7 +100,7 @@ export default function CartItem({
             </div>
           </div>
           <div className={css.col}>
-            <p className={css.price}>{selectedProduct.price} UAH</p>
+            <p className={css.price}>{productData.price} UAH</p>
           </div>
           <div className={css.col}>
             <div className={css.quantityWrapper}>

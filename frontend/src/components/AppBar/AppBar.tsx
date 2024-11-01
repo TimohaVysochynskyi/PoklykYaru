@@ -11,7 +11,7 @@ type Props = {
 export default function MainBar({ Navigation }: Props) {
   return (
     <>
-      <header className={css.container}>
+      <header className={css.header}>
         <a href={`http://${appDomain}`}>
           <img src={logo} alt="Logo" />
         </a>

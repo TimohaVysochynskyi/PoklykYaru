@@ -5,7 +5,7 @@ import { ProductType } from "../../types/Product.types";
 import css from "./ProductsList.module.css";
 
 type Props = {
-  products: Array<ProductType>;
+  products: ProductType[];
 };
 
 export default function ProductsList({ products }: Props) {

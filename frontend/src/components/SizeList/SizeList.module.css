@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  flex-wrap: wrap;
+  flex-grow: 4;
+  margin-top: 10px;
+}
+
+.size {
+  border: 1px solid var(--secondary-color);
+  padding: 5px 10px;
+  width: 55px;
+  text-align: center;
+  font-family: "Futura Bold";
+  color: var(--alt-main-color);
+  cursor: pointer;
+}
+.active {
+  background-color: var(--alt-main-color);
+  border-color: var(--alt-main-color);
+  color: var(--tertiary-color);
+}
