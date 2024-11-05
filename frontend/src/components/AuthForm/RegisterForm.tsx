@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 // redux
 import { useDispatch } from "react-redux";
@@ -9,7 +9,7 @@ import { AppDispatch } from "../../redux/store";
 import { register } from "../../redux/customerAuth/operations";
 
 // types
-import { RegisterCustomerType } from "../../types/Auth.types";
+import { RegisterCustomerType } from "../../types/CustomerAuth.types";
 
 // styles
 import css from "./AuthForm.module.css";
@@ -56,14 +56,6 @@ export default function RegisterForm() {
   return (
     <>
       <div className={css.container}>
-        <Toaster
-          containerStyle={{
-            position: "relative",
-          }}
-          position="top-right"
-          reverseOrder={false}
-        />
-
         <Formik
           initialValues={{
             firstName: "",

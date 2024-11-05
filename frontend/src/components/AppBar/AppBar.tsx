@@ -1,4 +1,4 @@
-import { appDomain } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 
@@ -12,9 +12,9 @@ export default function MainBar({ Navigation }: Props) {
   return (
     <>
       <header className={css.header}>
-        <a href={`http://${appDomain}`}>
+        <Link to="/">
           <img src={logo} alt="Logo" />
-        </a>
+        </Link>
         <Navigation />
       </header>
     </>

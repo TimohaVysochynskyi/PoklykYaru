@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Toaster } from "react-hot-toast";
 
 // components
-import RegisterForm from "../../components/AuthForm/RegisterForm";
-import LoginForm from "../../components/AuthForm/LoginForm";
+// import RegisterForm from "../../components/AuthForm/RegisterForm";
+// import LoginForm from "../../components/AuthForm/LoginForm";
 import Loader from "../../components/Loader/Loader";
 import ProductsList from "../../components/ProductsList/ProductsList";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -16,7 +15,10 @@ import { fetchAllProducts } from "../../services/merch/products";
 import { AppDispatch } from "../../redux/store";
 import { refreshCustomer } from "../../redux/customerAuth/operations";
 import { fetchCart } from "../../redux/cart/operations";
-import { selectIsRefreshing } from "../../redux/customerAuth/selectors";
+import {
+  selectIsLoggedIn,
+  selectIsRefreshing,
+} from "../../redux/customerAuth/selectors";
 import { selectIsCartOpen } from "../../redux/cart/selectors";
 
 // types
@@ -33,12 +35,13 @@ export default function MerchPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const isOpen = useSelector(selectIsCartOpen);
+  const isCartOpen = useSelector(selectIsCartOpen);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     dispatch(refreshCustomer());
-    dispatch(fetchCart());
-  }, [dispatch]);
+    if (isLoggedIn) dispatch(fetchCart());
+  }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -64,7 +67,6 @@ export default function MerchPage() {
 
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} />
       <section className={css.head}>
         <h1 className={css.title}>
           <span>Мерч</span> відповідальних
@@ -76,15 +78,15 @@ export default function MerchPage() {
           чого шукав.
         </p>
       </section>
-      <RegisterForm />
-      <LoginForm />
+      {/* <RegisterForm />
+      <LoginForm /> */}
       <div className={css.merchWrapper}>
         {loading && <Loader size="80" />}
         {error && <ErrorMessage />}
         {products.length > 0 && <ProductsList products={products} />}
       </div>
 
-      {isOpen && <Cart isOpen={isOpen} />}
+      {isCartOpen && <Cart isOpen={isCartOpen} />}
     </>
   );
 }

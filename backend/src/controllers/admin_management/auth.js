@@ -7,53 +7,63 @@ import {
 import { THIRTY_DAYS } from '../../constants/index.js';
 
 export const loginAdminController = async (req, res, next) => {
-  const session = await loginAdmin(req.body);
+  const data = await loginAdmin(req.body);
 
-  res.cookie('refreshToken', session.refreshToken, {
+  res.cookie('adminRefreshToken', data.session.refreshToken, {
     httpOnly: true,
+    sameSite: 'None',
+    secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', session._id, {
+  res.cookie('adminSessionId', data.session._id, {
     httpOnly: true,
+    sameSite: 'None',
+    secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
 
   res.status(200).send({
     status: 200,
     message: 'Successfully logged in an admin',
-    data: { accessToken: session.accessToken },
+    admin: data.admin,
+    accessToken: data.session.accessToken,
   });
 };
 
 export const refreshAdminController = async (req, res, next) => {
-  const session = await refreshAdmin({
-    sessionId: req.cookies.sessionId,
-    refreshToken: req.cookies.refreshToken,
+  const data = await refreshAdmin({
+    sessionId: req.cookies.adminSessionId,
+    refreshToken: req.cookies.adminRefreshToken,
   });
 
-  res.cookie('refreshToken', session.refreshToken, {
+  res.cookie('adminRefreshToken', data.session.refreshToken, {
     httpOnly: true,
+    sameSite: 'None',
+    secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', session._id, {
+  res.cookie('adminSessionId', data.session._id, {
     httpOnly: true,
+    sameSite: 'None',
+    secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
 
   res.status(200).send({
     status: 200,
     message: 'Successfully refreshed a session',
-    data: { accessToken: session.accessToken },
+    admin: data.admin,
+    accessToken: data.session.accessToken,
   });
 };
 
 export const logoutAdminController = async (req, res, next) => {
-  if (req.cookies.sessionId) {
-    await logoutAdmin(req.cookies.sessionId);
+  if (req.cookies.adminSessionId) {
+    await logoutAdmin(req.cookies.adminSessionId);
   }
 
-  res.clearCookie('sessionId');
-  res.clearCookie('refreshToken');
+  res.clearCookie('adminSessionId');
+  res.clearCookie('adminRefreshToken');
 
   res.status(204).send();
 };

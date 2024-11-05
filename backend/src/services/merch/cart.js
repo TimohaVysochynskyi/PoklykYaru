@@ -57,8 +57,9 @@ export const updateItem = async (customerId, payload) => {
 
   const cartItem = customer.cart.find(
     (item) =>
-      item.product.equals(payload.product) &&
-      JSON.stringify(item.variation) == JSON.stringify(payload.variation),
+      item._id.equals(payload._id) ||
+      (item.product.equals(payload.product) &&
+        JSON.stringify(item.variation) == JSON.stringify(payload.variation)),
   );
 
   if (!cartItem) {
@@ -97,13 +98,7 @@ export const updateItem = async (customerId, payload) => {
 export const deleteItem = async (customerId, payload) => {
   const customer = await CustomersCollection.findById(customerId);
 
-  customer.cart = customer.cart.filter(
-    (item) =>
-      !(
-        item.product.equals(payload.product) &&
-        JSON.stringify(item.variation) == JSON.stringify(payload.variation)
-      ),
-  );
+  customer.cart = customer.cart.filter((item) => !item._id.equals(payload._id));
 
   await customer.save();
 

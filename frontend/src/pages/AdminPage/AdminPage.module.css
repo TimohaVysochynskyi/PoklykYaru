@@ -1,0 +1,10 @@
+* {
+  font-family: "Futura Book";
+}
+body {
+  background-image: none;
+  background-color: white;
+}
+.container {
+  height: 100vh;
+}

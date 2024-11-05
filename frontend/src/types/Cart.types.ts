@@ -7,12 +7,14 @@ type CartItemVariationType = {
 
 
 export type CartItemType = {
+    _id?: string;
     product: string;
     variation: CartItemVariationType;
     quantity: number;
     price: number;
     newVariation?: CartItemVariationType;
-    productData: ProductType;
 }
 
-export type UpdateCartItemResponseType = CartItemType & { action: string };
+export type CartProductType = CartItemType & { productData: ProductType; }
+
+export type UpdateCartItemResponseType = CartProductType & { action: string };

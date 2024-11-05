@@ -21,5 +21,5 @@ export const cartSchema = new mongoose.Schema(
       min: 0,
     },
   },
-  { _id: false },
+  { _id: true },
 );

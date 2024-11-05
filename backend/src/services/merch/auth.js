@@ -61,8 +61,8 @@ export const loginCustomer = async (payload) => {
   });
 
   return {
-    customer: customer,
-    session: session,
+    customer,
+    session,
   };
 };
 
@@ -95,8 +95,8 @@ export const refreshCustomer = async ({ sessionId, refreshToken }) => {
   const customer = await CustomersCollection.findById(session.customerId);
 
   return {
-    session: newSession,
     customer,
+    session: newSession,
   };
 };
 

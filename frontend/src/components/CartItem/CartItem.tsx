@@ -13,13 +13,14 @@ import { AppDispatch } from "../../redux/store";
 import { deleteItem, updateItem } from "../../redux/cart/operations";
 
 // types
-import { CartItemType } from "../../types/Cart.types";
+import { CartProductType } from "../../types/Cart.types";
 
 // styles
 import css from "./CartItem.module.css";
+import ColorList from "../ColorList/ColorList";
 
 type Props = {
-  item: CartItemType;
+  item: CartProductType;
 };
 
 export default function CartItem({
@@ -27,6 +28,7 @@ export default function CartItem({
   item: { variation, quantity, productData },
 }: Props) {
   const [size, setSize] = useState(variation.size[0]);
+  const [color, setColor] = useState(variation.color[0]);
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dispatch: AppDispatch = useDispatch();
@@ -43,16 +45,25 @@ export default function CartItem({
     dispatch(updateItem({ ...item, action: "size", newVariation }));
   };
 
+  const handleChangeColor = (color: string) => {
+    setColor(color);
+    const newVariation = {
+      size: variation.size,
+      color: [color],
+    };
+    dispatch(updateItem({ ...item, action: "color", newVariation }));
+  };
+
   const handleShowDropdown = (showDropdown: boolean) => {
     if (showDropdown == true) setShowDropdown(false);
     else setShowDropdown(true);
   };
 
-  const handleDelete = (item: CartItemType) => {
+  const handleDelete = (item: CartProductType) => {
     dispatch(deleteItem(item));
   };
 
-  const handleQuantityUpdate = (item: CartItemType, action: string) => {
+  const handleQuantityUpdate = (item: CartProductType, action: string) => {
     dispatch(updateItem({ ...item, action }));
   };
 
@@ -96,6 +107,13 @@ export default function CartItem({
                     selectedSize={size}
                   />
                 )}
+              </div>
+              <div>
+                <ColorList
+                  colors={productData.variations.color}
+                  active={color}
+                  onChange={handleChangeColor}
+                />
               </div>
             </div>
           </div>

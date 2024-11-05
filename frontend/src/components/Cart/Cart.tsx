@@ -19,7 +19,7 @@ import { selectPaymentFormData } from "../../redux/payments/selectors";
 
 // types
 import { SendPaymentType } from "../../types/Payments.types";
-import { CartItemType } from "../../types/Cart.types";
+import { CartProductType } from "../../types/Cart.types";
 
 // styles
 import css from "./Cart.module.css";
@@ -41,7 +41,7 @@ export default function Cart({ isOpen }: Props) {
 
   useEffect(() => {
     const newTotal = items.reduce(
-      (acc: number, item: CartItemType) => acc + item.price,
+      (acc: number, item: CartProductType) => acc + item.price,
       0
     );
     setTotal(newTotal);
@@ -94,8 +94,8 @@ export default function Cart({ isOpen }: Props) {
         <div className={css.row}>
           <div className={css.col}>
             <ul className={css.list}>
-              {items.map((item: CartItemType) => (
-                <li key={item.productData._id} className={css.item}>
+              {items.map((item: CartProductType) => (
+                <li key={item._id} className={css.item}>
                   <CartItem item={item} />
                 </li>
               ))}

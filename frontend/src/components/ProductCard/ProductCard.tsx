@@ -2,16 +2,16 @@ import { useState } from "react";
 import clsx from "clsx";
 import toast from "react-hot-toast";
 import { Link, useLocation } from "react-router-dom";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 // components
 import SizeDropdown from "../SizeDropdown/SizeDropdown";
+import AddToCart from "../toasts/AddToCart/AddToCart";
 
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
-import { openCart } from "../../redux/cart/slice";
 import { addItem } from "../../redux/cart/operations";
 
 // types
@@ -50,17 +50,7 @@ export default function ProductCard({
     dispatch(addItem(cartItem))
       .unwrap()
       .then(() => {
-        toast(() => (
-          <div className={css.toastWrapper}>
-            <p className={css.toastText}>Товар додано</p>
-            <button
-              onClick={() => dispatch(openCart())}
-              className={css.cartButton}
-            >
-              <AiOutlineShoppingCart className={css.cart} />
-            </button>
-          </div>
-        ));
+        toast(() => <AddToCart />);
       })
       .catch((error) => toast.error(error));
   };

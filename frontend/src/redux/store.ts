@@ -11,12 +11,13 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { authReducer } from './customerAuth/slice';
+import { customerAuthReducer } from './customerAuth/slice';
 import { cartReducer } from './cart/slice';
 import { paymentsReducer } from './payments/slice';
+import { adminAuthReducer } from './adminAuth/slice';
 
 // Persisting token field from auth slice to localstorage
-const authPersistConfig = {
+const customerAuthPersistConfig = {
     key: 'auth',
     storage,
     whitelist: ['accessToken'],
@@ -25,18 +26,25 @@ const authPersistConfig = {
 const cartPersistConfig = {
     key: 'cart',
     storage,
-    whitelist: ['items', 'isOpen'],
+    whitelist: ['items'],
+};
+const adminAuthPersistConfig = {
+    key: 'adminAuth',
+    storage,
+    whitelist: ['accessToken'],
 };
 
 // Типізуємо persistReducers для auth та cart
-const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+const persistedCustomerAuthReducer = persistReducer(customerAuthPersistConfig, customerAuthReducer);
 const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+const persistedAdminAuthReducer = persistReducer(adminAuthPersistConfig, adminAuthReducer);
 
 export const store = configureStore({
     reducer: {
-        auth: persistedAuthReducer,
+        customerAuth: persistedCustomerAuthReducer,
         cart: persistedCartReducer,
         payments: paymentsReducer,
+        adminAuth: persistedAdminAuthReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

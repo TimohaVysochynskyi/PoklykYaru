@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCart, addItem, deleteItem, updateItem, } from './operations';
-import { CartItemType } from '../../types/Cart.types';
+import { CartProductType } from '../../types/Cart.types';
 
 const handlePending = (state: InitialStateType) => {
     state.loading = true;
 }
 
 type InitialStateType = {
-    items: CartItemType[];
+    items: CartProductType[];
     isOpen: boolean;
     loading: boolean;
     error: string | null;

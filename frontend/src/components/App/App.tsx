@@ -21,8 +21,18 @@ export default function App() {
             </div>
           }
         >
-          <AppBar Navigation={CurrentApp.navigation} />
-          <CurrentApp.app />
+          {CurrentApp.subdomain === "admin" ? (
+            <CurrentApp.app />
+          ) : (
+            <>
+              {CurrentApp.navigation !== null && (
+                <>
+                  <AppBar Navigation={CurrentApp.navigation} />
+                  <CurrentApp.app />
+                </>
+              )}
+            </>
+          )}
         </Suspense>
       </Layout>
     </>

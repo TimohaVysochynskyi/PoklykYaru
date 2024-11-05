@@ -13,13 +13,13 @@ import { THIRTY_DAYS } from '../../constants/index.js';
 export const registerCustomerController = async (req, res, next) => {
   const data = await registerCustomer(req.body);
 
-  res.cookie('refreshToken', data.session.refreshToken, {
+  res.cookie('customerRefreshToken', data.session.refreshToken, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', data.session._id, {
+  res.cookie('customerSessionId', data.session._id, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
@@ -37,13 +37,13 @@ export const registerCustomerController = async (req, res, next) => {
 export const loginCustomerController = async (req, res, next) => {
   const data = await loginCustomer(req.body);
 
-  res.cookie('refreshToken', data.session.refreshToken, {
+  res.cookie('customerRefreshToken', data.session.refreshToken, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
     maxAge: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', data.session._id, {
+  res.cookie('customerSessionId', data.session._id, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
@@ -60,17 +60,17 @@ export const loginCustomerController = async (req, res, next) => {
 
 export const refreshCustomerController = async (req, res, next) => {
   const data = await refreshCustomer({
-    sessionId: req.cookies.sessionId,
-    refreshToken: req.cookies.refreshToken,
+    sessionId: req.cookies.customerSessionId,
+    refreshToken: req.cookies.customerRefreshToken,
   });
 
-  res.cookie('refreshToken', data.session.refreshToken, {
+  res.cookie('customerRefreshToken', data.session.refreshToken, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
     maxAge: new Date(Date.now() + THIRTY_DAYS),
   });
-  res.cookie('sessionId', data.session._id, {
+  res.cookie('customerSessionId', data.session._id, {
     httpOnly: true,
     sameSite: 'None',
     secure: true,
@@ -86,12 +86,12 @@ export const refreshCustomerController = async (req, res, next) => {
 };
 
 export const logoutCustomerController = async (req, res, next) => {
-  if (req.cookies.sessionId) {
-    await logoutCustomer(req.cookies.sessionId);
+  if (req.cookies.customerSessionId) {
+    await logoutCustomer(req.cookies.customerSessionId);
   }
 
-  res.clearCookie('sessionId');
-  res.clearCookie('refreshToken');
+  res.clearCookie('customerSessionId');
+  res.clearCookie('customerRefreshToken');
 
   res.status(204).send();
 };

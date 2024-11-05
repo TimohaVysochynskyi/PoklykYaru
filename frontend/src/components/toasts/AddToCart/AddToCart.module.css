@@ -1,0 +1,19 @@
+.toastWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+.toastText {
+  font-family: "Futura Bold";
+  text-transform: uppercase;
+}
+.cartButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.cart {
+  width: 35px;
+  height: 35px;
+  color: var(--alt-main-color);
+}

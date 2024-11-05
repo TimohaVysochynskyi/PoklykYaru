@@ -10,6 +10,7 @@
   width: 80%;
   margin: 0;
   overflow-x: visible;
+  z-index: 0;
 }
 
 .swiperSlide {
@@ -24,6 +25,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: center;
   width: auto;
 }
 .thumbnails {
@@ -47,4 +49,12 @@
 
 .active {
   opacity: 1;
+}
+@media screen and (max-width: 868px) {
+  .mainSwiper {
+    width: calc(100% - 16px);
+  }
+  .thumbnails {
+    display: none;
+  }
 }

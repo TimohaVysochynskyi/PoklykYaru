@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { CartItemType, UpdateCartItemResponseType } from '../../types/Cart.types';
+import { CartItemType, CartProductType, UpdateCartItemResponseType } from '../../types/Cart.types';
 
 export const fetchCart = createAsyncThunk('cart/get', async (_, thunkAPI) => {
     try {
@@ -18,7 +18,7 @@ export const fetchCart = createAsyncThunk('cart/get', async (_, thunkAPI) => {
 })
 
 export const addItem = createAsyncThunk<
-    Array<CartItemType>,
+    CartProductType[],
     CartItemType,
     { rejectValue: string }
 >('cart/add', async (itemInfo, thunkAPI) => {
@@ -36,7 +36,7 @@ export const addItem = createAsyncThunk<
 })
 
 export const updateItem = createAsyncThunk<
-    Array<CartItemType>,
+    CartProductType[],
     UpdateCartItemResponseType,
     { rejectValue: string }
 >('cart/update', async (itemInfo, thunkAPI) => {
@@ -54,7 +54,7 @@ export const updateItem = createAsyncThunk<
 })
 
 export const deleteItem = createAsyncThunk<
-    Array<CartItemType>,
+    CartProductType[],
     CartItemType,
     { rejectValue: string }
 >('cart/delete', async (itemInfo, thunkAPI) => {

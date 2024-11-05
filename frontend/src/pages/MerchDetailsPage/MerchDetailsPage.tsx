@@ -1,11 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 // components
 import Loader from "../../components/Loader/Loader";
 import MerchDetails from "../../components/MerchDetails/MerchDetails";
+import Cart from "../../components/Cart/Cart";
 
 import { fetchProductWithId } from "../../services/merch/products";
+
+// redux
+import { AppDispatch } from "../../redux/store";
+import { refreshCustomer } from "../../redux/customerAuth/operations";
+import {
+  selectIsLoggedIn,
+  selectIsRefreshing,
+} from "../../redux/customerAuth/selectors";
+import { fetchCart } from "../../redux/cart/operations";
+import { selectIsCartOpen } from "../../redux/cart/selectors";
 
 // types
 import { ProductType } from "../../types/Product.types";
@@ -22,6 +34,17 @@ export default function MerchDetailsPage() {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState<ProductType | null>(null);
 
+  const dispatch: AppDispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  const isCartOpen = useSelector(selectIsCartOpen);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  useEffect(() => {
+    dispatch(refreshCustomer());
+    if (isLoggedIn) dispatch(fetchCart());
+  }, [dispatch, isLoggedIn]);
+
   useEffect(() => {
     if (productId) {
       fetchProductWithId(productId)
@@ -32,6 +55,10 @@ export default function MerchDetailsPage() {
     }
   }, [productId]);
 
+  if (isRefreshing) {
+    return <Loader size="80" />;
+  }
+
   return (
     <>
       {loading && <Loader size="80" />}
@@ -40,6 +67,8 @@ export default function MerchDetailsPage() {
           <MerchDetails product={product} />
         </section>
       )}
+
+      {isCartOpen && <Cart isOpen={isCartOpen} />}
     </>
   );
 }

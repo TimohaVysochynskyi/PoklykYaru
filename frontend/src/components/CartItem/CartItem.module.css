@@ -1,17 +1,19 @@
 .container {
   display: flex;
+  height: 100%;
 }
 .image {
-  height: 210px;
+  height: 100%;
   width: 140px;
   object-fit: cover;
 }
 .content {
   padding: 10px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 70px 130px;
   align-items: top;
+  gap: 20px;
 }
 .name {
   font-family: "Buduj SemiBold";
@@ -77,6 +79,11 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+.variation {
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+}
 .size {
   position: relative;
   min-width: 50px;
@@ -95,13 +102,42 @@
   color: var(--alt-main-color);
   padding: 5px;
   width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 .sizeButtonOpened {
-  border: 1px solid var(--alt-main-color);
+  border-color: var(--alt-main-color);
   border-radius: 1px 1px 0 0;
 }
 .arrow {
   width: 18px;
   height: 18px;
   color: var(--secondary-color);
+}
+
+@media screen and (max-width: 868px) {
+  .content {
+    gap: 15px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 7fr;
+    grid-template-areas:
+      "col1 col3"
+      "col1 col2";
+  }
+  .col:first-child {
+    grid-area: col1;
+    height: auto;
+  }
+  .col:nth-child(2) {
+    grid-area: col2;
+  }
+  .col:last-child {
+    grid-area: col3;
+    height: auto;
+  }
+  .description {
+    display: none;
+  }
+  .col:last-child {
+    gap: 0 20px;
+  }
 }

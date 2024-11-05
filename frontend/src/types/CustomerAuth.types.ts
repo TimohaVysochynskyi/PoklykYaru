@@ -13,7 +13,7 @@ export type LoginCustomerType = {
 }
 
 type ResponseCustomerType = {
-    id: string;
+    _id: string;
     firstName: string;
     lastName: string;
     phoneNumber: string;

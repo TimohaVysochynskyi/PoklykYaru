@@ -1,12 +1,15 @@
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { login } from "../../redux/customerAuth/operations";
+
+// types
+import { LoginCustomerType } from "../../types/CustomerAuth.types";
 
 // styles
 import css from "./AuthForm.module.css";
@@ -21,11 +24,6 @@ const RegisterCustomerSchema = Yup.object().shape({
     .max(50, "Занадто довгий!")
     .required("Потрібно заповнити поле!"),
 });
-
-type LoginCustomerType = {
-  phoneNumber: string;
-  password: string;
-};
 
 export default function LoginForm() {
   const id = useId();
@@ -46,14 +44,6 @@ export default function LoginForm() {
   return (
     <>
       <div className={css.container}>
-        <Toaster
-          containerStyle={{
-            position: "relative",
-          }}
-          position="top-right"
-          reverseOrder={false}
-        />
-
         <Formik
           initialValues={{
             phoneNumber: "",

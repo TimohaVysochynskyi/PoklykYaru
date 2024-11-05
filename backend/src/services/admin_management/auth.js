@@ -21,13 +21,18 @@ export const loginAdmin = async (payload) => {
   const accessToken = crypto.randomBytes(30).toString('base64');
   const refreshToken = crypto.randomBytes(30).toString('base64');
 
-  return await SessionsCollection.create({
+  const session = await SessionsCollection.create({
     adminId: admin._id,
     accessToken,
     refreshToken,
     accessTokenValidUntil: new Date(Date.now() + FIFTEEN_MINUTES),
     refreshTokenValidUntil: new Date(Date.now() + THIRTY_DAYS),
   });
+
+  return {
+    admin,
+    session,
+  };
 };
 
 export const refreshAdmin = async ({ sessionId, refreshToken }) => {
@@ -46,19 +51,22 @@ export const refreshAdmin = async ({ sessionId, refreshToken }) => {
   const newAccessToken = crypto.randomBytes(30).toString('base64');
   const newRefreshToken = crypto.randomBytes(30).toString('base64');
 
-  const newSession = {
+  await SessionsCollection.deleteOne({ _id: sessionId, refreshToken });
+
+  const newSession = await SessionsCollection.create({
+    adminId: session.adminId,
     accessToken: newAccessToken,
     refreshToken: newRefreshToken,
     accessTokenValidUntil: new Date(Date.now() + FIFTEEN_MINUTES),
     refreshTokenValidUntil: new Date(Date.now() + THIRTY_DAYS),
-  };
-
-  await SessionsCollection.deleteOne({ _id: sessionId, refreshToken });
-
-  return await SessionsCollection.create({
-    adminId: session.adminId,
-    ...newSession,
   });
+
+  const admin = await AdminsCollection.findById(session.adminId);
+
+  return {
+    admin,
+    session: newSession,
+  };
 };
 
 export const logoutAdmin = async (sessionId) => {

@@ -5,6 +5,7 @@
   width: 100%;
   position: absolute;
   top: 35px;
+  z-index: 1;
 }
 .item {
   width: 100%;

@@ -1,19 +1,16 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 280px 550px 280px;
   justify-content: center;
   width: 100%;
-  height: 75vh;
+  padding: 20px 0;
 }
 .col {
-  width: 280px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
-.col:nth-child(2) {
-  width: 420px;
-  min-width: 420px;
+  height: 75vh;
 }
 .details {
   height: 100%;
@@ -25,10 +22,8 @@
   height: auto;
   padding: 20px;
   gap: 10px 0;
-  border-radius: 0 0 0 50px;
 }
 .col:last-child .details {
-  border-radius: 0 50px 50px 0;
   justify-content: space-between;
 }
 .detailsSection {
@@ -60,7 +55,6 @@
 .button {
   border: none;
   border-top: 2px solid var(--alt-main-color);
-  border-radius: 0 0 50px 0;
   padding: 20px;
   background-color: var(--bright-accent-color);
   text-transform: uppercase;
@@ -69,4 +63,80 @@
   color: var(--alt-main-color);
   cursor: pointer;
   outline: none;
+}
+
+@media screen and (max-width: 1160px) {
+  .container {
+    grid-template-columns: 240px 400px 240px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .col {
+    height: 65vh;
+  }
+  .col:first-child .details,
+  .detailsSection {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 868px) {
+  .container {
+    grid-template-columns: 220px 300px 220px;
+  }
+  .col:first-child .details,
+  .detailsSection {
+    padding: 10px;
+  }
+  .col:first-child .details {
+    gap: 5px 0;
+  }
+  .detailsSection {
+    gap: 15px 0;
+  }
+  .title,
+  .button {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    gap: 10px;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+      "col2 col1"
+      "col2 col3";
+  }
+  .col:first-child {
+    grid-area: col1;
+    height: auto;
+    justify-content: start;
+  }
+  .col:nth-child(2) {
+    grid-area: col2;
+  }
+  .col:last-child {
+    grid-area: col3;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "col2 col2"
+      "col1 col3";
+  }
+}
+@media screen and (max-width: 470px) {
+  .container {
+    grid-template-areas:
+      "col2 col2"
+      "col1 col1"
+      "col3 col3";
+  }
 }
