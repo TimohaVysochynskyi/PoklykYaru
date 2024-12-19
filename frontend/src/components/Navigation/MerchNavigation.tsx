@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+
+import AuthNav from "../AuthNav/AuthNav";
+
 import { useSelector, useDispatch } from "react-redux";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
@@ -10,8 +14,13 @@ import { selectCart } from "../../redux/cart/selectors";
 import { appDomain } from "../../utils/constants";
 
 import css from "./Navigation.module.css";
+import clsx from "clsx";
 
-export default function MerchNavigation() {
+type Props = {
+  isOpen: boolean;
+};
+
+export default function MerchNavigation({ isOpen }: Props) {
   const [cartLength, setCartLength] = useState(0);
 
   const dispatch = useDispatch();
@@ -30,7 +39,7 @@ export default function MerchNavigation() {
 
   return (
     <>
-      <ul className={css.list}>
+      <ul className={clsx(css.list, isOpen && css.listOpened)}>
         <li className={css.item}>
           <a href={`http://${appDomain}`} className={css.link}>
             Головна
@@ -41,17 +50,27 @@ export default function MerchNavigation() {
             Допомога
           </a>
         </li>
-        {isLoggedIn && (
-          <li className={css.item}>
-            <button
-              type="button"
-              className={css.cartButton}
-              onClick={handleOpenCart}
-            >
-              <PiShoppingCartSimpleFill className={css.cart} />
-              <span className={css.link}>({cartLength.toString()})</span>
-            </button>
-          </li>
+
+        {isLoggedIn ? (
+          <>
+            <li className={css.item}>
+              <NavLink to="/profile" className={css.link}>
+                мій акаунт
+              </NavLink>
+            </li>
+            <li className={css.item}>
+              <button
+                type="button"
+                className={css.cartButton}
+                onClick={handleOpenCart}
+              >
+                <PiShoppingCartSimpleFill className={css.cart} />
+                <span className={css.link}>({cartLength.toString()})</span>
+              </button>
+            </li>
+          </>
+        ) : (
+          <AuthNav />
         )}
       </ul>
     </>

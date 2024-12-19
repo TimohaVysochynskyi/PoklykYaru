@@ -10,13 +10,13 @@ export const loginAdminController = async (req, res, next) => {
   const data = await loginAdmin(req.body);
 
   res.cookie('adminRefreshToken', data.session.refreshToken, {
-    httpOnly: false,
+    httpOnly: true,
     sameSite: 'None',
     secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
   res.cookie('adminSessionId', data.session._id, {
-    httpOnly: false,
+    httpOnly: true,
     sameSite: 'None',
     secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
@@ -37,13 +37,13 @@ export const refreshAdminController = async (req, res, next) => {
   });
 
   res.cookie('adminRefreshToken', data.session.refreshToken, {
-    httpOnly: false,
+    httpOnly: true,
     sameSite: 'None',
     secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),
   });
   res.cookie('adminSessionId', data.session._id, {
-    httpOnly: false,
+    httpOnly: true,
     sameSite: 'None',
     secure: true,
     expires: new Date(Date.now() + THIRTY_DAYS),

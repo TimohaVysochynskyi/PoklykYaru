@@ -6,8 +6,9 @@ export type LoginAdminType = {
 type ResponseAdminType = {
     _id: string;
     psevdo: string;
-    createdAt: string;
-    updatedAt: string;
+    telegramContact: string;
+    email: string;
+    phoneNumber: string;
 }
 
 export type ResponseType = {

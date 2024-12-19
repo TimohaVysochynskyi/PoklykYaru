@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
@@ -61,18 +62,16 @@ export default function RegisterForm() {
             firstName: "",
             lastName: "",
             phoneNumber: "",
-            password: "",
-            rep_password: "",
             email: "",
+            password: "",
           }}
           validationSchema={RegisterCustomerSchema}
           onSubmit={handleSubmit}
         >
           <Form className={css.form}>
-            <h2 className={css.title}>Реєстрація</h2>
             <div className={css.group}>
               <label htmlFor={`${id}-firstName`} className={css.label}>
-                Ім'я
+                Ім'я:
               </label>
               <Field
                 type="text"
@@ -89,7 +88,7 @@ export default function RegisterForm() {
             </div>
             <div className={css.group}>
               <label htmlFor={`${id}-lastName`} className={css.label}>
-                Прізвище
+                Прізвище:
               </label>
               <Field
                 type="text"
@@ -106,7 +105,7 @@ export default function RegisterForm() {
             </div>
             <div className={css.group}>
               <label htmlFor={`${id}-phoneNumber`} className={css.label}>
-                Номер телефону
+                Номер телефону:
               </label>
               <Field
                 type="text"
@@ -122,42 +121,8 @@ export default function RegisterForm() {
               ></ErrorMessage>
             </div>
             <div className={css.group}>
-              <label htmlFor={`${id}-password`} className={css.label}>
-                Пароль
-              </label>
-              <Field
-                type="password"
-                placeholder="**********"
-                name="password"
-                id={`${id}-password`}
-                className={css.input}
-              />
-              <ErrorMessage
-                name="password"
-                component="span"
-                className={css.error}
-              ></ErrorMessage>
-            </div>
-            <div className={css.group}>
-              <label htmlFor={`${id}-repPassword`} className={css.label}>
-                Повторіть пароль
-              </label>
-              <Field
-                type="password"
-                placeholder="*****"
-                name="repPassword"
-                id={`${id}-repPassword`}
-                className={css.input}
-              />
-              <ErrorMessage
-                name="repPassword"
-                component="span"
-                className={css.error}
-              ></ErrorMessage>
-            </div>
-            <div className={css.group}>
               <label htmlFor={`${id}-email`} className={css.label}>
-                Електронна пошта
+                Електронна пошта:
               </label>
               <Field
                 type="email"
@@ -172,9 +137,35 @@ export default function RegisterForm() {
                 className={css.error}
               ></ErrorMessage>
             </div>
-            <button type="submit" className={css.button}>
-              Submit
-            </button>
+            <div className={css.fullGroup}>
+              <label htmlFor={`${id}-password`} className={css.label}>
+                Пароль:
+              </label>
+              <Field
+                type="password"
+                placeholder="**********"
+                name="password"
+                id={`${id}-password`}
+                className={css.input}
+              />
+              <ErrorMessage
+                name="password"
+                component="span"
+                className={css.error}
+              ></ErrorMessage>
+            </div>
+
+            <div className={css.formBottom}>
+              <button type="submit" className={css.button}>
+                Створити акаунт
+              </button>
+              <p className={css.text}>
+                Вже маєте акаунт?&nbsp;
+                <Link className={css.link} to="/login">
+                  Увійти
+                </Link>
+              </p>
+            </div>
           </Form>
         </Formik>
       </div>

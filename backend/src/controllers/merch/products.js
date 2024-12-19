@@ -5,6 +5,8 @@ import {
   addProduct,
   updateProduct,
   deleteProduct,
+  getAllCategories,
+  addCategory,
 } from '../../services/merch/products.js';
 import { saveFileToUploadDir } from '../../utils/saveFileToUploadDir.js';
 
@@ -42,11 +44,9 @@ export const addProductController = async (req, res, next) => {
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
+    composition: req.body.composition,
     category: req.body.category,
-    variations: {
-      size: JSON.parse(req.body.size),
-      color: JSON.parse(req.body.color),
-    },
+    variations: req.body.variations,
     stock: req.body.stock,
   };
 
@@ -66,27 +66,20 @@ export const addProductController = async (req, res, next) => {
 
 export const updateProductController = async (req, res, next) => {
   const { id } = req.params;
-  const images = req.files;
 
   const payload = {
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
+    composition: req.body.composition,
     category: req.body.category,
-    variations: {
-      size: JSON.parse(req.body.size),
-      color: JSON.parse(req.body.color),
-    },
+    variations: req.body.variations,
     stock: req.body.stock,
   };
 
-  let imagesUrls;
-
-  if (images) {
-    imagesUrls = await saveFileToUploadDir(images, 'merch');
-  }
-
-  const product = await updateProduct(id, { ...payload, images: imagesUrls });
+  const product = await updateProduct(id, payload, {
+    upsert: true,
+  });
 
   if (!product) {
     return next(createHttpError(404, 'Product not found'));
@@ -108,4 +101,24 @@ export const deleteProductController = async (req, res, next) => {
   }
 
   res.status(204).send();
+};
+
+export const getAllCategoriesController = async (req, res, next) => {
+  const categories = await getAllCategories();
+
+  res.status(200).send({
+    status: 200,
+    message: 'Successfully found categories',
+    data: categories,
+  });
+};
+
+export const addCategoryController = async (req, res, next) => {
+  const categories = await addCategory();
+
+  res.status(200).send({
+    status: 200,
+    message: 'Successfully created new category',
+    data: categories,
+  });
 };

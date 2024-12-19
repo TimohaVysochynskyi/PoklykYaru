@@ -5,7 +5,6 @@
   border: 1px solid var(--alt-main-color);
   outline: none;
   position: relative;
-  z-index: 3;
 }
 .overlay {
   position: fixed;
@@ -13,10 +12,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-image: url(../../assets/bg.jpeg) !important; */
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(2px);
+  z-index: 5;
 }
 .row {
   display: flex;

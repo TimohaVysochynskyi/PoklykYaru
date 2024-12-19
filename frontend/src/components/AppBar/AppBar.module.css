@@ -1,6 +1,20 @@
 .header {
-  padding: 30px;
+  padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
+  z-index: 4;
+}
+.logo {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    justify-content: space-between;
+  }
 }

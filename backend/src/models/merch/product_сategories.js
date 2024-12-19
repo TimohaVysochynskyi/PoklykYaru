@@ -11,6 +11,6 @@ const productCategoriesSchema = new mongoose.Schema({
 });
 
 export const ProductCategoriesCollection = merch.model(
-  'productCategories',
+  'product_categories',
   productCategoriesSchema,
 );

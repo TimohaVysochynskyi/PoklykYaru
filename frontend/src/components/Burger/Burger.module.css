@@ -1,0 +1,32 @@
+.container {
+  width: 24px;
+  height: 24px;
+  max-height: 24px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 5;
+}
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: var(--alt-main-color);
+  border-radius: 1px;
+  transition: 0.3s;
+}
+.crossLine:first-child {
+  transform: rotate(45deg);
+  position: relative;
+  top: 10px;
+}
+.crossLine:last-child {
+  transform: rotate(-45deg);
+  position: relative;
+  bottom: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    display: flex;
+  }
+}

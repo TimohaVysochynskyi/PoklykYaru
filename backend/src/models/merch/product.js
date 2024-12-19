@@ -26,7 +26,7 @@ const productSchema = new mongoose.Schema(
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'productCategories',
+      ref: 'product_categories',
       required: true,
     },
     images: {
@@ -35,16 +35,6 @@ const productSchema = new mongoose.Schema(
     },
     variations: variationSchema,
     stock: {
-      type: Number,
-      default: 0,
-    },
-    inStock: {
-      type: Boolean,
-      default: function () {
-        return this.stock > 0;
-      },
-    },
-    likes: {
       type: Number,
       default: 0,
     },

@@ -1,4 +1,5 @@
 import axios from "axios";
-import { apiDomain } from "../../utils/constants";
 
-axios.defaults.baseURL = `${apiDomain}/merch`;
+export const setAuthHeader = (token: string) => {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};

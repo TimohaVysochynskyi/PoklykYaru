@@ -9,7 +9,10 @@ import ProductsList from "../../components/ProductsList/ProductsList";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Cart from "../../components/Cart/Cart";
 
-import { fetchAllProducts } from "../../services/merch/products";
+import {
+  fetchAllCategories,
+  fetchAllProducts,
+} from "../../services/merch/products";
 
 // redux
 import { AppDispatch } from "../../redux/store";
@@ -22,7 +25,7 @@ import {
 import { selectIsCartOpen } from "../../redux/cart/selectors";
 
 // types
-import { ProductType } from "../../types/Product.types";
+import { CategoryType, ProductType } from "../../types/Product.types";
 
 // styles
 import css from "./MerchPage.module.css";
@@ -32,6 +35,7 @@ export default function MerchPage() {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   const [products, setProducts] = useState<ProductType[]>([]);
+  const [categories, setCategories] = useState<CategoryType[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -57,8 +61,21 @@ export default function MerchPage() {
         setLoading(false);
       }
     }
-
+    async function fetchCategories() {
+      try {
+        setError(false);
+        setLoading(true);
+        const response = await fetchAllCategories();
+        setCategories(response.data);
+      } catch (e) {
+        setError(true);
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
+    }
     fetchProducts();
+    fetchCategories();
   }, []);
 
   if (isRefreshing) {
@@ -83,7 +100,9 @@ export default function MerchPage() {
       <div className={css.merchWrapper}>
         {loading && <Loader size="80" />}
         {error && <ErrorMessage />}
-        {products.length > 0 && <ProductsList products={products} />}
+        {products.length > 0 && (
+          <ProductsList categories={categories} products={products} />
+        )}
       </div>
 
       {isCartOpen && <Cart isOpen={isCartOpen} />}

@@ -1,13 +1,18 @@
+import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 
 import { appDomain } from "../../utils/constants";
 
 import css from "./Navigation.module.css";
 
-export default function MainNavigation() {
+type Props = {
+  isOpen: boolean;
+};
+
+export default function MainNavigation({ isOpen }: Props) {
   return (
     <>
-      <ul className={css.list}>
+      <ul className={clsx(css.list, isOpen && css.listOpened)}>
         <li className={css.item}>
           <NavLink to="/" className={css.link}>
             Головна

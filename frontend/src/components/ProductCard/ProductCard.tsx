@@ -20,6 +20,8 @@ import { CartItemType } from "../../types/Cart.types";
 
 // styles
 import css from "./ProductCard.module.css";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/customerAuth/selectors";
 
 type Props = {
   product: ProductType;
@@ -31,6 +33,8 @@ export default function ProductCard({
 }: Props) {
   const [size, setSize] = useState(variations.size[0]);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const dispatch: AppDispatch = useDispatch();
 
@@ -71,49 +75,51 @@ export default function ProductCard({
             <div className={css.priceWrapper}>
               <span className={css.price}>{price} UAH</span>
             </div>
-            <div className={css.col}>
-              <div className={css.size}>
-                <button
-                  className={clsx(
-                    css.sizeButton,
-                    showDropdown && css.sizeButtonOpened
+            {isLoggedIn && _id && (
+              <div className={css.col}>
+                <div className={css.size}>
+                  <button
+                    className={clsx(
+                      css.sizeButton,
+                      showDropdown && css.sizeButtonOpened
+                    )}
+                    onClick={() => handleShowDropdown(showDropdown)}
+                  >
+                    {size}
+                    {showDropdown ? (
+                      <IoIosArrowUp className={css.arrow} />
+                    ) : (
+                      <IoIosArrowDown className={css.arrow} />
+                    )}
+                  </button>
+                  {showDropdown && (
+                    <SizeDropdown
+                      sizeSelection={handleChangeSize}
+                      sizes={variations.size}
+                      selectedSize={size}
+                    />
                   )}
-                  onClick={() => handleShowDropdown(showDropdown)}
-                >
-                  {size}
-                  {showDropdown ? (
-                    <IoIosArrowUp className={css.arrow} />
-                  ) : (
-                    <IoIosArrowDown className={css.arrow} />
-                  )}
-                </button>
-                {showDropdown && (
-                  <SizeDropdown
-                    sizeSelection={handleChangeSize}
-                    sizes={variations.size}
-                    selectedSize={size}
-                  />
-                )}
-              </div>
+                </div>
 
-              <button
-                type="button"
-                onClick={() =>
-                  handleAddToCart({
-                    product: _id,
-                    variation: {
-                      size: [size],
-                      color: [variations.color[0]],
-                    },
-                    quantity: 1,
-                    price: price,
-                  })
-                }
-                className={css.cartButton}
-              >
-                <AiOutlineShoppingCart className={css.cart} />
-              </button>
-            </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleAddToCart({
+                      product: _id,
+                      variation: {
+                        size: [size],
+                        color: [variations.color[0]],
+                      },
+                      quantity: 1,
+                      price: price,
+                    })
+                  }
+                  className={css.cartButton}
+                >
+                  <AiOutlineShoppingCart className={css.cart} />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

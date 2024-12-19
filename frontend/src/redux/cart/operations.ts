@@ -1,11 +1,14 @@
+
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { CartItemType, CartProductType, UpdateCartItemResponseType } from '../../types/Cart.types';
 
+const URL = `http://localhost:3000/merch/cart`;
+
 export const fetchCart = createAsyncThunk('cart/get', async (_, thunkAPI) => {
     try {
-        const res = await axios.get('/cart');
+        const res = await axios.get(`${URL}/`);
 
         return res.data;
     } catch (error) {
@@ -23,7 +26,7 @@ export const addItem = createAsyncThunk<
     { rejectValue: string }
 >('cart/add', async (itemInfo, thunkAPI) => {
     try {
-        const res = await axios.post('/cart/add', itemInfo);
+        const res = await axios.post(`${URL}/add`, itemInfo);
 
         return res.data.data;
     } catch (error) {
@@ -41,7 +44,7 @@ export const updateItem = createAsyncThunk<
     { rejectValue: string }
 >('cart/update', async (itemInfo, thunkAPI) => {
     try {
-        const res = await axios.post('/cart/update', itemInfo);
+        const res = await axios.post(`${URL}/update`, itemInfo);
 
         return res.data.data;
     } catch (error) {
@@ -59,7 +62,7 @@ export const deleteItem = createAsyncThunk<
     { rejectValue: string }
 >('cart/delete', async (itemInfo, thunkAPI) => {
     try {
-        const res = await axios.post('/cart/delete', itemInfo);
+        const res = await axios.post(`${URL}/delete`, itemInfo);
 
         return res.data.data;
     } catch (error) {

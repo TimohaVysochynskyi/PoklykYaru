@@ -1,0 +1,83 @@
+:root {
+  --map-width: calc(3 * 100vh / 4);
+  --title-width: 12vw;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 0 20px;
+}
+.mapWrapper {
+  width: var(--map-width);
+  height: 100%;
+  position: relative;
+}
+.mapImage,
+.mapOverlay {
+  width: 100%;
+  height: 100%;
+}
+.mapImage {
+  position: absolute;
+  object-fit: cover;
+}
+.mapOverlay {
+  position: absolute;
+  transition: 0.3s;
+}
+.finger {
+  position: absolute;
+  z-index: 1;
+  width: 14%;
+  top: 88.6%;
+  left: 61.1%;
+}
+.fingerHide {
+  animation: hideFinger 0.2s forwards;
+}
+.fingerShow {
+  animation: showFinger 0.2s forwards;
+}
+.titleWrapper {
+  width: var(--title-width);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 10.2vh;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--secondary-color);
+  font-family: "Buduj Bold-Height";
+}
+.point {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  z-index: 2;
+}
+.listWrapper {
+  width: calc(100% - var(--map-width) - var(--title-width) - 40px);
+}
+
+@keyframes hideFinger {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes showFinger {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

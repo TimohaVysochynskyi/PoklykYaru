@@ -1,0 +1,90 @@
+.container {
+  width: 500px;
+  padding: 30px 50px;
+  border: 2px solid var(--alt-main-color);
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255, 0.8);
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.group,
+.fullGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+  width: calc(50% - 15px);
+}
+.fullGroup {
+  width: 100%;
+}
+.label {
+  font-size: 15px;
+  font-family: "Buduj Semibold";
+  color: var(--alt-main-color);
+}
+.input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 15px;
+  border-bottom: 1px solid var(--secondary-color);
+  font-size: var(--alt-main-color);
+}
+.input:focus {
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.error {
+  font-size: 14px;
+}
+.formBottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0;
+}
+.button {
+  border: none;
+  background-color: var(--bright-accent-color);
+  text-transform: uppercase;
+  font-family: "Buduj Black";
+  padding: 15px 20px;
+  border-radius: 50px;
+  width: 250px;
+}
+.text,
+.link {
+  font-size: 15px;
+  font-family: "Futura Bold";
+  color: var(--secondary-color);
+}
+.link {
+  color: var(--alt-main-color);
+  padding-bottom: 0.5px;
+  border-bottom: 1px solid var(--alt-main-color);
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: 95%;
+  }
+  .form {
+    gap: 20px 0;
+  }
+  .group {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 30px 20px;
+  }
+}

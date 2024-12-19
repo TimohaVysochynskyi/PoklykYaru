@@ -2,19 +2,19 @@ import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 
 // redux
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../redux/store";
-import { login } from "../../redux/adminAuth/operations"; // назви операції можна змінити
+import { AppDispatch } from "../../../redux/store";
+import { login } from "../../../redux/adminAuth/operations"; // назви операції можна змінити
 
 // types
-import { LoginAdminType } from "../../types/AdminAuth.types";
+import { LoginAdminType } from "../../../types/AdminAuth.types";
 
 // стилі
 import css from "./AdminLogin.module.css";
-import { appDomain } from "../../utils/constants";
+import { appDomain } from "../../../utils/constants";
 
 const AdminLoginSchema = Yup.object().shape({
   psevdo: Yup.string()

@@ -3,6 +3,9 @@ import { login, logOut, refreshAdmin } from './operations';
 
 type AdminPayloadType = {
     psevdo: string | null;
+    telegramContact: string | null;
+    email: string | null;
+    phoneNumber: string | null;
 }
 
 type InitialStateType = {
@@ -15,6 +18,9 @@ type InitialStateType = {
 const initialState: InitialStateType = {
     admin: {
         psevdo: null,
+        telegramContact: null,
+        email: null,
+        phoneNumber: null
     },
     accessToken: null,
     isLoggedIn: false,
@@ -24,6 +30,9 @@ const initialState: InitialStateType = {
 const parseAdminData = (payload: AdminPayloadType) => {
     const adminData = {
         psevdo: payload.psevdo,
+        telegramContact: payload.telegramContact,
+        email: payload.email,
+        phoneNumber: payload.phoneNumber
     }
 
     return adminData
@@ -41,7 +50,12 @@ const authSlice = createSlice({
                 state.isLoggedIn = true;
             })
             .addCase(logOut.fulfilled, (state) => {
-                state.admin = { psevdo: null };
+                state.admin = {
+                    psevdo: null,
+                    telegramContact: null,
+                    email: null,
+                    phoneNumber: null
+                };
                 state.accessToken = null;
                 state.isLoggedIn = false;
             })

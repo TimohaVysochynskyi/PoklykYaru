@@ -93,25 +93,23 @@ export default function Cart({ isOpen }: Props) {
         {paymentFormData !== null && <div className={css.disableModal}></div>}
         <div className={css.row}>
           <div className={css.col}>
-            <ul className={css.list}>
-              {items.map((item: CartProductType) => (
-                <li key={item._id} className={css.item}>
-                  <CartItem item={item} />
-                </li>
-              ))}
-            </ul>
+            {items.length > 0 ? (
+              <ul className={css.list}>
+                {items.map((item: CartProductType) => (
+                  <li key={item._id} className={css.item}>
+                    <CartItem item={item} />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={css.text}>Кошик порожній</p>
+            )}
           </div>
           <div className={css.col}>
             <div className={css.sideRow}>
               <p className={css.text}>Сума</p>
               <p className={css.price}>{total} UAH</p>
             </div>
-            {/* <div className={css.sideRow}>
-              <p className={css.text}>Додати коментар до замовення</p>
-              <button type="button" className={css.arrowButton}>
-                <IoIosArrowDown className={css.arrow} />
-              </button>
-            </div> */}
             <div className={css.sideRow}>
               {paymentFormData !== null && loading == false ? (
                 <form

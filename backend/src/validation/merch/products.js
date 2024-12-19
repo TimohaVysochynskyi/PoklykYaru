@@ -6,8 +6,7 @@ export const addProductSchema = Joi.object({
   price: Joi.number().integer().min(0).required(),
   composition: Joi.string().required(),
   category: Joi.string().required(),
-  size: Joi.string().required(),
-  color: Joi.string().required(),
+  variations: Joi.object().required(),
   stock: Joi.number().required(),
 });
 
@@ -17,7 +16,11 @@ export const updateProductSchema = Joi.object({
   price: Joi.number().integer().min(0),
   composition: Joi.string(),
   category: Joi.string(),
-  size: Joi.string(),
-  color: Joi.string(),
+  images: Joi.array(),
+  variations: Joi.object(),
   stock: Joi.number(),
+});
+
+export const addCategorySchema = Joi.object({
+  name: Joi.string().min(3).max(30).required(),
 });

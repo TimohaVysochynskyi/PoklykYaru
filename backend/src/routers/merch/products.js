@@ -33,11 +33,10 @@ router.post(
   validateBody(addProductSchema),
   ctrlWrapper(addProductController),
 );
-router.patch(
+router.put(
   '/:id',
   isValidId,
   authAdmin,
-  upload.array('images', 8),
   validateBody(updateProductSchema),
   ctrlWrapper(updateProductController),
 );

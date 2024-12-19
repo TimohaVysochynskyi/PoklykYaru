@@ -8,7 +8,7 @@
   padding: 20px;
 }
 .link {
-  height: 75%;
+  height: 80%;
   width: 100%;
 }
 .image {
@@ -17,7 +17,7 @@
   object-fit: cover;
 }
 .description {
-  height: calc(25% - 15px);
+  height: calc(20% - 15px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -109,5 +109,20 @@
     padding-left: 10px;
     justify-content: start;
     gap: 20px 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .description {
+    justify-content: center;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .row {
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
+  .col {
+    width: 100%;
   }
 }

@@ -1,14 +1,21 @@
 export type ProductType = {
-    _id: string;
+    _id?: string;
     name: string;
     description: string;
-    images: string[];
     price: number;
     composition: string;
+    category: string;
+    images: string[];
     variations: {
         size: string[];
         color: string[];
     };
-    createdAt: string;
-    updatedAt: string;
+    stock: number;
+    createdAt?: string;
+    updatedAt?: string;
 };
+
+export type CategoryType = {
+    _id?: string;
+    name: string
+}

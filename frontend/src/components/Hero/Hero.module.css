@@ -1,0 +1,93 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px 0;
+}
+.buttonsWrapper,
+.socialsList {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-family: "Buduj Bold";
+  box-shadow: 0px 2px 8px #222;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.buttonFilled {
+  background-color: var(--bright-accent-color);
+  color: var(--main-text-color);
+  border: 2px solid var(--bright-accent-color);
+}
+.buttonOutlined {
+  color: var(--tertiary-color);
+  border: 2px solid var(--tertiary-color);
+}
+.socialsItem {
+  width: 40px;
+  height: 40px;
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  color: var(--tertiary-color);
+  border-radius: 20px;
+  padding: 4px;
+  transition: 0.2s;
+  backdrop-filter: blur(2px);
+}
+.socialsItem:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    height: 50vh;
+  }
+  .content {
+    bottom: 20px;
+    gap: 15px 0;
+  }
+  .buttonsWrapper {
+    width: 95%;
+    gap: 0 20px;
+  }
+  .button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  .socialsItem {
+    width: 35px;
+    height: 35px;
+  }
+  .icon {
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}

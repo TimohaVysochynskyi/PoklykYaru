@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import productsRouter from './products.js';
+import categoriesRouter from './products_categories.js';
 import paymentsRouter from './payments.js';
 import customersRouter from './customers.js';
 import authRouter from './auth.js';
@@ -10,6 +11,7 @@ import cartRouter from './cart.js';
 const router = Router();
 
 router.use('/products', productsRouter);
+router.use('/categories', categoriesRouter);
 router.use('/payments', paymentsRouter);
 router.use('/customers', customersRouter);
 router.use('/auth', authRouter);

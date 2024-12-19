@@ -1,0 +1,15 @@
+.button {
+  padding: 8px 20px;
+  border: 2px solid var(--bright-accent-color);
+  border-radius: 50px;
+  color: var(--alt-main-color);
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "Buduj SemiBold";
+  min-width: 120px;
+  text-align: center;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: var(--bright-accent-color);
+}

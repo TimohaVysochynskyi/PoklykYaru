@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
@@ -53,8 +54,7 @@ export default function LoginForm() {
           onSubmit={handleSubmit}
         >
           <Form className={css.form}>
-            <h2 className={css.title}>Логін</h2>
-            <div className={css.group}>
+            <div className={css.fullGroup}>
               <label htmlFor={`${id}-phoneNumber`} className={css.label}>
                 Номер телефону
               </label>
@@ -71,7 +71,7 @@ export default function LoginForm() {
                 className={css.error}
               ></ErrorMessage>
             </div>
-            <div className={css.group}>
+            <div className={css.fullGroup}>
               <label htmlFor={`${id}-password`} className={css.label}>
                 Пароль
               </label>
@@ -88,9 +88,17 @@ export default function LoginForm() {
                 className={css.error}
               ></ErrorMessage>
             </div>
-            <button type="submit" className={css.button}>
-              Submit
-            </button>
+            <div className={css.formBottom}>
+              <button type="submit" className={css.button}>
+                Увійти
+              </button>
+              <p className={css.text}>
+                Не маєте акаунту?&nbsp;
+                <Link className={css.link} to="/register">
+                  Створити
+                </Link>
+              </p>
+            </div>
           </Form>
         </Formik>
       </div>

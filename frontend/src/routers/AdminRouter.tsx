@@ -12,6 +12,9 @@ const AdminLayoutPage = lazy(
 const AdminMerchPage = lazy(
   () => import("../pages/admin/AdminMerchPage/AdminMerchPage")
 );
+const AdminMerchEditPage = lazy(
+  () => import("../pages/admin/AdminMerchDetailsPage/AdminMerchDetailsPage")
+);
 
 export default function MerchRouter() {
   return (
@@ -25,9 +28,10 @@ export default function MerchRouter() {
           path="/"
           element={<PrivateRoute component={<AdminLayoutPage />} />}
         >
+          <Route path="merch" element={<AdminMerchPage />}></Route>
           <Route
-            path="merch"
-            element={<PrivateRoute component={<AdminMerchPage />} />}
+            path="merch/:productId"
+            element={<AdminMerchEditPage />}
           ></Route>
         </Route>
       </Routes>

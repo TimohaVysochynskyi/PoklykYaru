@@ -1,0 +1,55 @@
+.list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  padding: 20px;
+  padding-right: 30px;
+  overflow-y: scroll;
+  list-style: none;
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+.item {
+  text-align: left;
+  animation-name: showItem;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.item:first-child {
+  margin-top: auto;
+}
+
+.title {
+  font-size: 44px;
+  font-family: "Buduj Bold";
+  text-transform: uppercase;
+  color: var(--main-text-color);
+}
+.text {
+  font-size: 20px;
+  font-family: "Futura Bold";
+  color: var(--secondary-color);
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: var(--secondary-color);
+  border-radius: 0;
+}
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+.list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--main-text-color);
+}
+
+@keyframes showItem {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
