@@ -1,0 +1,59 @@
+.container {
+  background-color: var(--alt-main-color);
+  padding: 40px;
+}
+.row {
+  display: flex;
+  gap: 0 20px;
+  height: 90vh;
+  margin-bottom: 20px;
+}
+.col {
+  height: 100%;
+}
+.col:first-child {
+  width: 60%;
+  background-image: url(../../assets/feedbacks/bg.webp);
+  background-size: cover;
+  background-position: right;
+  transform: scaleX(-1);
+  border-radius: 30px;
+  position: relative;
+}
+.col:last-child {
+  width: 40%;
+}
+
+.titleWrapper {
+  transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  right: -1px;
+}
+.title,
+.subtitle {
+  background-color: var(--alt-main-color);
+  text-transform: uppercase;
+  font-family: "Buduj Black-Height";
+  padding: 0 20px;
+}
+.title {
+  font-size: 50px;
+  width: 275px;
+  line-height: 80px;
+  color: var(--dark-accent-color);
+  border-radius: 0 30px 0 0;
+}
+.subtitle {
+  font-size: 30px;
+  line-height: 55px;
+  color: var(--tertiary-color);
+}
+.subtitle:nth-child(2) {
+  width: 298px;
+  border-radius: 0 30px 30px 0;
+}
+.subtitle:last-child {
+  width: 215px;
+  border-radius: 0 0 30px 0;
+}

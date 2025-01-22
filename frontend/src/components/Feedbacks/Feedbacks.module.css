@@ -1,0 +1,70 @@
+.container {
+  position: relative;
+  height: 100%;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  overflow-y: hidden;
+  height: 100%;
+}
+.item {
+  padding: 20px 30px;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+}
+.gradient {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  background: rgb(42, 61, 68);
+  background: linear-gradient(
+    0deg,
+    rgba(42, 61, 68, 1) 40%,
+    rgba(42, 61, 68, 0.95) 50%,
+    rgba(42, 61, 68, 0.8) 60%,
+    rgba(255, 230, 0, 0) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  color: #fff;
+  font-family: "Futura Bold";
+}
+.row {
+  display: flex;
+  gap: 0 15px;
+  margin-top: 20px;
+}
+.col:last-child {
+  padding: 10px 0;
+}
+.name {
+  font-family: "Buduj Black-Height";
+  color: #fff;
+  font-size: 18px;
+}
+.description {
+  font-family: "Buduj Bold";
+  font-size: 15px;
+  color: var(--tertiary-color);
+}
+.link {
+  font-family: "Buduj Black-Height";
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--tertiary-color) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 50px;
+}
+.arrow {
+  width: 60px;
+  height: 60px;
+}

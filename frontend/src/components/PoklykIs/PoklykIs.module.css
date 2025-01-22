@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px 0;
+  padding: 60px 0;
+  padding-bottom: 0;
+  width: 100%;
+}
+.title {
+  font-size: 100px;
+  font-family: "Buduj Black-Height";
+  text-transform: uppercase;
+  color: var(--alt-main-color);
+  display: flex;
+  align-items: center;
+  gap: 0 40px;
+  letter-spacing: -6px;
+}
+.title span {
+  font-size: 80px;
+  color: var(--secondary-color);
+}
+.imagesWrapper {
+  display: flex;
+  height: 280px;
+  width: 100%;
+  position: relative;
+}
+.image {
+  height: 100%;
+  width: calc(100% / 3);
+  object-fit: cover;
+}
+.gradient {
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  background: rgb(213, 207, 186);
+  background: linear-gradient(
+    0deg,
+    rgba(213, 207, 186, 0.9) 40%,
+    rgba(255, 230, 0, 0) 100%
+  );
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  font-family: "Buduj Black-Height";
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--alt-main-color) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 50px;
+}
+.arrow {
+  width: 60px;
+  height: 60px;
+}

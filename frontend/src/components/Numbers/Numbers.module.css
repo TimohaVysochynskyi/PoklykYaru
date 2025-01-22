@@ -1,0 +1,32 @@
+.list {
+  display: flex;
+  gap: 0 30px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+  max-width: 240px;
+}
+.sum {
+  width: 100%;
+  object-fit: contain;
+}
+.number {
+  font-size: 64px;
+  color: var(--alt-main-color);
+  font-family: "Buduj Bold";
+  text-align: center;
+}
+.description,
+.text {
+  font-size: 26px;
+  color: var(--alt-main-color);
+  font-family: "Futura Bold";
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 35px;
+}
+.text {
+  text-transform: none;
+}

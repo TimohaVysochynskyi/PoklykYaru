@@ -67,7 +67,7 @@ export default function AdminMerchPage() {
             <AdminProductNew
               isOpen={isModal}
               handleModalClose={handleModal}
-              onSave={(updatedProduct) => {
+              onSave={(updatedProduct: ProductType) => {
                 addProduct(updatedProduct, accessToken).then(() =>
                   fetchProducts()
                 );
