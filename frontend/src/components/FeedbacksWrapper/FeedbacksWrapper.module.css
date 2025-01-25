@@ -29,31 +29,23 @@
   position: absolute;
   top: 0;
   right: -1px;
+  background-color: var(--alt-main-color);
+  padding: 20px;
+  border-radius: 0 0 30px 0;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.2);
 }
 .title,
 .subtitle {
-  background-color: var(--alt-main-color);
   text-transform: uppercase;
-  font-family: "Buduj Black-Height";
-  padding: 0 20px;
+  font-family: "Buduj Black";
 }
 .title {
-  font-size: 50px;
-  width: 275px;
-  line-height: 80px;
+  font-size: 60px;
   color: var(--dark-accent-color);
-  border-radius: 0 30px 0 0;
+  line-height: 60px;
 }
 .subtitle {
-  font-size: 30px;
-  line-height: 55px;
+  font-size: 40px;
   color: var(--tertiary-color);
-}
-.subtitle:nth-child(2) {
-  width: 298px;
-  border-radius: 0 30px 30px 0;
-}
-.subtitle:last-child {
-  width: 215px;
-  border-radius: 0 0 30px 0;
+  line-height: 30px;
 }

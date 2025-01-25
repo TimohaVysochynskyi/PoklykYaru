@@ -11,6 +11,7 @@ import {
 } from "react-icons/ri";
 import logo from "../../assets/logo.png";
 import css from "./Footer.module.css";
+import clsx from "clsx";
 
 export default function Footer() {
   return (
@@ -20,12 +21,12 @@ export default function Footer() {
           <img src={logo} alt="Логотип" className={css.logo} />
         </Link>
         <div className={css.linksList}>
+          <Link to="/help" className={clsx(css.linkBig, css.linkYello)}>
+            Допомогти <HiMiniArrowUpRight className={css.arrow} />
+          </Link>
           <a href="#" className={css.linkBig}>
             Долучитись <HiMiniArrowUpRight className={css.arrow} />
           </a>
-          <Link to="/help" className={css.linkBig}>
-            Допомогти <HiMiniArrowUpRight className={css.arrow} />
-          </Link>
         </div>
         <div className={css.linksList}>
           <a href="#" className={css.linkSmall}>

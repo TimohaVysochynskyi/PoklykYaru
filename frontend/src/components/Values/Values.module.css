@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+  background-color: var(--alt-main-color);
+  padding: 60px 14vw;
+}
+
+.title,
+.subtitle {
+  font-size: 120px;
+  color: var(--tertiary-color);
+  text-transform: uppercase;
+  font-family: "Buduj Bold-Height";
+  text-align: center;
+}
+.subtitle {
+  font-size: 80px;
+  color: var(--bright-accent-color);
+}
+
+.row {
+  display: flex;
+  gap: 0 60px;
+  margin-top: 60px;
+}
+.col {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.col:last-child {
+  width: 70%;
+}
+
+.valuesImage {
+  width: 100%;
+  height: 100%;
+}
+.text {
+  color: #fff;
+  font-family: "Futura Bold";
+  font-size: 20px;
+}
+.imagesWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}

@@ -9,9 +9,11 @@ export default function FeedbacksWrapper() {
         <div className={css.row}>
           <div className={css.col}>
             <div className={css.titleWrapper}>
-              <p className={css.title}>Відгуки</p>
-              <p className={css.subtitle}>вихованців та</p>
-              <p className={css.subtitle}>їх батьків</p>
+              <p className={css.title}>
+                Відгуки <br />
+                <span className={css.subtitle}>вихованців та</span> <br />
+                <span className={css.subtitle}>їх батьків</span>
+              </p>
             </div>
           </div>
           <div className={css.col}>

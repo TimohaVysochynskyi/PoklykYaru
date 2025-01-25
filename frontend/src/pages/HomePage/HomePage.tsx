@@ -1,5 +1,5 @@
 import Hero from "../../components/Hero/Hero";
-import ValuesWrapper from "../../components/ValuesWrapper/ValuesWrapper";
+import Values from "../../components/Values/Values";
 import Map from "../../components/Map/Map";
 import PoklykIs from "../../components/PoklykIs/PoklykIs";
 import FeedbacksWrapper from "../../components/FeedbacksWrapper/FeedbacksWrapper";
@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ValuesWrapper />
+      <Values />
       <Map />
       <PoklykIs />
       <FeedbacksWrapper />

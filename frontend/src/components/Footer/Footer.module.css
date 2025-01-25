@@ -28,6 +28,9 @@
   font-family: "Buduj Bold";
   color: var(--tertiary-color);
 }
+.linkYello {
+  color: var(--dark-accent-color) !important;
+}
 .arrow {
   height: 45px;
   width: 45px;

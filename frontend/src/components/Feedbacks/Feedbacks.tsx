@@ -19,7 +19,11 @@ export default function Feedbacks() {
               "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Officiis ex iste earum excepturi dolore ipsa totam fugiat iure
               possimus, repudiandae voluptas soluta blanditiis inventore error
-              enim est eveniet labore atque?"
+              enim est eveniet labore atque? <br />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
+              ex iste earum excepturi dolore ipsa totam fugiat iure possimus,
+              repudiandae voluptas soluta blanditiis inventore error enim est
+              eveniet labore atque?"
             </p>
             <div className={css.row}>
               <div className={css.col}>
@@ -38,7 +42,11 @@ export default function Feedbacks() {
               "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Officiis ex iste earum excepturi dolore ipsa totam fugiat iure
               possimus, repudiandae voluptas soluta blanditiis inventore error
-              enim est eveniet labore atque?"
+              enim est eveniet labore atque? <br />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
+              ex iste earum excepturi dolore ipsa totam fugiat iure possimus,
+              repudiandae voluptas soluta blanditiis inventore error enim est
+              eveniet labore atque?"
             </p>
             <div className={css.row}>
               <div className={css.col}>

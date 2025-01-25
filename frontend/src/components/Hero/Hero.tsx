@@ -51,7 +51,7 @@ export default function App() {
       <div className={css.container}>
         <Swiper
           spaceBetween={0}
-          speed={600}
+          speed={1200}
           centeredSlides={true}
           simulateTouch={false}
           autoplay={{

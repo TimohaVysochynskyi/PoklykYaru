@@ -3,8 +3,7 @@
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-position-y: -5vw;
-  background-position-x: center;
+  background-position: top;
 }
 .layer {
   position: absolute;
@@ -31,11 +30,11 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 120px;
+  top: 20vh;
   z-index: 2;
 }
 .title {
-  font-size: 100px;
+  font-size: 120px;
   font-family: "Buduj Regular-Height";
   color: rgba(241, 196, 0, 1);
   text-transform: uppercase;
@@ -56,10 +55,24 @@
   margin-top: -20px;
 }
 
+@media screen and (max-width: 2560px) {
+  .container,
+  .layer {
+    background-position-y: -25vh;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .container,
+  .layer {
+    background-position-y: -8vh;
+  }
+}
+
 @media screen and (max-width: 650px) {
   .container,
   .layer {
-    background-position-y: 0px;
+    background-position: top;
   }
   .titleWrapper {
     top: 70px;
