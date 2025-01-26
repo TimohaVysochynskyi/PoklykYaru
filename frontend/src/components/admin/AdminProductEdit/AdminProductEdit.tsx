@@ -88,7 +88,7 @@ export default function AdminProductEdit({ product, onSave }: Props) {
                   <FieldArray name="variations.size">
                     {({ remove, push }) => (
                       <div className="flex flex-wrap gap-2">
-                        {values.variations.size.map((item, index) => (
+                        {values.variations.size.map((_item, index) => (
                           <div key={index} className="flex items-center">
                             <Field
                               name={`variations.size.${index}`}
@@ -121,7 +121,7 @@ export default function AdminProductEdit({ product, onSave }: Props) {
                   <FieldArray name="variations.color">
                     {({ remove, push }) => (
                       <div className="flex flex-wrap gap-2">
-                        {values.variations.color.map((item, index) => (
+                        {values.variations.color.map((_item, index) => (
                           <div key={index} className="flex items-center">
                             <Field
                               name={`variations.color.${index}`}

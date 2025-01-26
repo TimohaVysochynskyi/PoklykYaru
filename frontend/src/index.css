@@ -20,6 +20,8 @@
 body {
   background-image: url("./assets/bg.jpeg");
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   overflow-x: hidden;
   min-height: 100vh;
 }

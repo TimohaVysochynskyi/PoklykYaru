@@ -18,6 +18,7 @@ import { CartItemType } from "../../types/Cart.types";
 
 // styles
 import css from "./MerchDetails.module.css";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 type Props = {
   product: ProductType;
@@ -47,6 +48,8 @@ export default function MerchDetails({
       })
       .catch((error) => toast.error(error));
   };
+
+  if (_id == undefined) return <ErrorMessage />;
 
   return (
     <>

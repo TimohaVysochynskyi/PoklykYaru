@@ -60,3 +60,52 @@
   width: 100%;
   height: 100%;
 }
+
+@media screen and (max-width: 1160px) {
+  .footer {
+    padding: 20px 30px;
+  }
+  .linkBig {
+    font-size: 15px;
+  }
+  .linksList {
+    gap: 10px 0;
+  }
+  .socialsList {
+    gap: 0 10px;
+  }
+  .socialLink {
+    width: 25px;
+    height: 25px;
+  }
+  .linkSmall {
+    height: auto;
+  }
+  .linkIcon {
+    width: 15px;
+    height: 15px;
+  }
+  .arrow {
+    width: 25px;
+    height: 25px;
+  }
+  .logoWrapper {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .linkBig,
+  .linkSmall,
+  .socialLink {
+    color: var(--tertiary-color) !important;
+  }
+  .linkYello {
+    color: var(--dark-accent-color) !important;
+  }
+}

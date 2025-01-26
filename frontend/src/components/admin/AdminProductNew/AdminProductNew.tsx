@@ -60,7 +60,7 @@ export default function CreateProduct({
   };
 
   const handleVariationsChange = (
-    type: "size" | "color",
+    type: keyof Variations, // Замість "size" | "color"
     value: string,
     index: number
   ) => {
@@ -77,7 +77,7 @@ export default function CreateProduct({
     });
   };
 
-  const addVariation = (type: "size" | "color") => {
+  const addVariation = (type: keyof Variations) => {
     setProductData((prev) => ({
       ...prev,
       variations: {
@@ -87,7 +87,7 @@ export default function CreateProduct({
     }));
   };
 
-  const removeVariation = (type: "size" | "color", index: number) => {
+  const removeVariation = (type: keyof Variations, index: number) => {
     setProductData((prev) => {
       const updatedVariations = [...prev.variations[type]];
       updatedVariations.splice(index, 1);
@@ -269,31 +269,51 @@ export default function CreateProduct({
               <label className="block text-sm font-medium text-gray-700">
                 {type === "size" ? "Розміри" : "Кольори"}
               </label>
-              {productData.variations[type].map((value, index) => (
-                <div key={index} className="flex items-center space-x-2 mt-1">
-                  <input
-                    type="text"
-                    className="block w-full p-2 border rounded"
-                    value={value}
-                    onChange={(e) =>
-                      handleVariationsChange(
-                        type as "size" | "color",
-                        e.target.value,
-                        index
-                      )
-                    }
-                  />
+              {["size", "color"].map((type) => (
+                <div key={type}>
+                  <label className="block text-sm font-medium text-gray-700">
+                    {type === "size" ? "Розміри" : "Кольори"}
+                  </label>
+                  {productData.variations[type as keyof Variations].map(
+                    (value: string, index: number) => (
+                      <div
+                        key={index}
+                        className="flex items-center space-x-2 mt-1"
+                      >
+                        <input
+                          type="text"
+                          className="block w-full p-2 border rounded"
+                          value={value}
+                          onChange={(e) =>
+                            handleVariationsChange(
+                              type as keyof Variations,
+                              e.target.value,
+                              index
+                            )
+                          }
+                        />
+                        <button
+                          type="button"
+                          className="text-red-500"
+                          onClick={() =>
+                            removeVariation(type as keyof Variations, index)
+                          }
+                        >
+                          <IoCloseOutline className="h-5 w-5" />
+                        </button>
+                      </div>
+                    )
+                  )}
                   <button
                     type="button"
-                    className="text-red-500"
-                    onClick={() =>
-                      removeVariation(type as "size" | "color", index)
-                    }
+                    className="mt-2 text-blue-500"
+                    onClick={() => addVariation(type as keyof Variations)}
                   >
-                    <IoCloseOutline className="h-5 w-5" />
+                    {type === "size" ? "Додати розмір" : "Додати колір"}
                   </button>
                 </div>
               ))}
+
               <button
                 type="button"
                 className="mt-2 text-blue-500"
