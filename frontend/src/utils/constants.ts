@@ -1,8 +1,8 @@
 import AppRouter from "../routers/AppRouter";
 import MerchRouter from "../routers/MerchRouter";
 import AdminRouter from "../routers/AdminRouter";
-import MainNavigation from "../components/Navigation/MainNavigation";
-import MerchNavigation from "../components/Navigation/MerchNavigation";
+import MainNavigation from "../components/shared/Navigation/MainNavigation";
+import MerchNavigation from "../components/shared/Navigation/MerchNavigation";
 
 export const APPS = [
     {

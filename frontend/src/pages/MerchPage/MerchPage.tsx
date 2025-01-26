@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 // components
 // import RegisterForm from "../../components/AuthForm/RegisterForm";
 // import LoginForm from "../../components/AuthForm/LoginForm";
-import Loader from "../../components/Loader/Loader";
-import ProductsList from "../../components/ProductsList/ProductsList";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import Cart from "../../components/Cart/Cart";
+import Loader from "../../components/shared/Loader/Loader";
+import ProductsList from "../../components/merch/ProductsList/ProductsList";
+import ErrorMessage from "../../components/shared/ErrorMessage/ErrorMessage";
+import Cart from "../../components/merch/Cart/Cart";
 
 import {
   fetchAllCategories,

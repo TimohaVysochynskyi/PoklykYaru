@@ -1,8 +1,8 @@
 import { Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 
-import Layout from "../Layout/Layout";
-import Loader from "../Loader/Loader";
-import AppBar from "../AppBar/AppBar";
+import Loader from "../shared/Loader/Loader";
+import AppBar from "../shared/AppBar/AppBar";
 
 import { getApp } from "../../utils/helpers";
 
@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <Layout>
+      <main className={css.container}>
         <Suspense
           fallback={
             <div className={css.loaderWrapper}>
@@ -21,6 +21,7 @@ export default function App() {
             </div>
           }
         >
+          <Toaster position="top-right" reverseOrder={false} />
           {CurrentApp.subdomain === "admin" ? (
             <CurrentApp.app />
           ) : (
@@ -34,7 +35,7 @@ export default function App() {
             </>
           )}
         </Suspense>
-      </Layout>
+      </main>
     </>
   );
 }

@@ -1,0 +1,104 @@
+.footer {
+  background-color: #213134;
+  padding: 50px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logoWrapper {
+  width: 65px;
+  height: 65px;
+}
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.linksList {
+  flex-direction: column;
+  display: flex;
+}
+.linkBig {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Buduj Bold";
+  color: var(--tertiary-color);
+}
+.linkYello {
+  color: var(--dark-accent-color);
+}
+.arrow {
+  height: 45px;
+  width: 45px;
+}
+.linkIcon {
+  width: 20px;
+  height: 20px;
+}
+.linkSmall {
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+  color: var(--tertiary-color);
+  font-size: 15px;
+  height: 50px;
+}
+.socialsList {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+.socialLink {
+  width: 30px;
+  height: 30px;
+  color: var(--tertiary-color);
+}
+.socialIcon {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1160px) {
+  .footer {
+    padding: 20px 30px;
+  }
+  .linkBig {
+    font-size: 15px;
+  }
+  .linksList {
+    gap: 10px 0;
+  }
+  .socialsList {
+    gap: 0 10px;
+  }
+  .socialLink {
+    width: 25px;
+    height: 25px;
+  }
+  .linkSmall {
+    height: auto;
+  }
+  .linkIcon {
+    width: 15px;
+    height: 15px;
+  }
+  .arrow {
+    width: 25px;
+    height: 25px;
+  }
+  .logoWrapper {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}

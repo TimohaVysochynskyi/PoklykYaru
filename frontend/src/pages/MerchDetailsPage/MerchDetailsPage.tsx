@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // components
-import Loader from "../../components/Loader/Loader";
-import MerchDetails from "../../components/MerchDetails/MerchDetails";
-import Cart from "../../components/Cart/Cart";
+import Loader from "../../components/shared/Loader/Loader";
+import MerchDetails from "../../components/merch/MerchDetails/MerchDetails";
+import Cart from "../../components/merch/Cart/Cart";
 
 import { fetchProductWithId } from "../../services/merch/products";
 
