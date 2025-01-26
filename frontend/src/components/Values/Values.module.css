@@ -47,3 +47,66 @@
   grid-template-columns: 1fr 1fr;
   gap: 5px;
 }
+
+@media screen and (max-width: 1680px) {
+  .title {
+    font-size: 100px;
+  }
+  .subtitle {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .title {
+    font-size: 90px;
+  }
+  .subtitle {
+    font-size: 50px;
+  }
+  .text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 80px;
+  }
+  .subtitle {
+    font-size: 40px;
+  }
+  .container {
+    padding: 60px 8vw;
+  }
+}
+@media screen and (max-width: 868px) {
+  .title {
+    font-size: 60px;
+  }
+  .subtitle {
+    font-size: 30px;
+  }
+  .container {
+    padding: 40px 30px;
+  }
+  .col:first-child {
+    display: none;
+  }
+  .col:last-child {
+    width: 100%;
+    text-align: justify;
+  }
+  .row {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .title {
+    font-size: 45px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+  .text {
+    font-family: "Futura Demi";
+  }
+}

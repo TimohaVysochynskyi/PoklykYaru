@@ -1,3 +1,6 @@
+.container {
+  padding: 0 20px;
+}
 .list {
   display: flex;
   gap: 0 30px;
@@ -29,4 +32,61 @@
 }
 .text {
   text-transform: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .number {
+    font-size: 48px;
+  }
+  .description,
+  .text {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 868px) {
+  .list {
+    gap: 10px;
+  }
+  .item {
+    gap: 0;
+  }
+  .number {
+    font-size: 48px;
+  }
+  .description,
+  .text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .number {
+    font-size: 38px;
+  }
+  .description,
+  .text {
+    font-size: 18px;
+  }
+  .text {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .number {
+    font-size: 28px;
+  }
+  .description,
+  .text {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item {
+    max-width: calc(50% - 10px);
+  }
 }

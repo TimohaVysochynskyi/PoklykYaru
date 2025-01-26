@@ -11,7 +11,7 @@ export default function PoklykIs() {
     <>
       <div className={css.container}>
         <h2 className={css.title}>
-          Поклик Яру <span>це</span>
+          Поклик Яру <span className={css.subtitle}>це</span>
         </h2>
         <Numbers />
         <div className={css.imagesWrapper}>

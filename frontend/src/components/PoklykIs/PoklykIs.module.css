@@ -3,12 +3,12 @@
   flex-direction: column;
   align-items: center;
   gap: 30px 0;
-  padding: 60px 0;
+  padding: 60px 0px;
   padding-bottom: 0;
   width: 100%;
 }
 .title {
-  font-size: 100px;
+  font-size: 120px;
   font-family: "Buduj Black-Height";
   text-transform: uppercase;
   color: var(--alt-main-color);
@@ -17,8 +17,8 @@
   gap: 0 40px;
   letter-spacing: -6px;
 }
-.title span {
-  font-size: 80px;
+.subtitle {
+  font-size: 100px;
   color: var(--secondary-color);
 }
 .imagesWrapper {
@@ -60,4 +60,58 @@
 .arrow {
   width: 45px;
   height: 45px;
+}
+
+@media screen and (max-width: 1650px) {
+  .title {
+    font-size: 100px;
+  }
+  .subtitle {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 80px;
+  }
+  .subtitle {
+    font-size: 70px;
+  }
+  .text {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .container {
+    gap: 20px 0;
+  }
+  .title {
+    font-size: 55px;
+    letter-spacing: -2px;
+    gap: 0 20px;
+  }
+  .subtitle {
+    font-size: 40px;
+  }
+  .imagesWrapper {
+    height: 150px;
+  }
+  .gradient {
+    height: 100%;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .arrow {
+    height: 35px;
+    width: 35px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .title {
+    font-size: 40px;
+  }
+  .subtitle {
+    font-size: 30px;
+  }
 }

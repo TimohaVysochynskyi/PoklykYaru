@@ -81,3 +81,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1160px) {
+  .container {
+    display: none;
+  }
+}
