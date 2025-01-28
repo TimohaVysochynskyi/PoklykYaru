@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProductDetails from "../../../components/admin/AdminProductDetails/AdminProductDetails";
 import ProductEdit from "../../../components/admin/AdminProductEdit/AdminProductEdit";
-import Loader from "../../../components/Loader/Loader";
+import Loader from "../../../components/shared/Loader/Loader";
 
 import {
   fetchProductWithId,

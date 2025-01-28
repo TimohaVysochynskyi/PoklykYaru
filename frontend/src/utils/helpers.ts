@@ -13,6 +13,7 @@ export const getApp = () => {
 
     return app;
 }
+
 export const getSubdomain = () => {
     const locationParts = window.location.hostname.split(".");
 

@@ -14,6 +14,7 @@ export default function App() {
   return (
     <>
       <main className={css.container}>
+        <div className={css.bgColor}></div>
         <Suspense
           fallback={
             <div className={css.loaderWrapper}>

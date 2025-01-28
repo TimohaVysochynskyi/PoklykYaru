@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AdminProductCard from "../../../components/admin/AdminProductCard/AdminProductCard";
-import Loader from "../../../components/Loader/Loader";
-import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
+import Loader from "../../../components/shared/Loader/Loader";
+import ErrorMessage from "../../../components/shared/ErrorMessage/ErrorMessage";
 import { FaCirclePlus } from "react-icons/fa6";
 import AdminProductNew from "../../../components/admin/AdminProductNew/AdminProductNew";
 

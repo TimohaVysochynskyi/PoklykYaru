@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 35px 0;
+  margin-top: 100px;
+}
+.title {
+  font-size: 120px;
+  font-family: "Buduj Black-Height";
+  text-transform: uppercase;
+  color: var(--main-text-color);
+}
+.subtitle {
+  font-size: 30px;
+  font-family: "Futura Bold";
+  color: var(--alt-main-color);
+}
+.button {
+  padding: 15px 40px;
+  background-color: var(--bright-accent-color);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Buduj Bold";
+  border-radius: 100px;
+}
+@media screen and (max-width: 1160px) {
+  .title {
+    font-size: 100px;
+  }
+  .subtitle {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 868px) {
+  .title {
+    font-size: 80px;
+  }
+  .subtitle {
+    font-size: 22px;
+  }
+  .button {
+    padding: 10px 30px;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .title {
+    font-size: 70px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container {
+    margin-top: 50px;
+  }
+  .title {
+    font-size: 60px;
+  }
+}
