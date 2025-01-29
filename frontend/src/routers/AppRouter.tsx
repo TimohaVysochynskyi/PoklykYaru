@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("../pages/AboutPage/AboutPage"));
-const HelpPage = lazy(() => import("../pages/HelpPage/HelpPage"));
+const DonatePage = lazy(() => import("../pages/DonatePage/DonatePage"));
 const EventPage = lazy(() => import("../pages/EventPage/EventPage"));
 
 export default function AppRouter() {
@@ -12,7 +12,7 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/help" element={<HelpPage />} />
+        <Route path="/donate" element={<DonatePage />} />
         <Route path="/events" element={<EventPage />} />
       </Routes>
     </>

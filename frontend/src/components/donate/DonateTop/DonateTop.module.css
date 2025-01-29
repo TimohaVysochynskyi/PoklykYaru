@@ -1,0 +1,128 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  font-size: 120px;
+  font-family: "Buduj Bold";
+  color: var(--alt-main-color);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+.subtitle {
+  font-family: "Buduj Black-Height";
+  text-transform: uppercase;
+  color: var(--main-text-color);
+}
+.qrList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  margin-top: 50px;
+}
+.qrWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 275px;
+}
+.qr {
+  width: 100%;
+  height: 275px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+.qrText {
+  font-size: 20px;
+  color: var(--alt-main-color);
+  text-transform: uppercase;
+  font-family: "Buduj Bold";
+  text-align: center;
+}
+.link {
+  font-size: 20px;
+  font-family: "Buduj Bold";
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+@media screen and (max-width: 1160px) {
+  .title {
+    font-size: 100px;
+  }
+  .qrList {
+    gap: 30px;
+  }
+  .qrWrapper {
+    width: 225px;
+  }
+  .qr {
+    height: 225px;
+  }
+}
+@media screen and (max-width: 868px) {
+  .title {
+    font-size: 80px;
+  }
+  .qrList {
+    gap: 20px;
+  }
+  .qrWrapper:last-child {
+    width: fit-content;
+  }
+  .qrWrapper {
+    width: 100%;
+  }
+  .qr {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .container {
+    margin-top: 60px;
+  }
+  .title {
+    font-size: 60px;
+  }
+  .qrList {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .qrWrapper {
+    width: 40%;
+    min-width: 200px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .title {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container {
+    margin-top: 40px;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+  .qrList {
+    display: none;
+  }
+}

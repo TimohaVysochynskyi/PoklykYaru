@@ -46,6 +46,9 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .container {
+    margin-top: 60px;
+  }
   .title {
     font-size: 70px;
   }
@@ -55,7 +58,7 @@
 }
 @media screen and (max-width: 425px) {
   .container {
-    margin-top: 50px;
+    margin-top: 40px;
   }
   .title {
     font-size: 60px;

@@ -1,0 +1,111 @@
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 50px 0;
+}
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.col:last-child {
+  align-items: flex-end;
+}
+.title {
+  font-size: 40px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-family: "Buduj Bold";
+}
+.subtitle {
+  color: var(--main-text-color);
+  font-family: "Buduj Bold";
+}
+.text {
+  font-size: 20px;
+  color: var(--alt-main-color);
+  font-family: "Futura Bold";
+}
+.link {
+  padding: 15px 40px;
+  background-color: var(--alt-main-color);
+  border-radius: 100px;
+  color: var(--tertiary-color);
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Buduj Bold";
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icon {
+  width: 26px;
+  height: 26px;
+}
+.image {
+  width: 290px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 1160px) {
+  .title {
+    font-size: 36px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .link {
+    font-size: 18px;
+    padding: 10px 30px;
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+  .col:last-child {
+    width: fit-content;
+  }
+}
+@media screen and (max-width: 868px) {
+  .title {
+    font-size: 32px;
+    margin-bottom: -10px;
+  }
+  .text {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .text {
+    font-family: "Futura Demi";
+  }
+}
+@media screen and (max-width: 650px) {
+  .item {
+    flex-direction: column;
+  }
+  .col:last-child {
+    align-items: center;
+    width: 100%;
+  }
+  .title {
+    text-align: center;
+  }
+  .text {
+    text-align: justify;
+  }
+  .link {
+    margin: 0 auto;
+  }
+}
