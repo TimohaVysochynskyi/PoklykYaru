@@ -27,7 +27,9 @@ export default function AppBar({ Navigation }: Props) {
       <header
         className={clsx(
           css.header,
-          currentRoute == "/" && currentSubdomain == "" && css.headerBlured
+          currentRoute == "/" &&
+            currentSubdomain !== "merch" &&
+            css.headerBlured
         )}
       >
         <Link to="/">
