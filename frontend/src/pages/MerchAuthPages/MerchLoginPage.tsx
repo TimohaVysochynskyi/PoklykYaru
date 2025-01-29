@@ -1,4 +1,4 @@
-import LoginForm from "../../components/AuthForm/LoginForm";
+import LoginForm from "../../components/merch/AuthForm/LoginForm";
 import css from "./MerchAuthPages.module.css";
 
 export default function MerchLoginPage() {

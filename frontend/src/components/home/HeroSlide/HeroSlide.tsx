@@ -10,7 +10,7 @@ export default function HeroSlide({ name, title }: Props) {
     <>
       <div
         className={css.container}
-        style={{ backgroundImage: `url('../../src/assets/hero/${name}.webp')` }}
+        style={{ backgroundImage: `url('hero/${name}.webp')` }}
       >
         <div
           className={clsx(css.bgFilter, name == "vatra" && css.noBgFilter)}
@@ -18,7 +18,7 @@ export default function HeroSlide({ name, title }: Props) {
         <div
           className={css.layer}
           style={{
-            backgroundImage: `url('../../src/assets/hero/${name}-layer.webp')`,
+            backgroundImage: `url('hero/${name}-layer.webp')`,
           }}
         ></div>
         <div className={css.titleWrapper}>
