@@ -8,12 +8,12 @@ export default function Numbers() {
       <div className={css.container}>
         <ul className={css.list}>
           <li className={css.item}>
-            <p className={css.number}>10050</p>
+            <p className={css.number}>521</p>
             <img src={sum} alt="Загалом" className={css.sum} />
             <p className={css.description}>Вихованців пройшло табір</p>
           </li>
           <li className={css.item}>
-            <p className={css.number}>50</p>
+            <p className={css.number}>17</p>
             <img src={sum} alt="Загалом" className={css.sum} />
             <p className={css.description}>Таборів проведено</p>
           </li>

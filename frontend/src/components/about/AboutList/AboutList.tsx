@@ -9,12 +9,12 @@ export default function AboutList() {
       <div className={css.container}>
         <div className={css.row}>
           <div className={css.col}>
-            <p className={css.title}>Наша команда</p>
             <p className={css.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              ducimus, cupiditate beatae reiciendis magnam quam magni sequi
-              consequuntur soluta voluptatem dignissimos dolor expedita error,
-              suscipit eius amet nihil ratione vitae!
+              “Поклик Яру” – громадська організація, яка ставить за мету
+              виховання відповідальної молоді на засадах Побратимства,
+              Дисципліни та Патріотизму. Ми хочемо, щоб наша молодь не їхала
+              закордон шукати кращого життя. Україна варта того, щоб саме тут
+              розвиватися і будувати своє майбутнє.
             </p>
           </div>
           <div className={css.col}>
@@ -26,23 +26,23 @@ export default function AboutList() {
             <img src={image2} alt="Фотографія" className={css.image} />
           </div>
           <div className={css.col}>
-            <p className={css.title}>Наша команда</p>
             <p className={css.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              ducimus, cupiditate beatae reiciendis magnam quam magni sequi
-              consequuntur soluta voluptatem dignissimos dolor expedita error,
-              suscipit eius amet nihil ratione vitae!
+              На нашу думку, найефективнішим та найкоротшим шляхом розбудови
+              сильної держави є виховання нових національних еліт. Еліт, які не
+              боятимуться брати відповідальність за Державу та ставати на чолі
+              державних процесів.
             </p>
           </div>
         </div>
         <div className={css.row}>
           <div className={css.col}>
-            <p className={css.title}>Наша команда</p>
             <p className={css.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-              ducimus, cupiditate beatae reiciendis magnam quam magni sequi
-              consequuntur soluta voluptatem dignissimos dolor expedita error,
-              suscipit eius amet nihil ratione vitae!
+              Саме на це направлені наші заходи: табір, вишколи, Покрова,
+              зимовий похід, смолоскипна хода і тд. Все, що ми створюємо,
+              підкріплено метою виховання відповідальної молоді. Це робота не на
+              один рік. Потрібно багато часу, сил і відданості, щоб отримувати
+              той результат, якого прагнемо. Але наша команда впевнено йде до
+              мети, незважаючи ні на що. Бо ми — схід сонця нашої Держави.
             </p>
           </div>
           <div className={css.col}>

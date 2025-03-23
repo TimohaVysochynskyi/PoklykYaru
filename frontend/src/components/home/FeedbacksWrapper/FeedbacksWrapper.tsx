@@ -1,4 +1,3 @@
-import FeedbackBar from "../FeedbackBar/FeedbackBar";
 import Feedbacks from "../Feedbacks/Feedbacks";
 import css from "./FeedbacksWrapper.module.css";
 
@@ -22,7 +21,6 @@ export default function FeedbacksWrapper() {
             <Feedbacks />
           </div>
         </div>
-        <FeedbackBar />
       </div>
     </>
   );

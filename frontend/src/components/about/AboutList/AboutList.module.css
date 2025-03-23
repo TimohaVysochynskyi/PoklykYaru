@@ -25,6 +25,7 @@
   font-family: "Futura Bold";
   color: var(--alt-main-color);
   margin-top: 20px;
+  text-align: justify;
 }
 .image {
   width: 100%;

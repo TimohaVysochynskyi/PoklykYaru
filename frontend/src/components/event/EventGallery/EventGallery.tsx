@@ -1,4 +1,3 @@
-import image from "../../../assets/about/1.webp";
 import css from "./EventGallery.module.css";
 
 export default function EventGallery() {
@@ -7,12 +6,13 @@ export default function EventGallery() {
       <div className={css.container}>
         <p className={css.title}>Галерея заходів: </p>
         <div className={css.imagesWrapper}>
-          <img src={image} alt="Фотографія" className={css.image} />
-          <img src={image} alt="Фотографія" className={css.image} />
-          <img src={image} alt="Фотографія" className={css.image} />
-          <img src={image} alt="Фотографія" className={css.image} />
-          <img src={image} alt="Фотографія" className={css.image} />
-          <img src={image} alt="Фотографія" className={css.image} />
+          {[1, 2, 3, 4, 5, 6].map((number) => (
+            <img
+              src={`/event/gallery/${number}.webp`}
+              alt="Фотографія"
+              className={css.image}
+            />
+          ))}
         </div>
       </div>
     </>

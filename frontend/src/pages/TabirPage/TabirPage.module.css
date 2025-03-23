@@ -1,0 +1,46 @@
+.topContainer {
+  padding: 30px 200px;
+}
+.text {
+  font-size: 20px;
+  font-family: "Futura Heavy";
+  font-weight: 700;
+  color: var(--alt-main-color);
+  margin-top: 40px;
+  text-align: justify;
+}
+.backLink {
+  font-size: 20px;
+  font-family: "Buduj Bold";
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (max-width: 1440px) {
+  .topContainer {
+    padding: 30px 100px;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .topContainer {
+    padding: 30px 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .topContainer {
+    padding: 30px 20px;
+  }
+}

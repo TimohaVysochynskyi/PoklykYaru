@@ -22,3 +22,17 @@
 .image:last-child {
   width: calc(100% / 3 - 25px);
 }
+
+@media screen and (max-width: 650px) {
+  .title {
+    padding: 0 20px;
+  }
+  .image {
+    width: calc(100% / 2 - 5px) !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .image {
+    width: 100% !important;
+  }
+}

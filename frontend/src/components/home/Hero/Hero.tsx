@@ -15,6 +15,7 @@ import "swiper/css/navigation";
 import "./Hero.css";
 import css from "./Hero.module.css";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 const slides = [
   { name: "team", title: "команда" },
@@ -70,23 +71,21 @@ export default function App() {
         </Swiper>
         <div className={css.content}>
           <div className={css.buttonsWrapper}>
-            <button
-              type="button"
+            <Link
+              target="blank"
+              to="https://docs.google.com/forms/d/1OQU71dalInNHe6VdziI94-xzy5wXNT8-_EqLD_fyMEA/viewform?edit_requested=true"
               className={clsx(css.button, css.buttonFilled)}
             >
               Зареєструватись на табір
-            </button>
-            <button
-              type="button"
-              className={clsx(css.button, css.buttonOutlined)}
-            >
+            </Link>
+            <Link to="/events" className={clsx(css.button, css.buttonOutlined)}>
               Інші заходи
-            </button>
+            </Link>
           </div>
           <ul className={css.socialsList}>
             {socials.map((social) => (
               <li key={social.name} className={css.socialsItem}>
-                <a href={social.link}>{social.icon}</a>
+                <Link to={social.link}>{social.icon}</Link>
               </li>
             ))}
           </ul>

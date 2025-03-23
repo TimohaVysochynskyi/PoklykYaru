@@ -8,7 +8,7 @@ export default function EventPage() {
   return (
     <>
       <section className={css.topContainer}>
-        <EventTop />
+        <EventTop active="idle" />
         <EventTitleWrapper />
       </section>
       <EventGallery />
