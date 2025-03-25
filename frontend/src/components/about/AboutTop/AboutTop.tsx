@@ -12,6 +12,7 @@ export default function AboutTop() {
           отримати звання Легота, Височинця та Відчайдуха.
         </p>
         <Link
+          target="blank"
           to="https://docs.google.com/forms/d/1RjXHBQWtLBUeMnhjEnP997u83JKJ9wmPg8ss4cNN5jI/viewform?edit_requested=true"
           className={css.button}
         >

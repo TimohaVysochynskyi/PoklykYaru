@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { NavLink, useLocation } from "react-router-dom";
 
-import { appDomain } from "../../../utils/constants";
+// import { appDomain } from "../../../utils/constants";
 
 import css from "./Navigation.module.css";
 
@@ -38,26 +38,26 @@ export default function MainNavigation({ isOpen }: Props) {
             Заходи
           </NavLink>
         </li>
-        <li className={css.item}>
+        {/* <li className={css.item}>
           <NavLink to="/movement" className={linkClass}>
             Рух
           </NavLink>
-        </li>
+        </li> */}
         <li className={css.item}>
           <NavLink to="/donate" className={linkClass}>
             Підтримати
           </NavLink>
         </li>
-        <li className={css.item}>
+        {/* <li className={css.item}>
           <NavLink to={`http://merch.${appDomain}`} className={linkClass}>
             Мерч
           </NavLink>
-        </li>
-        <li className={css.item}>
+        </li> */}
+        {/* <li className={css.item}>
           <NavLink to="/gallery" className={linkClass}>
             Галерея
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </>
   );

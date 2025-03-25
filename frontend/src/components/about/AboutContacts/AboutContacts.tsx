@@ -20,7 +20,11 @@ export default function AboutContacts() {
         </div>
         <div className={css.mapWrapper}>
           <img src={map} alt="Мапа України" className={css.map} />
-          <a href="#" className={css.mapLink}></a>
+          <a
+            target="blank"
+            href="https://maps.app.goo.gl/1CBZoq3Vt6hHQhqk7"
+            className={css.mapLink}
+          ></a>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import Hero from "../../components/home/Hero/Hero";
 import Values from "../../components/home/Values/Values";
-import Map from "../../components/home/Map/Map";
+// import Map from "../../components/home/Map/Map";
 import PoklykIs from "../../components/home/PoklykIs/PoklykIs";
 import FeedbacksWrapper from "../../components/home/FeedbacksWrapper/FeedbacksWrapper";
 import Footer from "../../components/shared/Footer/Footer";
@@ -12,7 +12,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Values />
-      <Map />
+      {/* <Map /> */}
       <PoklykIs />
       <FeedbacksWrapper />
       <Footer />
