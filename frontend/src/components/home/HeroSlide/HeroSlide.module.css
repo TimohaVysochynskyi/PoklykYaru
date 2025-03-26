@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 20vh;
+  top: 18vh;
   z-index: 2;
 }
 .title {

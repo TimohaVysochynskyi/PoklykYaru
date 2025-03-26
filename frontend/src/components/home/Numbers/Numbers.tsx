@@ -15,7 +15,7 @@ export default function Numbers() {
           <li className={css.item}>
             <p className={css.number}>17</p>
             <img src={sum} alt="Загалом" className={css.sum} />
-            <p className={css.description}>Таборів проведено</p>
+            <p className={css.description}>Змін проведено</p>
           </li>
           <li className={css.item}>
             <p className={css.number}>10 днів</p>

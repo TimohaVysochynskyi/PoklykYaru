@@ -21,18 +21,18 @@ export default function Footer() {
           <img src={logo} alt="Логотип" className={css.logo} />
         </Link>
         <div className={css.linksList}>
-          <Link to="/help" className={clsx(css.linkBig, css.linkYello)}>
+          <Link to="/donate" className={clsx(css.linkBig, css.linkYello)}>
             Допомогти <HiMiniArrowUpRight className={css.arrow} />
           </Link>
-          <a href="#" className={css.linkBig}>
+          <a href="https://docs.google.com/forms/d/1RjXHBQWtLBUeMnhjEnP997u83JKJ9wmPg8ss4cNN5jI/viewform?edit_requested=true" className={css.linkBig}>
             Долучитись <HiMiniArrowUpRight className={css.arrow} />
           </a>
         </div>
         <div className={css.linksList}>
           <a href="#" className={css.linkSmall}>
-            <AiFillPhone className={css.linkIcon} /> +3800000000000
+            <AiFillPhone className={css.linkIcon} /> +380 95 626 77 73
           </a>
-          <a href="#" className={css.linkSmall}>
+          <a href="https://t.me/PoklykYaru" className={css.linkSmall}>
             <FaTelegramPlane className={css.linkIcon} /> t.me/PoklykYaru
           </a>
         </div>
@@ -45,16 +45,16 @@ export default function Footer() {
           </a>
         </div>
         <div className={css.socialsList}>
-          <a href="#" className={css.socialLink}>
+          <a href="https://t.me/PoklykYaru" className={css.socialLink}>
             <RiTelegramFill className={css.socialIcon} />
           </a>
-          <a href="#" className={css.socialLink}>
+          <a href="https://www.instagram.com/poklyk.yaru" className={css.socialLink}>
             <RiInstagramLine className={css.socialIcon} />
           </a>
-          <a href="#" className={css.socialLink}>
+          <a href="https://www.facebook.com/poklyk.yaru" className={css.socialLink}>
             <RiFacebookCircleFill className={css.socialIcon} />
           </a>
-          <a href="#" className={css.socialLink}>
+          <a href="https://www.tiktok.com/@poklyk.yaru" className={css.socialLink}>
             <RiTiktokFill className={css.socialIcon} />
           </a>
         </div>

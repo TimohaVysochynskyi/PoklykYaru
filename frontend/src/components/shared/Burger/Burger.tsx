@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default function Burger({ isOpen, onClick }: Props) {
+
   return (
     <>
       <div className={clsx(css.container, "burger")} onClick={onClick}>

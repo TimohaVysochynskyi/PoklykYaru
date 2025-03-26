@@ -6,6 +6,8 @@ const AboutPage = lazy(() => import("../pages/AboutPage/AboutPage"));
 const DonatePage = lazy(() => import("../pages/DonatePage/DonatePage"));
 const EventPage = lazy(() => import("../pages/EventPage/EventPage"));
 const TabirPage = lazy(() => import("../pages/TabirPage/TabirPage"));
+const MovementPage = lazy(() => import("../pages/MovementPage/MovementPage"));
+
 
 export default function AppRouter() {
   return (
@@ -16,6 +18,7 @@ export default function AppRouter() {
         <Route path="/donate" element={<DonatePage />} />
         <Route path="/events" element={<EventPage />} />
         <Route path="/tabir" element={<TabirPage />} />
+        <Route path="/movement" element={<MovementPage />} />
       </Routes>
     </>
   );

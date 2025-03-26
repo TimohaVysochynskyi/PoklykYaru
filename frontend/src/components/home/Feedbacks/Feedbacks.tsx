@@ -8,7 +8,7 @@ export default function Feedbacks() {
     <>
       <div className={css.container}>
         <div className={css.gradient}>
-          <Link to="/feedbacks" className={css.link}>
+          <Link target="blank" to="https://www.instagram.com/stories/highlights/18137333335113644/" className={css.link}>
             Всі відгуки <HiMiniArrowUpRight className={css.arrow} />
           </Link>
         </div>
@@ -59,19 +59,17 @@ export default function Feedbacks() {
           </li>
           <li className={css.item}>
             <p className={css.text}>
-              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Officiis ex iste earum excepturi dolore ipsa totam fugiat iure
-              possimus, repudiandae voluptas soluta blanditiis inventore error
-              enim est eveniet labore atque?"
+            За старших синів я не переживала, що їм там сподобається. Проте з молодшими були сумніви. Втім табір «зайшов» усім!
+<br />І це не дивно. Це місце, де їх розуміють. Це місце, де їх виховують, дисциплінують. Разом з цим, їхні думки поважають, а до них ставляться, як до особистостей. Батькам важливо, коли старші товариші ставляться до підлітка, як до рівного. Виховники «Поклику Яру» не перестають тримати зв'язок з вихованцями табору й протягом року. Тому у дітей там є справжні друзі. А це багато чого вартує!
             </p>
             <div className={css.row}>
               <div className={css.col}>
                 <img src={user} alt="Портрет" className={css.image} />
               </div>
               <div className={css.col}>
-                <p className={css.name}>Друг Фестиваль</p>
+                <p className={css.name}>Руслана Чевірова</p>
                 <p className={css.description}>
-                  Координатор організації "Поклик Яру"
+                  Мама друга Лінгвіста, Ємо, Шрека
                 </p>
               </div>
             </div>

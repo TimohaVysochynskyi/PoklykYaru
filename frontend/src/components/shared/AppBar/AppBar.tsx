@@ -5,7 +5,7 @@ import logo from "../../../assets/logo.png";
 import Burger from "../Burger/Burger";
 
 import css from "./AppBar.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getSubdomain } from "../../../utils/helpers";
 
 type Props = {
@@ -22,12 +22,16 @@ export default function AppBar({ Navigation }: Props) {
     else setOpen(false);
   };
 
+  useEffect(() => {
+    setOpen(false);
+  }, [currentRoute]);
+
   return (
     <>
       <header
         className={clsx(
           css.header,
-          currentRoute == "/" &&
+          (currentRoute == "/" || currentRoute == "/movement") &&
             currentSubdomain !== "merch" &&
             css.headerBlured
         )}

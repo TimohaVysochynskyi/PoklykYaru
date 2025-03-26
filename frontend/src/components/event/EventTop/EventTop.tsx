@@ -10,21 +10,16 @@ export default function EventTop({ active }: Props) {
   const items = [
     { title: "Літній табір", image: "tabir", path: "../tabir" },
     {
-      title: 'Акція "Щедруй для захисників"',
-      image: "shchedrui",
-      path: "../tabir",
-    },
-    {
       title: "Зимовий похід ім. Ю. Горліс-Горського",
       image: "pohid",
-      path: "../tabir",
+      path: "",
     },
     {
       title: "Туристичний змаг ім. Василя Чучупаки",
       image: "zmah",
-      path: "../tabir",
+      path: "",
     },
-    { title: "Покрова", image: "pokrova", path: "../tabir" },
+    { title: "Покрова", image: "pokrova", path: "" },
   ];
 
   return (
