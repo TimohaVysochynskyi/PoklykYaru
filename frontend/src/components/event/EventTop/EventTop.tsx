@@ -3,23 +3,23 @@ import css from "./EventTop.module.css";
 import clsx from "clsx";
 
 type Props = {
-  active: "tabir" | "idle";
+  active: string;
 };
 
 export default function EventTop({ active }: Props) {
   const items = [
-    { title: "Літній табір", image: "tabir", path: "../tabir" },
+    { title: "Літній табір", image: "tabir", path: "tabir" },
     {
       title: "Зимовий похід ім. Ю. Горліс-Горського",
       image: "pohid",
-      path: "",
+      path: "pohid",
     },
     {
       title: "Туристичний змаг ім. Василя Чучупаки",
       image: "zmah",
-      path: "",
+      path: "zmah",
     },
-    { title: "Покрова", image: "pokrova", path: "" },
+    { title: "Покрова", image: "pokrova", path: "pokrova" },
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function EventTop({ active }: Props) {
         {items.map((item) => (
           <li
             className={clsx(
-              active == "idle" ? css.item : css.smallItem,
+              active == "events" ? css.item : css.smallItem,
               item.image == active && css.bigItem
             )}
             key={item.image}
@@ -39,7 +39,7 @@ export default function EventTop({ active }: Props) {
                 alt=""
                 className={css.image}
               />
-              {active == "idle" && <p className={css.title}>{item.title}</p>}
+              {active == "events" && <p className={css.title}>{item.title}</p>}
             </Link>
           </li>
         ))}

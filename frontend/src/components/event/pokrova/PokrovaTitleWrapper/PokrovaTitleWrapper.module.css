@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+.title {
+  font-size: 120px;
+  color: var(--main-text-color);
+  font-family: "Buduj Black-Height";
+  text-transform: uppercase;
+}
+.button {
+  padding: 15px 20px;
+  background-color: var(--bright-accent-color);
+  border-radius: 100px;
+  font-family: "Futura Bold";
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  width: 380px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 1440px) {
+  .title {
+    font-size: 90px;
+  }
+  .button {
+    font-size: 26px;
+    width: 320px;
+    height: 140px;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .container {
+    margin: 20px 0;
+    gap: 20px;
+  }
+  .title {
+    font-size: 70px;
+  }
+  .button {
+    height: 100px;
+    width: 270px;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 868px) {
+  .title {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 45px;
+  }
+  .button {
+    height: 80px;
+    width: 250px;
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .container {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .button {
+    width: 280px;
+    height: 100px;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 45px;
+  }
+}

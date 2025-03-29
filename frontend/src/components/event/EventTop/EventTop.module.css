@@ -19,7 +19,7 @@
   filter: contrast(50%) grayscale(50%);
 }
 .bigItem {
-  width: calc(80% - 50px);
+  width: calc(85% - 45px);
   filter: grayscale(0%);
 }
 .image {

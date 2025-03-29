@@ -1,23 +1,12 @@
-import { Link } from "react-router-dom";
-import EventTop from "../../components/event/EventTop/EventTop";
-import css from "./TabirPage.module.css";
-import TabirFeaturesList from "../../components/tabir/TabirFeaturesList/TabirFeaturesList";
-import TabirTitleWrapper from "../../components/tabir/TabirTitleWrapper/TabirTitleWrapper";
-import { BiLeftArrowAlt } from "react-icons/bi";
-import Footer from "../../components/shared/Footer/Footer";
+import TabirFeaturesList from '../TabirFeaturesList/TabirFeaturesList';
+import TabirTitleWrapper from '../TabirTitleWrapper/TabirTitleWrapper';
+import css from './TabirWrapper.module.css';
 
-export default function TabirPage() {
-  return (
-    <>
-      <section className={css.topContainer}>
-        <Link to="/events" className={css.backLink}>
-          <BiLeftArrowAlt className={css.icon} />
-          Повернутись
-        </Link>
-        <EventTop active="tabir" />
-
-        <TabirTitleWrapper />
-        <TabirFeaturesList />
+export default function TabirWrapper() {
+    return <>
+        <div className={css.container}>
+            <TabirTitleWrapper />
+            <TabirFeaturesList />
         <p className={css.text}>
           Основний і наймасштабніший наш захід. Таборовий сезон дозволяє
           доторкнутися до нашої системи виховання молоді і в майбутньому
@@ -51,9 +40,6 @@ export default function TabirPage() {
           навичок з домедичної допомоги, базових навичок тактики та виживання в
           лісі, орієнтування і т.д.
         </p>
-      </section>
-
-      <Footer />
+        </div>
     </>
-  );
 }
