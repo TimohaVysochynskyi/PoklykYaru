@@ -3,10 +3,9 @@ import EventTop from "../../components/event/EventTop/EventTop";
 import css from "./TabirPage.module.css";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import Footer from "../../components/shared/Footer/Footer";
-import { eventsActivePage } from "../../types/common.types";
 
 type Props = {
-    activePage: eventsActivePage;
+    activePage: string;
 }
 
 export default function EventPage({activePage}: Props) {
