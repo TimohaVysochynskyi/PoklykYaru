@@ -6,7 +6,7 @@ export default function TabirFeaturesList() {
     {
       id: "calendar",
       icon: <FaCalendarAlt className={css.icon} />,
-      text: "липень-серпень",
+      text: "червень-липень",
     },
     {
       id: "human",
