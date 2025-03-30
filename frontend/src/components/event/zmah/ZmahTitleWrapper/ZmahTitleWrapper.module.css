@@ -6,7 +6,7 @@
   margin: 40px 0;
 }
 .title {
-  font-size: 120px;
+  font-size: 90px;
   color: var(--main-text-color);
   font-family: "Buduj Black-Height";
   text-transform: uppercase;
@@ -24,20 +24,13 @@
   height: 160px;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
-}
-.arrow {
-  width: 120px;
-  height: 120px;
 }
 
 @media screen and (max-width: 1440px) {
   .title {
     font-size: 90px;
-  }
-  .arrow {
-    width: 100px;
-    height: 100px;
   }
   .button {
     font-size: 26px;
@@ -93,6 +86,6 @@
 }
 @media screen and (max-width: 425px) {
   .title {
-    font-size: 45px;
+    font-size: 36px;
   }
 }

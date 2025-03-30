@@ -26,4 +26,4 @@ export const APPS = [
 ];
 
 export const appDomain: string = "localhost:5173";
-export const apiDomain: string = "http://localhost:3000"
+export const apiDomain: string = "http://localhost:3000";

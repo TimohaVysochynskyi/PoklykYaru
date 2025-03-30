@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebook,
   FaTiktok,
+  FaYoutube,
 } from "react-icons/fa";
 
 import HeroSlide from "../HeroSlide/HeroSlide";
@@ -43,6 +44,11 @@ const socials = [
     name: "tiktok",
     link: "https://www.tiktok.com/@poklyk.yaru",
     icon: <FaTiktok className={css.icon} />,
+  },
+  {
+    name: "youtube",
+    link: "https://www.youtube.com/channel/UCROFrx6_3YVPx2pKHyY8C2w",
+    icon: <FaYoutube className={css.icon} />,
   },
 ];
 

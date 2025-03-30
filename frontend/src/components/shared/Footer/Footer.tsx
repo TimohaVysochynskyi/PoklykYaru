@@ -8,10 +8,39 @@ import {
   RiInstagramLine,
   RiFacebookCircleFill,
   RiTiktokFill,
+  RiYoutubeFill,
 } from "react-icons/ri";
 import logo from "../../../assets/logo.png";
 import css from "./Footer.module.css";
 import clsx from "clsx";
+
+const socials = [
+  {
+    name: "telegram",
+    link: "https://t.me/PoklykYaru",
+    icon: <RiTelegramFill className={css.socialIcon} />,
+  },
+  {
+    name: "instagram",
+    link: "https://www.instagram.com/poklyk.yaru",
+    icon: <RiInstagramLine className={css.socialIcon} />,
+  },
+  {
+    name: "facebook",
+    link: "https://www.facebook.com/poklyk.yaru",
+    icon: <RiFacebookCircleFill className={css.socialIcon} />,
+  },
+  {
+    name: "tiktok",
+    link: "https://www.tiktok.com/@poklyk.yaru",
+    icon: <RiTiktokFill className={css.socialIcon} />,
+  },
+  {
+    name: "youtube",
+    link: "https://www.youtube.com/channel/UCROFrx6_3YVPx2pKHyY8C2w",
+    icon: <RiYoutubeFill className={css.socialIcon} />,
+  },
+];
 
 export default function Footer() {
   return (
@@ -24,7 +53,10 @@ export default function Footer() {
           <Link to="/donate" className={clsx(css.linkBig, css.linkYello)}>
             Допомогти <HiMiniArrowUpRight className={css.arrow} />
           </Link>
-          <a href="https://docs.google.com/forms/d/1RjXHBQWtLBUeMnhjEnP997u83JKJ9wmPg8ss4cNN5jI/viewform?edit_requested=true" className={css.linkBig}>
+          <a
+            href="https://docs.google.com/forms/d/1RjXHBQWtLBUeMnhjEnP997u83JKJ9wmPg8ss4cNN5jI/viewform?edit_requested=true"
+            className={css.linkBig}
+          >
             Долучитись <HiMiniArrowUpRight className={css.arrow} />
           </a>
         </div>
@@ -45,18 +77,11 @@ export default function Footer() {
           </a>
         </div>
         <div className={css.socialsList}>
-          <a href="https://t.me/PoklykYaru" className={css.socialLink}>
-            <RiTelegramFill className={css.socialIcon} />
-          </a>
-          <a href="https://www.instagram.com/poklyk.yaru" className={css.socialLink}>
-            <RiInstagramLine className={css.socialIcon} />
-          </a>
-          <a href="https://www.facebook.com/poklyk.yaru" className={css.socialLink}>
-            <RiFacebookCircleFill className={css.socialIcon} />
-          </a>
-          <a href="https://www.tiktok.com/@poklyk.yaru" className={css.socialLink}>
-            <RiTiktokFill className={css.socialIcon} />
-          </a>
+          {socials.map((social) => (
+            <Link key={social.name} to={social.link} className={css.socialLink}>
+              {social.icon}
+            </Link>
+          ))}
         </div>
       </footer>
     </>
