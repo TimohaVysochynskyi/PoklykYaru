@@ -36,6 +36,7 @@
   box-shadow: 0px 2px 8px #222;
   background-color: rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  text-align: center;
 }
 .buttonFilled {
   background-color: var(--bright-accent-color);
@@ -80,7 +81,8 @@
   }
 }
 @media screen and (max-width: 650px) {
-  .buttonsWrapper {
+  .buttonsWrapper,
+  .socialsList {
     width: 95%;
     gap: 0 20px;
   }

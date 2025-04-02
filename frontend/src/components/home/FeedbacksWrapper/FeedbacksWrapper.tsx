@@ -11,9 +11,9 @@ export default function FeedbacksWrapper() {
             <div className={css.titleWrapper}>
               <p className={css.title}>
                 Відгуки <br />
-                <span className={css.subtitle}>вихованців та</span>{" "}
+                <span className={css.subtitle}>вихованців</span>
                 <br className={css.titleBR} />
-                <span className={css.subtitle}>їх батьків</span>
+                <span className={css.subtitle}>та батьків</span>
               </p>
             </div>
           </div>

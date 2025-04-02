@@ -19,7 +19,11 @@ export default function EventTop({ active }: Props) {
       image: "zmah",
       path: "zmah",
     },
-    { title: "Покрова", image: "pokrova", path: "pokrova" },
+    {
+      title: "Свято Покрови в Холодному Яру",
+      image: "pokrova",
+      path: "pokrova",
+    },
   ];
 
   return (

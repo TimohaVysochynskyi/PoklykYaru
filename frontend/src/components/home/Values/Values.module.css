@@ -46,6 +46,9 @@
   text-align: justify;
   margin: 5px 0;
 }
+.text span {
+  font-family: "Futura Bold";
+}
 .imagesWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;

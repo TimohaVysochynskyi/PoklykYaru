@@ -20,6 +20,7 @@ export default function DonateList() {
               донат. Наперед вдячні кожному. Свій до свого!
             </p>
             <a
+              target="blank"
               href="https://base.monobank.ua/27nRdVToxGcBps#subscriptions"
               className={css.link}
             >

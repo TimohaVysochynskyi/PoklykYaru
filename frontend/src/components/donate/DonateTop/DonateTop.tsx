@@ -11,22 +11,22 @@ export default function DonateTop() {
           <span className={css.subtitle}>нас</span>
         </p>
         <div className={css.qrList}>
-          <a href="" className={css.qrWrapper}>
+          <a
+            target="blank"
+            href="https://next.privat24.ua/send/2v7yn"
+            className={css.qrWrapper}
+          >
             <p className={css.qrText}>Приват банк</p>
             <img src={qrPrivat} alt="QR-код" className={css.qr} />
           </a>
-          <a href="" className={css.qrWrapper}>
+          <a
+            target="blank"
+            href="https://send.monobank.ua/8QAtg2DpVr"
+            className={css.qrWrapper}
+          >
             <p className={css.qrText}>Монобанк</p>
             <img src={qrMono} alt="QR-код" className={css.qr} />
           </a>
-          <div className={css.qrWrapper}>
-            <a
-              href="https://base.monobank.ua/27nRdVToxGcBps#subscriptions"
-              className={css.link}
-            >
-              Інший спосіб...
-            </a>
-          </div>
         </div>
       </div>
     </>

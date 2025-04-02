@@ -61,7 +61,7 @@ export default function Footer() {
           </a>
         </div>
         <div className={css.linksList}>
-          <a href="#" className={css.linkSmall}>
+          <a href="tel:+380956267773" className={css.linkSmall}>
             <AiFillPhone className={css.linkIcon} /> +380 95 626 77 73
           </a>
           <a href="https://t.me/PoklykYaru" className={css.linkSmall}>
@@ -69,7 +69,7 @@ export default function Footer() {
           </a>
         </div>
         <div className={css.linksList}>
-          <a href="#" className={css.linkSmall}>
+          <a href="mailto:poklyk.yaru@gmail.com" className={css.linkSmall}>
             <AiFillMail className={css.linkIcon} /> poklyk.yaru@gmail.com
           </a>
           <a href="#" className={css.linkSmall}>
