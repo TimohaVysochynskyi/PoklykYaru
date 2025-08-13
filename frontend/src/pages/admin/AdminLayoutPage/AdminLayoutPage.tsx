@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 import user from "../../../assets/user.png";
 import logo from "../../../assets/logo.png";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function AdminLayoutPage() {
   const dispatch: AppDispatch = useDispatch();
@@ -25,11 +25,11 @@ export default function AdminLayoutPage() {
   }, [dispatch]);
 
   const navigation = [
-    { name: "Мерчовска", path: "/merch" },
-    { name: "Оплати", path: "/payments" },
-    { name: "Заходи", path: "/events" },
-    { name: "Галерея", path: "/gallery" },
-    { name: "Рух", path: "/movement" },
+    { name: "Мерчовска", path: "./merch" },
+    { name: "Оплати", path: "./payments" },
+    { name: "Заходи", path: "./events" },
+    { name: "Галерея", path: "./gallery" },
+    { name: "Рух", path: "./movement" },
   ];
 
   const linkClass = ({ isActive }: { isActive: boolean }) => {
@@ -58,7 +58,9 @@ export default function AdminLayoutPage() {
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="shrink-0">
-                  <img alt="Your Company" src={logo} className="h-10 w-10" />
+                  <Link to="/">
+                    <img alt="Your Company" src={logo} className="h-10 w-10" />
+                  </Link>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">

@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
@@ -29,6 +29,7 @@ const RegisterCustomerSchema = Yup.object().shape({
 export default function LoginForm() {
   const id = useId();
   const dispatch: AppDispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (values: LoginCustomerType) => {
     dispatch(
@@ -38,6 +39,7 @@ export default function LoginForm() {
       })
     )
       .unwrap()
+      .then(() => navigate("/merch"))
       .catch(() => {
         toast.error("Невідома помилка");
       });
@@ -94,7 +96,7 @@ export default function LoginForm() {
               </button>
               <p className={css.text}>
                 Не маєте акаунту?&nbsp;
-                <Link className={css.link} to="/register">
+                <Link className={css.link} to="../register">
                   Створити
                 </Link>
               </p>

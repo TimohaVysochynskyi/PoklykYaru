@@ -14,7 +14,7 @@ import { LoginAdminType } from "../../../types/AdminAuth.types";
 
 // стилі
 import css from "./AdminLogin.module.css";
-import { appDomain } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 const AdminLoginSchema = Yup.object().shape({
   psevdo: Yup.string()
@@ -117,12 +117,12 @@ export default function AdminLogin() {
 
         <p className="mt-10 text-center text-sm text-gray-500">
           Не туди попали?{" "}
-          <a
-            href={`http://${appDomain}`}
+          <Link
+            to="/"
             className="font-semibold text-indigo-600 hover:text-indigo-500"
           >
             Повернутися на Головну
-          </a>
+          </Link>
         </p>
       </div>
     </div>

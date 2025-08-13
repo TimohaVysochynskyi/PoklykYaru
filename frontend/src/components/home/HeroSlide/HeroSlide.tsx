@@ -4,21 +4,22 @@ import css from "./HeroSlide.module.css";
 type Props = {
   name: string;
   title: string;
+  isHiDPI?: boolean;
 };
-export default function HeroSlide({ name, title }: Props) {
+export default function HeroSlide({ name, title, isHiDPI = false }: Props) {
   return (
     <>
       <div
-        className={css.container}
-        style={{ backgroundImage: `url('hero/${name}.webp')` }}
+        className={clsx(css.container, isHiDPI && css.dprScaled)}
+        style={{ backgroundImage: `url('/hero/${name}.webp')` }}
       >
         <div
-          className={clsx(css.bgFilter, name == "vatra" && css.noBgFilter)}
+          className={clsx(css.bgFilter, name === "vatra" && css.noBgFilter)}
         ></div>
         <div
           className={css.layer}
           style={{
-            backgroundImage: `url('hero/${name}-layer.webp')`,
+            backgroundImage: `url('/hero/${name}-layer.webp')`,
           }}
         ></div>
         <div className={css.titleWrapper}>

@@ -44,7 +44,7 @@ export default function ProductsNavigation({
         </div>
         <ul className={css.list}>
           <li className={css.item}>
-            <Link className={css.link} to={`/`}>
+            <Link className={css.link} to={`./`}>
               Всі продукти
             </Link>
           </li>

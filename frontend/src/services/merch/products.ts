@@ -2,9 +2,9 @@ import axios from 'axios';
 import './index'
 import { CategoryType, ProductType } from '../../types/Product.types';
 import { setAuthHeader } from './index';
-import { apiDomain } from "../../utils/constants";
+import { apiUrl } from "../../utils/constants";
 
-const URL = `${apiDomain}/merch`
+const URL = apiUrl('/merch');
 
 export const fetchAllProducts = async () => {
     const response = await axios.get(`${URL}/products`);

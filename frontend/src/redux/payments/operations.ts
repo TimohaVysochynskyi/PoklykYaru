@@ -1,18 +1,18 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { SendPaymentType } from '../../types/Payments.types';
-import { PaymentFormData } from '../../types/Payments.types';
+import { SendPaymentType, PaymentInvoiceData } from '../../types/Payments.types';
+import { apiUrl } from '../../utils/constants';
 
-export const paymentForm = createAsyncThunk<
-    PaymentFormData,
+export const createInvoice = createAsyncThunk<
+    PaymentInvoiceData,
     SendPaymentType,
     { rejectValue: string }
->('payments/form', async (paymentInfo, thunkAPI) => {
+>('payments/createInvoice', async (paymentInfo, thunkAPI) => {
     try {
-        const res = await axios.post('/payments/form', paymentInfo);
+        const res = await axios.post(apiUrl('/merch/payments/invoice'), paymentInfo);
 
-        return res.data;
+        return res.data.data as PaymentInvoiceData;
     } catch (error) {
         if (error instanceof Error) {
             return thunkAPI.rejectWithValue(error.message);

@@ -62,7 +62,7 @@ export default function ProductCard({
   return (
     <>
       <div className={css.container}>
-        <Link to={`/${_id}`} state={location} className={css.link}>
+        <Link to={`./${_id}`} state={location} className={css.link}>
           <img
             src={`http://${images[0]}`}
             alt="Картинка"

@@ -3,13 +3,20 @@ import { Toaster } from "react-hot-toast";
 
 import Loader from "../shared/Loader/Loader";
 import AppBar from "../shared/AppBar/AppBar";
-
-import { getApp } from "../../utils/helpers";
+import { useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import AppRouter from "../../routers/AppRouter";
+import MerchRouter from "../../routers/MerchRouter";
+import AdminRouter from "../../routers/AdminRouter";
+import MainNavigation from "../shared/Navigation/MainNavigation";
+import MerchNavigation from "../shared/Navigation/MerchNavigation";
 
 import css from "./App.module.css";
 
 export default function App() {
-  const CurrentApp = getApp();
+  const pathname = useLocation().pathname;
+  const isAdmin = pathname.startsWith("/admin");
+  const isMerch = pathname.startsWith("/merch");
 
   return (
     <>
@@ -23,18 +30,14 @@ export default function App() {
           }
         >
           <Toaster position="top-right" reverseOrder={false} />
-          {CurrentApp.subdomain === "admin" ? (
-            <CurrentApp.app />
-          ) : (
-            <>
-              {CurrentApp.navigation !== null && (
-                <>
-                  <AppBar Navigation={CurrentApp.navigation} />
-                  <CurrentApp.app />
-                </>
-              )}
-            </>
+          {!isAdmin && (
+            <AppBar Navigation={isMerch ? MerchNavigation : MainNavigation} />
           )}
+          <Routes>
+            <Route path="/admin/*" element={<AdminRouter />} />
+            <Route path="/merch/*" element={<MerchRouter />} />
+            <Route path="/*" element={<AppRouter />} />
+          </Routes>
         </Suspense>
       </main>
     </>

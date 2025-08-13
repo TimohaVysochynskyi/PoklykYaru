@@ -1,0 +1,20 @@
+.button {
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Buduj Bold";
+  background-color: var(--bright-accent-color);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-align: center;
+  border: 2px solid var(--bright-accent-color);
+  width: max-content;
+}
+
+@media screen and (max-width: 868px) {
+  .button {
+    padding: 10px 30px;
+    font-size: 18px;
+  }
+}

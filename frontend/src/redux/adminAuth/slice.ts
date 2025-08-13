@@ -11,6 +11,8 @@ type AdminPayloadType = {
 type InitialStateType = {
     admin: AdminPayloadType;
     accessToken: string | null;
+    refreshToken: string | null;
+    sessionId: string | null;
     isLoggedIn: boolean;
     isRefreshing: boolean;
 }
@@ -23,6 +25,8 @@ const initialState: InitialStateType = {
         phoneNumber: null
     },
     accessToken: null,
+    refreshToken: null,
+    sessionId: null,
     isLoggedIn: false,
     isRefreshing: false,
 }
@@ -47,6 +51,8 @@ const authSlice = createSlice({
             .addCase(login.fulfilled, (state, action) => {
                 state.admin = parseAdminData(action.payload.admin);
                 state.accessToken = action.payload.accessToken;
+                state.refreshToken = action.payload.refreshToken;
+                state.sessionId = action.payload.sessionId;
                 state.isLoggedIn = true;
             })
             .addCase(logOut.fulfilled, (state) => {
@@ -57,6 +63,8 @@ const authSlice = createSlice({
                     phoneNumber: null
                 };
                 state.accessToken = null;
+                state.refreshToken = null;
+                state.sessionId = null;
                 state.isLoggedIn = false;
             })
             .addCase(refreshAdmin.pending, (state) => {
@@ -65,6 +73,8 @@ const authSlice = createSlice({
             .addCase(refreshAdmin.fulfilled, (state, action) => {
                 state.admin = parseAdminData(action.payload.admin);
                 state.accessToken = action.payload.accessToken;
+                state.refreshToken = action.payload.refreshToken;
+                state.sessionId = action.payload.sessionId;
                 state.isLoggedIn = true;
                 state.isRefreshing = false;
             })

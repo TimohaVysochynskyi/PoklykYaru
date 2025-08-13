@@ -1,29 +1,8 @@
-import AppRouter from "../routers/AppRouter";
-import MerchRouter from "../routers/MerchRouter";
-import AdminRouter from "../routers/AdminRouter";
-import MainNavigation from "../components/shared/Navigation/MainNavigation";
-import MerchNavigation from "../components/shared/Navigation/MerchNavigation";
+// Central API base. Change here (or set VITE_API_BASE) to retarget all API requests.
+type ViteEnv = { [key: string]: string | undefined };
+const viteEnv: ViteEnv = (typeof import.meta !== 'undefined' && (import.meta as unknown as { env?: ViteEnv }).env) || {};
+export const apiDomain: string = viteEnv.VITE_API_BASE ?? "http://localhost:3000/api";
 
-export const APPS = [
-    {
-        subdomain: "www",
-        app: AppRouter,
-        navigation: MainNavigation,
-        main: true
-    },
-    {
-        subdomain: "merch",
-        app: MerchRouter,
-        navigation: MerchNavigation,
-        main: false
-    },
-    {
-        subdomain: "admin",
-        app: AdminRouter,
-        navigation: null,
-        main: false
-    }
-];
-
-export const appDomain: string = "localhost:5173";
-export const apiDomain: string = "http://localhost:3000";
+// Optional helper to build URLs safely
+export const apiUrl = (path: string) =>
+    `${apiDomain}${path.startsWith('/') ? '' : '/'}${path}`;

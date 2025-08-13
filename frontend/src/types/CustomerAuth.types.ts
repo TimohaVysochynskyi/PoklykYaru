@@ -26,4 +26,6 @@ type ResponseCustomerType = {
 export type ResponseType = {
     customer: ResponseCustomerType;
     accessToken: string;
+    refreshToken: string;
+    sessionId: string;
 };

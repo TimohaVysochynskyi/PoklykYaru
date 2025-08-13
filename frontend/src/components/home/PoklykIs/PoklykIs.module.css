@@ -39,7 +39,7 @@
   background: rgb(213, 207, 186);
   background: linear-gradient(
     0deg,
-    rgba(213, 207, 186, 0.9) 40%,
+    var(--alt-main-color) 40%,
     rgba(255, 230, 0, 0) 100%
   );
   bottom: 0;
@@ -51,7 +51,7 @@
   font-family: "Buduj Black-Height";
   font-size: 24px;
   text-transform: uppercase;
-  color: var(--alt-main-color) !important;
+  color: rgba(213, 207, 186) !important;
   display: flex;
   align-items: center;
   position: relative;

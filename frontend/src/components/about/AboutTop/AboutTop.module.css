@@ -17,14 +17,6 @@
   font-family: "Futura Bold";
   color: var(--alt-main-color);
 }
-.button {
-  padding: 15px 40px;
-  background-color: var(--bright-accent-color);
-  font-size: 20px;
-  text-transform: uppercase;
-  font-family: "Buduj Bold";
-  border-radius: 100px;
-}
 @media screen and (max-width: 1160px) {
   .title {
     font-size: 100px;

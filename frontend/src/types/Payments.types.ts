@@ -5,7 +5,9 @@ export type SendPaymentType = {
     totalPrice: number;
 }
 
-export type PaymentFormData = {
-    data: string;
-    signature: string;
+export type PaymentInvoiceData = {
+    invoiceUrl: string;
+    invoiceId: string;
+    reference: string;
+    orderId: string;
 }

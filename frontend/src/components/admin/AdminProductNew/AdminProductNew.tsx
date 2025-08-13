@@ -5,6 +5,7 @@ import { setAuthHeader } from "../../../services/merch";
 import { useSelector } from "react-redux";
 import { selectAccessToken } from "../../../redux/adminAuth/selectors";
 import axios from "axios";
+import { apiUrl } from "../../../utils/constants";
 import { ProductType } from "../../../types/Product.types";
 
 Modal.setAppElement("#root");
@@ -145,7 +146,7 @@ export default function CreateProduct({
       try {
         setAuthHeader(accessToken);
         const response = await axios.post(
-          `http://localhost:3000/merch/products/`,
+          apiUrl("/merch/products/"),
           formData,
           {
             headers: {

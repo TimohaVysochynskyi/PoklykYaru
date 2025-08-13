@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { paymentForm } from './operations';
-import { PaymentFormData } from '../../types/Payments.types';
+import { createInvoice } from './operations';
+import { PaymentInvoiceData } from '../../types/Payments.types';
 
 const handlePending = (state: InitialStateType) => {
     state.loading = true;
 }
 
 type InitialStateType = {
-    paymentFormData: PaymentFormData | null;
+    invoice: PaymentInvoiceData | null;
     loading: boolean;
     error: string | null;
 }
 
 const initialState: InitialStateType = {
-    paymentFormData: null,
+    invoice: null,
     loading: false,
     error: null
 }
@@ -23,18 +23,18 @@ const paymentsSlice = createSlice({
     initialState,
     reducers: {
         cancelPayment(state) {
-            state.paymentFormData = null;
+            state.invoice = null;
         }
     },
     extraReducers: (builder) => {
         builder
-            .addCase(paymentForm.pending, handlePending)
-            .addCase(paymentForm.fulfilled, (state, action) => {
-                state.paymentFormData = action.payload;
+            .addCase(createInvoice.pending, handlePending)
+            .addCase(createInvoice.fulfilled, (state, action) => {
+                state.invoice = action.payload;
                 state.loading = false;
                 state.error = null
             })
-            .addCase(paymentForm.rejected, (state, action) => {
+            .addCase(createInvoice.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || 'Unknown error occurred';
             })

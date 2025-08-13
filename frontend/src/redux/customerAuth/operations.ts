@@ -4,11 +4,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 import { RegisterCustomerType, LoginCustomerType, ResponseType } from '../../types/CustomerAuth.types';
-import { apiDomain } from '../../utils/constants';
+import { apiUrl } from '../../utils/constants';
 
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 
-const URL = `${apiDomain}/merch/auth`;
+const URL = apiUrl('/merch/auth');
 
 const setAuthHeader = (token: string) => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -49,7 +49,6 @@ export const login = createAsyncThunk<
     'auth/login',
     async (customerInfo, thunkAPI) => {
         try {
-            console.log("Logining");
             const res = await axios.post(`${URL}/login`, customerInfo);
             // After successful login, add the token to the HTTP header
             setAuthHeader(res.data.accessToken);
@@ -67,7 +66,10 @@ export const login = createAsyncThunk<
 
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
-        await axios.post(`${URL}/logout`);
+        const state: RootState = (thunkAPI.getState() as RootState);
+        await axios.post(`${URL}/logout`, {
+            sessionId: state.customerAuth.sessionId,
+        });
         // After a successful logout, remove the token from the HTTP header
         clearAuthHeader();
     } catch (error) {
@@ -87,19 +89,18 @@ export const refreshCustomer = createAsyncThunk<
 >(
     'auth/refresh',
     async (_, thunkAPI) => {
-        // Reading the token from the state via getState()
         const state: RootState = thunkAPI.getState();
-        const persistedToken = state.customerAuth.accessToken;
-
-        if (persistedToken === null) {
-            // If there is no token, exit without performing any request
-            return thunkAPI.rejectWithValue('Unable to fetch customer');
+        const { accessToken, refreshToken, sessionId } = state.customerAuth;
+        if (!accessToken || !refreshToken || !sessionId) {
+            return thunkAPI.rejectWithValue('Unable to refresh customer');
         }
 
         try {
-            // If there is a token, add it to the HTTP header and perform the request
-            setAuthHeader(persistedToken);
-            const res = await axios.post(`${URL}/refresh`);
+            setAuthHeader(accessToken);
+            const res = await axios.post(`${URL}/refresh`, {
+                refreshToken,
+                sessionId,
+            });
             setAuthHeader(res.data.accessToken);
             return res.data;
         } catch (error) {

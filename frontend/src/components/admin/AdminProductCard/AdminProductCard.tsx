@@ -9,7 +9,7 @@ export default function AdminProductCard({ product }: Props) {
   const location = useLocation();
 
   return (
-    <Link to={`/merch/${product._id}`} state={location}>
+    <Link to={`./${product._id}`} state={location}>
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 cursor-pointer">
         <img
           alt="Картинка товару"

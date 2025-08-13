@@ -6,5 +6,5 @@ import { NodeComponentType } from "../types/common.types";
 export default function RestrictedRoute({ component }: NodeComponentType) {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  return isLoggedIn ? <Navigate to="/" /> : component;
+  return isLoggedIn ? <Navigate to="/admin" /> : component;
 }

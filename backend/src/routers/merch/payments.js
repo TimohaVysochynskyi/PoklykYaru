@@ -2,28 +2,32 @@ import { Router } from 'express';
 
 import { ctrlWrapper } from '../../utils/ctrlWrapper.js';
 import { validateBody } from '../../middlewares/validateBody.js';
-//import { isValidId } from '../../middlewares/isValidId.js';
 import { authCustomer } from '../../middlewares/authCustomer.js';
-import { authAdmin } from '../../middlewares/authAdmin.js';
 
 import {
-  getAllPaymentsController,
-  getPaymentsByIdController,
-  paymentFormController,
+  createPaymentInvoiceController,
+  getAllOrdersController,
+  getMyOrdersController,
 } from '../../controllers/merch/payments.js';
 
-import { paymentFormSchema } from '../../validation/merch/payments.js';
+import { createInvoiceSchema } from '../../validation/merch/payments.js';
+import { authAdmin } from '../../middlewares/authAdmin.js';
 
 const router = Router();
 
-router.get('/', authAdmin, ctrlWrapper(getAllPaymentsController));
+// customer: list own orders
+router.get('/', authCustomer, ctrlWrapper(getMyOrdersController));
+
+// admin-only: list all orders
+router.get('/all', authAdmin, ctrlWrapper(getAllOrdersController));
 
 router.post(
-  '/form',
+  '/invoice',
   authCustomer,
-  validateBody(paymentFormSchema),
-  ctrlWrapper(paymentFormController),
+  validateBody(createInvoiceSchema),
+  ctrlWrapper(createPaymentInvoiceController),
 );
-router.post('/', authCustomer, ctrlWrapper(getPaymentsByIdController));
+
+// Webhook is mounted at app level to accept raw body, see server.js
 
 export default router;

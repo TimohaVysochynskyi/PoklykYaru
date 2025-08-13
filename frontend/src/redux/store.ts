@@ -20,7 +20,7 @@ import { adminAuthReducer } from './adminAuth/slice';
 const customerAuthPersistConfig = {
     key: 'auth',
     storage,
-    whitelist: ['accessToken'],
+    whitelist: ['accessToken', 'refreshToken', 'sessionId'],
 };
 
 const cartPersistConfig = {
@@ -31,7 +31,7 @@ const cartPersistConfig = {
 const adminAuthPersistConfig = {
     key: 'adminAuth',
     storage,
-    whitelist: ['accessToken'],
+    whitelist: ['accessToken', 'refreshToken', 'sessionId'],
 };
 
 // Типізуємо persistReducers для auth та cart

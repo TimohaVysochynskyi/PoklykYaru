@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "../components/PrivateAdminRoute";
-import RestrictedRoute from "../components/RestrictedAdminRoute";
+import PrivateAdminRoute from "../components/PrivateAdminRoute";
+import RestrictedAdminRoute from "../components/RestrictedAdminRoute";
 
 const AdminLoginPage = lazy(
   () => import("../pages/admin/AdminLoginPage/AdminLoginPage")
@@ -25,11 +25,11 @@ export default function MerchRouter() {
       <Routes>
         <Route
           path="/login"
-          element={<RestrictedRoute component={<AdminLoginPage />} />}
+          element={<RestrictedAdminRoute component={<AdminLoginPage />} />}
         ></Route>
         <Route
           path="/"
-          element={<PrivateRoute component={<AdminLayoutPage />} />}
+          element={<PrivateAdminRoute component={<AdminLayoutPage />} />}
         >
           <Route path="merch" element={<AdminMerchPage />}></Route>
           <Route

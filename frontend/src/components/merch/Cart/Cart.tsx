@@ -13,9 +13,9 @@ import Loader from "../../shared/Loader/Loader";
 import { AppDispatch } from "../../../redux/store";
 import { closeCart } from "../../../redux/cart/slice";
 import { cancelPayment } from "../../../redux/payments/slice";
-import { paymentForm } from "../../../redux/payments/operations";
+import { createInvoice } from "../../../redux/payments/operations";
 import { selectCart } from "../../../redux/cart/selectors";
-import { selectPaymentFormData } from "../../../redux/payments/selectors";
+import { selectInvoice } from "../../../redux/payments/selectors";
 
 // types
 import { SendPaymentType } from "../../../types/Payments.types";
@@ -35,7 +35,7 @@ export default function Cart({ isOpen }: Props) {
   const [loading, setLoading] = useState(false);
 
   const items = useSelector(selectCart);
-  const paymentFormData = useSelector(selectPaymentFormData);
+  const invoice = useSelector(selectInvoice);
 
   const dispatch: AppDispatch = useDispatch();
 
@@ -56,8 +56,18 @@ export default function Cart({ isOpen }: Props) {
     setLoading(false);
   };
 
-  const handlePayment = (sendPayment: SendPaymentType) => {
-    const form = dispatch(paymentForm(sendPayment)).then(() => {
+  const handlePayment = () => {
+    const cleaned: SendPaymentType = {
+      orderProducts: items.map((p: CartProductType) => ({
+        product: p.product,
+        variation: p.variation,
+        quantity: p.quantity,
+        price: p.price,
+      })),
+      totalPrice: total,
+    };
+
+    const form = dispatch(createInvoice(cleaned)).then(() => {
       setLoading(true);
 
       setTimeout(() => {
@@ -90,7 +100,7 @@ export default function Cart({ isOpen }: Props) {
             <IoCloseOutline className={css.close} />
           </button>
         </div>
-        {paymentFormData !== null && <div className={css.disableModal}></div>}
+        {invoice !== null && <div className={css.disableModal}></div>}
         <div className={css.row}>
           <div className={css.col}>
             {items.length > 0 ? (
@@ -111,40 +121,27 @@ export default function Cart({ isOpen }: Props) {
               <p className={css.price}>{total} UAH</p>
             </div>
             <div className={css.sideRow}>
-              {paymentFormData !== null && loading == false ? (
-                <form
-                  action="https://www.liqpay.ua/api/3/checkout"
-                  accept-charset="utf-8"
-                  className={css.form}
+              {invoice !== null && loading == false ? (
+                <a
+                  href={invoice.invoiceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={css.buttonDark}
                 >
-                  <input
-                    type="hidden"
-                    name="data"
-                    value={paymentFormData.data}
-                  />
-                  <input
-                    type="hidden"
-                    name="signature"
-                    value={paymentFormData.signature}
-                  />
-                  <button type="submit" className={css.buttonDark}>
-                    Сплатити
-                  </button>
-                </form>
+                  Сплатити
+                </a>
               ) : (
                 <button
                   className={clsx(
                     css.buttonDark,
                     loading && css.buttonIsLoading
                   )}
-                  onClick={() =>
-                    handlePayment({ orderProducts: items, totalPrice: total })
-                  }
+                  onClick={handlePayment}
                 >
                   {loading ? <Loader size="20" /> : "Зробити замовлення"}
                 </button>
               )}
-              {paymentFormData !== null && (
+              {invoice !== null && (
                 <button
                   className={css.buttonLight}
                   onClick={handleCancelPayment}

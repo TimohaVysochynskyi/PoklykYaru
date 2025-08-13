@@ -6,7 +6,6 @@ import Burger from "../Burger/Burger";
 
 import css from "./AppBar.module.css";
 import { useEffect, useState } from "react";
-import { getSubdomain } from "../../../utils/helpers";
 
 type Props = {
   Navigation: React.FunctionComponent<{ isOpen: boolean }>;
@@ -15,7 +14,7 @@ type Props = {
 export default function AppBar({ Navigation }: Props) {
   const [open, setOpen] = useState(false);
   const currentRoute = useLocation().pathname;
-  const currentSubdomain = getSubdomain();
+  const isMerch = currentRoute.startsWith("/merch");
 
   const handleBurgerChange = () => {
     if (!open) setOpen(true);
@@ -32,7 +31,7 @@ export default function AppBar({ Navigation }: Props) {
         className={clsx(
           css.header,
           (currentRoute == "/" || currentRoute == "/movement") &&
-            currentSubdomain !== "merch" &&
+            !isMerch &&
             css.headerBlured
         )}
       >
@@ -40,10 +39,7 @@ export default function AppBar({ Navigation }: Props) {
           <img
             src={logo}
             alt="Logo"
-            className={clsx(
-              css.logo,
-              currentRoute == "/" && currentSubdomain == "" && css.logoSmall
-            )}
+            className={clsx(css.logo, currentRoute == "/" && css.logoSmall)}
           />
         </Link>
         <Navigation isOpen={open} />

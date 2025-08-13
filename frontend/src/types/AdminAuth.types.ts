@@ -14,4 +14,6 @@ type ResponseAdminType = {
 export type ResponseType = {
     admin: ResponseAdminType;
     accessToken: string;
+    refreshToken: string;
+    sessionId: string;
 };

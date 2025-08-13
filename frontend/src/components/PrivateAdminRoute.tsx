@@ -5,5 +5,5 @@ import { NodeComponentType } from "../types/common.types";
 
 export default function PrivateRoute({ component }: NodeComponentType) {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  return isLoggedIn == true ? component : <Navigate to="/login" />;
+  return isLoggedIn == true ? component : <Navigate to="/admin/login" />;
 }

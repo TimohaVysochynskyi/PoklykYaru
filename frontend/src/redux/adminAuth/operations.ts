@@ -4,11 +4,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 import { LoginAdminType, ResponseType } from '../../types/AdminAuth.types';
-import { apiDomain } from '../../utils/constants';
+import { apiUrl } from '../../utils/constants';
 
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 
-const URL = `${apiDomain}/admin`;
+const URL = apiUrl('/admin');
 
 const setAuthHeader = (token: string) => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -43,7 +43,10 @@ export const login = createAsyncThunk<
 
 export const logOut = createAsyncThunk('logout', async (_, thunkAPI) => {
     try {
-        await axios.post(`${URL}/logout`);
+        const state: RootState = (thunkAPI.getState() as RootState);
+        await axios.post(`${URL}/logout`, {
+            sessionId: state.adminAuth.sessionId,
+        });
         // After a successful logout, remove the token from the HTTP header
         clearAuthHeader();
     } catch (error) {
@@ -63,19 +66,18 @@ export const refreshAdmin = createAsyncThunk<
 >(
     'refresh',
     async (_, thunkAPI) => {
-        // Reading the token from the state via getState()
         const state: RootState = thunkAPI.getState();
-        const persistedToken = state.adminAuth.accessToken;
-
-        if (persistedToken === null) {
-            // If there is no token, exit without performing any request
-            return thunkAPI.rejectWithValue('Unable to fetch admin');
+        const { accessToken, refreshToken, sessionId } = state.adminAuth;
+        if (!accessToken || !refreshToken || !sessionId) {
+            return thunkAPI.rejectWithValue('Unable to refresh admin');
         }
 
         try {
-            // If there is a token, add it to the HTTP header and perform the request
-            setAuthHeader(persistedToken);
-            const res = await axios.post(`${URL}/refresh`);
+            setAuthHeader(accessToken);
+            const res = await axios.post(`${URL}/refresh`, {
+                refreshToken,
+                sessionId,
+            });
             setAuthHeader(res.data.accessToken);
             return res.data;
         } catch (error) {

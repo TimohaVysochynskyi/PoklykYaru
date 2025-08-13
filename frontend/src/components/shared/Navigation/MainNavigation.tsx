@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { NavLink, useLocation } from "react-router-dom";
 
-// import { appDomain } from "../../../utils/constants";
+// domain-based links removed; routing uses path segments now
 
 import css from "./Navigation.module.css";
 
@@ -13,7 +13,7 @@ export default function MainNavigation({ isOpen }: Props) {
   const currentRoute = useLocation().pathname;
 
   const linkClass = () => {
-    if (currentRoute == "/") {
+    if (currentRoute == "/" || currentRoute == "/movement") {
       return clsx(css.link, css.lightLink);
     } else {
       return clsx(css.link);
@@ -48,11 +48,11 @@ export default function MainNavigation({ isOpen }: Props) {
             Підтримати
           </NavLink>
         </li>
-        {/* <li className={css.item}>
-          <NavLink to={`http://merch.${appDomain}`} className={linkClass}>
+        <li className={css.item}>
+          <NavLink to="/merch" className={linkClass}>
             Мерч
           </NavLink>
-        </li> */}
+        </li>
         {/* <li className={css.item}>
           <NavLink to="/gallery" className={linkClass}>
             Галерея

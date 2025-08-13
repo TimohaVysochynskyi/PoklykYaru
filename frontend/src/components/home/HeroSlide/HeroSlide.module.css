@@ -5,6 +5,9 @@
   background-size: cover;
   background-position: top;
 }
+.container {
+  position: relative;
+}
 .layer {
   position: absolute;
   top: 0;
@@ -34,14 +37,14 @@
   z-index: 2;
 }
 .title {
-  font-size: 120px;
+  font-size: clamp(72px, 7.5vw, 120px);
   font-family: "Buduj Regular-Height";
   color: rgba(241, 196, 0, 1);
   text-transform: uppercase;
   letter-spacing: -6px;
 }
 .subtitle {
-  font-size: 100px;
+  font-size: clamp(56px, 6.5vw, 100px);
   font-family: "Futura Bold";
   background-color: #fff;
   background-image: linear-gradient(
@@ -78,45 +81,58 @@
 
 @media screen and (max-width: 1440px) {
   .title {
-    font-size: 100px;
+    font-size: clamp(64px, 6.8vw, 100px);
   }
   .subtitle {
-    font-size: 80px;
+    font-size: clamp(48px, 5.6vw, 80px);
   }
 }
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 90px;
+    font-size: clamp(56px, 10vw, 90px);
   }
   .subtitle {
-    font-size: 70px;
+    font-size: clamp(40px, 8vw, 70px);
   }
 }
 @media screen and (max-width: 650px) {
   .title {
-    font-size: 70px;
+    font-size: clamp(42px, 9vw, 70px);
   }
   .subtitle {
-    font-size: 50px;
+    font-size: clamp(28px, 7vw, 50px);
     margin-top: -10px;
   }
 }
 @media screen and (max-width: 500px) {
   .title {
-    font-size: 60px;
+    font-size: clamp(36px, 11vw, 60px);
     letter-spacing: -2px;
   }
   .subtitle {
-    font-size: 40px;
+    font-size: clamp(24px, 8.5vw, 40px);
     margin-top: 0px;
   }
 }
 @media screen and (max-width: 425px) {
   .title {
-    font-size: 50px;
+    font-size: clamp(30px, 12vw, 50px);
   }
   .subtitle {
-    font-size: 30px;
+    font-size: clamp(20px, 8.5vw, 30px);
     margin-top: 0px;
+  }
+}
+
+/* Hi-DPI specific tweaks: activate when parent has .dprScaled on non-mobile widths */
+@media (min-width: 769px) {
+  .dprScaled .titleWrapper {
+    top: clamp(12vh, 16vh, 18vh);
+  }
+  .dprScaled .title {
+    letter-spacing: -4px;
+  }
+  .dprScaled .subtitle {
+    margin-top: -12px;
   }
 }

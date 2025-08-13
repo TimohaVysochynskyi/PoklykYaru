@@ -11,6 +11,8 @@ type CustomerPayloadType = {
 type InitialStateType = {
     customer: CustomerPayloadType;
     accessToken: string | null;
+    refreshToken: string | null;
+    sessionId: string | null;
     isLoggedIn: boolean;
     isRefreshing: boolean;
 }
@@ -23,6 +25,8 @@ const initialState: InitialStateType = {
         email: null
     },
     accessToken: null,
+    refreshToken: null,
+    sessionId: null,
     isLoggedIn: false,
     isRefreshing: false,
 }
@@ -47,16 +51,22 @@ const authSlice = createSlice({
             .addCase(register.fulfilled, (state, action) => {
                 state.customer = parseCustomerData(action.payload.customer);
                 state.accessToken = action.payload.accessToken;
+                state.refreshToken = action.payload.refreshToken;
+                state.sessionId = action.payload.sessionId;
                 state.isLoggedIn = true;
             })
             .addCase(login.fulfilled, (state, action) => {
                 state.customer = parseCustomerData(action.payload.customer);
                 state.accessToken = action.payload.accessToken;
+                state.refreshToken = action.payload.refreshToken;
+                state.sessionId = action.payload.sessionId;
                 state.isLoggedIn = true;
             })
             .addCase(logOut.fulfilled, (state) => {
                 state.customer = { firstName: null, lastName: null, phoneNumber: null, email: null };
                 state.accessToken = null;
+                state.refreshToken = null;
+                state.sessionId = null;
                 state.isLoggedIn = false;
             })
             .addCase(refreshCustomer.pending, (state) => {
@@ -65,6 +75,8 @@ const authSlice = createSlice({
             .addCase(refreshCustomer.fulfilled, (state, action) => {
                 state.customer = parseCustomerData(action.payload.customer);
                 state.accessToken = action.payload.accessToken;
+                state.refreshToken = action.payload.refreshToken;
+                state.sessionId = action.payload.sessionId;
                 state.isLoggedIn = true;
                 state.isRefreshing = false;
             })

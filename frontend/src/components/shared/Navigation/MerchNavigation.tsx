@@ -11,7 +11,7 @@ import { openCart } from "../../../redux/cart/slice";
 import { selectIsLoggedIn } from "../../../redux/customerAuth/selectors";
 import { selectCart } from "../../../redux/cart/selectors";
 
-import { appDomain } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 import css from "./Navigation.module.css";
 import clsx from "clsx";
@@ -41,20 +41,20 @@ export default function MerchNavigation({ isOpen }: Props) {
     <>
       <ul className={clsx(css.list, isOpen && css.listOpened)}>
         <li className={css.item}>
-          <a href={`http://${appDomain}`} className={css.link}>
+          <Link to="/" className={css.link}>
             Головна
-          </a>
+          </Link>
         </li>
         <li className={css.item}>
-          <a href={`http://${appDomain}/help`} className={css.link}>
+          <Link to="/merch/help" className={css.link}>
             Допомога
-          </a>
+          </Link>
         </li>
 
         {isLoggedIn ? (
           <>
             <li className={css.item}>
-              <NavLink to="/profile" className={css.link}>
+              <NavLink to="/merch/profile" className={css.link}>
                 Мій акаунт
               </NavLink>
             </li>
