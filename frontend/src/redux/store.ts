@@ -11,10 +11,12 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { customerAuthReducer } from './customerAuth/slice';
-import { cartReducer } from './cart/slice';
-import { paymentsReducer } from './payments/slice';
-import { adminAuthReducer } from './adminAuth/slice';
+import { 
+    authReducer, 
+    cartReducer, 
+    paymentsReducer, 
+    adminAuthReducer 
+} from './features';
 
 // Persisting token field from auth slice to localstorage
 const customerAuthPersistConfig = {
@@ -35,7 +37,7 @@ const adminAuthPersistConfig = {
 };
 
 // Типізуємо persistReducers для auth та cart
-const persistedCustomerAuthReducer = persistReducer(customerAuthPersistConfig, customerAuthReducer);
+const persistedCustomerAuthReducer = persistReducer(customerAuthPersistConfig, authReducer);
 const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
 const persistedAdminAuthReducer = persistReducer(adminAuthPersistConfig, adminAuthReducer);
 

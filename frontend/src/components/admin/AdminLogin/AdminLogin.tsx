@@ -7,7 +7,7 @@ import logo from "../../../assets/logo.png";
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { login } from "../../../redux/adminAuth/operations"; // назви операції можна змінити
+import { loginAdmin } from "../../../redux/features/adminAuth"; // назви операції можна змінити
 
 // types
 import { LoginAdminType } from "../../../types/AdminAuth.types";
@@ -32,7 +32,7 @@ export default function AdminLogin() {
 
   const handleSubmit = (values: LoginAdminType) => {
     dispatch(
-      login({
+      loginAdmin({
         psevdo: values.psevdo,
         password: values.password,
       })

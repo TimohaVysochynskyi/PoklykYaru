@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import AdminLogin from "../../../components/admin/AdminLogin/AdminLogin";
 
 import { AppDispatch } from "../../../redux/store";
-import { refreshAdmin } from "../../../redux/adminAuth/operations";
+import { refreshAdmin } from "../../redux/features/adminAuth";
 
 import css from "./AdminLoginPage.module.css";
 

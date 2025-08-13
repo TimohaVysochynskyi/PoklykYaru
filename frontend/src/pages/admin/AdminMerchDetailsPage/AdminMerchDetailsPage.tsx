@@ -12,7 +12,7 @@ import {
 
 import { ProductType } from "../../../types/Product.types";
 
-import { selectAccessToken } from "../../../redux/adminAuth/selectors";
+import { selectAdminAccessToken } from "../../redux/features/adminAuth";
 
 export default function AdminMerchEditPage() {
   const { productId } = useParams<{ productId: string }>();
@@ -20,7 +20,7 @@ export default function AdminMerchEditPage() {
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
 
-  const accessToken = useSelector(selectAccessToken);
+  const accessToken = useSelector(selectAdminAccessToken);
 
   const fetchProduct = (productId: string) => {
     fetchProductWithId(productId)

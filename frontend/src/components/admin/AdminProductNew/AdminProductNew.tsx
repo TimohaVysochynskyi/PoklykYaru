@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { IoCloseOutline } from "react-icons/io5";
 import { setAuthHeader } from "../../../services/merch";
 import { useSelector } from "react-redux";
-import { selectAccessToken } from "../../../redux/adminAuth/selectors";
+import { selectAdminAccessToken } from "../../../redux/features/adminAuth";
 import axios from "axios";
 import { apiUrl } from "../../../utils/constants";
 import { ProductType } from "../../../types/Product.types";
@@ -48,7 +48,7 @@ export default function CreateProduct({
     stock: 0,
   });
 
-  const accessToken = useSelector(selectAccessToken);
+  const accessToken = useSelector(selectAdminAccessToken);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

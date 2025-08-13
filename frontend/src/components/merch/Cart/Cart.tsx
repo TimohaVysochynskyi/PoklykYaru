@@ -11,11 +11,11 @@ import Loader from "../../shared/Loader/Loader";
 
 // redux
 import { AppDispatch } from "../../../redux/store";
-import { closeCart } from "../../../redux/cart/slice";
-import { cancelPayment } from "../../../redux/payments/slice";
-import { createInvoice } from "../../../redux/payments/operations";
-import { selectCart } from "../../../redux/cart/selectors";
-import { selectInvoice } from "../../../redux/payments/selectors";
+import { closeCart } from "../../../redux/features/cart";
+import { cancelPayment } from "../../../redux/features/payments";
+import { createInvoice } from "../../../redux/features/payments";
+import { selectCart } from "../../../redux/features/cart";
+import { selectPaymentInvoice } from "../../../redux/features/payments";
 
 // types
 import { SendPaymentType } from "../../../types/Payments.types";
@@ -35,7 +35,7 @@ export default function Cart({ isOpen }: Props) {
   const [loading, setLoading] = useState(false);
 
   const items = useSelector(selectCart);
-  const invoice = useSelector(selectInvoice);
+  const invoice = useSelector(selectPaymentInvoice);
 
   const dispatch: AppDispatch = useDispatch();
 
