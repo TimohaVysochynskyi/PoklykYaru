@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { CartProduct, CartItem, UpdateCartItemRequest, CartResponse } from './types';
+import { apiUrl } from '../../../utils/constants';
 
-const URL = `http://localhost:3000/merch/cart`;
+const URL = apiUrl('/merch/cart');
 
 // Fetch cart items
 export const fetchCart = createAsyncThunk<
@@ -10,7 +11,7 @@ export const fetchCart = createAsyncThunk<
   void,
   { rejectValue: string }
 >(
-  'cart/fetchCart', 
+  'cart/fetchCart',
   async (_, thunkAPI) => {
     try {
       const res = await axios.get(`${URL}/`);
@@ -31,7 +32,7 @@ export const addItem = createAsyncThunk<
   CartItem,
   { rejectValue: string }
 >(
-  'cart/addItem', 
+  'cart/addItem',
   async (itemInfo, thunkAPI) => {
     try {
       const res = await axios.post(`${URL}/add`, itemInfo);
@@ -52,7 +53,7 @@ export const updateItem = createAsyncThunk<
   UpdateCartItemRequest,
   { rejectValue: string }
 >(
-  'cart/updateItem', 
+  'cart/updateItem',
   async (itemInfo, thunkAPI) => {
     try {
       const res = await axios.post(`${URL}/update`, itemInfo);
@@ -73,7 +74,7 @@ export const deleteItem = createAsyncThunk<
   CartItem,
   { rejectValue: string }
 >(
-  'cart/deleteItem', 
+  'cart/deleteItem',
   async (itemInfo, thunkAPI) => {
     try {
       const res = await axios.post(`${URL}/delete`, itemInfo);

@@ -7,7 +7,7 @@ import logo from "../../../assets/logo.png";
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { loginAdmin } from "../redux/features/auth/selectors"; // назви операції можна змінити
+import { loginAdmin } from "../../../redux"; // назви операції можна змінити
 
 // types
 import { LoginAdminType } from "../../../types/AdminAuth.types";

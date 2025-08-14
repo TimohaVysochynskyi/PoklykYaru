@@ -11,11 +11,13 @@ import Loader from "../../shared/Loader/Loader";
 
 // redux
 import { AppDispatch } from "../../../redux/store";
-import { closeCart } from "../redux/features/auth/selectors";
-import { cancelPayment } from "../redux/features/auth/selectors";
-import { createInvoice } from "../redux/features/auth/selectors";
-import { selectCart } from "../redux/features/auth/selectors";
-import { selectPaymentInvoice } from "../redux/features/auth/selectors";
+import {
+  closeCart,
+  cancelPayment,
+  createInvoice,
+  selectCart,
+  selectPaymentInvoice,
+} from "../../../redux";
 
 // types
 import { SendPaymentType } from "../../../types/Payments.types";

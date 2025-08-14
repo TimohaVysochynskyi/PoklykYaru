@@ -12,7 +12,7 @@ import AddToCart from "../../toasts/AddToCart/AddToCart";
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { addItem } from "../redux/features/auth/selectors";
+import { addItem, selectIsLoggedIn } from "../../../redux";
 
 // types
 import { ProductType } from "../../../types/Product.types";
@@ -21,7 +21,6 @@ import { CartItemType } from "../../../types/Cart.types";
 // styles
 import css from "./ProductCard.module.css";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../redux/features/auth/selectors";
 
 type Props = {
   product: ProductType;
@@ -56,7 +55,7 @@ export default function ProductCard({
       .then(() => {
         toast(() => <AddToCart />);
       })
-      .catch((error) => toast.error(error));
+      .catch((err: unknown) => toast.error(String(err)));
   };
 
   return (

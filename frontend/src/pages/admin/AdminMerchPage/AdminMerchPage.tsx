@@ -10,7 +10,7 @@ import { ProductType } from "../../../types/Product.types";
 import { addProduct, fetchAllProducts } from "../../../services/merch/products";
 
 import { useSelector } from "react-redux";
-import { selectAdminAccessToken } from "../../redux";
+import { selectAdminAccessToken } from "../../../redux";
 
 export default function AdminMerchPage() {
   const [products, setProducts] = useState<ProductType[]>([]);

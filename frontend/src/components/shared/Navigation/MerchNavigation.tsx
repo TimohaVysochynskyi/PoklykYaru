@@ -1,18 +1,10 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-
+import { NavLink, Link } from "react-router-dom";
 import AuthNav from "../../merch/AuthNav/AuthNav";
-
 import { useSelector, useDispatch } from "react-redux";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
-
-// redux
-import { openCart } from "../redux/features/auth/selectors";
-import { selectIsLoggedIn } from "../redux/features/auth/selectors";
-import { selectCart } from "../redux/features/auth/selectors";
-
-import { Link } from "react-router-dom";
-
+// redux (central barrel)
+import { openCart, selectIsLoggedIn, selectCart } from "../../../redux";
 import css from "./Navigation.module.css";
 import clsx from "clsx";
 

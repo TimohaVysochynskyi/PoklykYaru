@@ -28,7 +28,7 @@ export const selectCustomerFullName = createSelector(
 );
 
 export const selectIsAuthenticated = createSelector(
-  [selectIsLoggedIn, selectAdminAccessToken],
+  [selectIsLoggedIn, selectAccessToken],
   (isLoggedIn, accessToken) => isLoggedIn && !!accessToken
 );
 

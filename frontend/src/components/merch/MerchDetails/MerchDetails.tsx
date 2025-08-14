@@ -10,7 +10,7 @@ import AddToCart from "../../toasts/AddToCart/AddToCart";
 
 // redux
 import { AppDispatch } from "../../../redux/store";
-import { addItem } from "../redux/features/auth/selectors";
+import { addItem } from "../../../redux";
 
 // types
 import { ProductType } from "../../../types/Product.types";
@@ -46,7 +46,7 @@ export default function MerchDetails({
       .then(() => {
         toast(() => <AddToCart />);
       })
-      .catch((error) => toast.error(error));
+      .catch((err: unknown) => toast.error(String(err)));
   };
 
   if (_id == undefined) return <ErrorMessage />;
