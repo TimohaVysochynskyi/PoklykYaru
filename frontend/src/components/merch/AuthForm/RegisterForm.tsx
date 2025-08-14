@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { register } from "../redux";
+import { register } from "../redux/features/auth/selectors";
 
 // types
 import { RegisterCustomerType } from "../../../types/CustomerAuth.types";

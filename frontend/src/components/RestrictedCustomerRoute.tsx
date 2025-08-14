@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../redux";
+import { selectIsLoggedIn } from "../redux/features/auth/selectors";
 import { NodeComponentType } from "../types/common.types";
 
 export default function RestrictedRoute({ component }: NodeComponentType) {

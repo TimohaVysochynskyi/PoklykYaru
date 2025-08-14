@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { IoCloseOutline } from "react-icons/io5";
 import { setAuthHeader } from "../../../services/merch";
 import { useSelector } from "react-redux";
-import { selectAdminAccessToken } from "../redux";
+import { selectAdminAccessToken } from "../redux/features/auth/selectors";
 import axios from "axios";
 import { apiUrl } from "../../../utils/constants";
 import { ProductType } from "../../../types/Product.types";

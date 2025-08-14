@@ -10,7 +10,7 @@ import SizeDropdown from "../SizeDropdown/SizeDropdown";
 // redux
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { deleteItem, updateItem } from "../redux";
+import { deleteItem, updateItem } from "../redux/features/auth/selectors";
 
 // types
 import { CartProductType } from "../../../types/Cart.types";
