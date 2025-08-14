@@ -8,8 +8,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
-import { refreshAdmin } from "../../../redux/adminAuth/operations";
-import { selectAdmin } from "../../../redux/adminAuth/selectors";
+import { refreshAdmin } from "../../redux";
+import { selectAdmin } from "../../redux";
 import clsx from "clsx";
 
 import user from "../../../assets/user.png";

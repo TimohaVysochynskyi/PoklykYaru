@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { fetchAllOrders, AdminOrder } from "../../../services/admin/payments";
-import { selectAccessToken } from "../../../redux/adminAuth/selectors";
+import { selectAdminAccessToken } from "../../redux";
 import { setAuthHeader } from "../../../services/merch";
 
 type SortKey = "createdAt" | "totalPrice" | "status" | "customer" | "invoiceId";
@@ -15,7 +15,7 @@ const statusColors: Record<AdminOrder["status"], string> = {
 };
 
 export default function AdminPaymentsPage() {
-  const accessToken = useSelector(selectAccessToken);
+  const accessToken = useSelector(selectAdminAccessToken);
   const [orders, setOrders] = useState<AdminOrder[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

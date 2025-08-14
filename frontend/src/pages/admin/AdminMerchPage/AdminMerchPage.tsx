@@ -10,7 +10,7 @@ import { ProductType } from "../../../types/Product.types";
 import { addProduct, fetchAllProducts } from "../../../services/merch/products";
 
 import { useSelector } from "react-redux";
-import { selectAccessToken } from "../../../redux/adminAuth/selectors";
+import { selectAdminAccessToken } from "../../redux";
 
 export default function AdminMerchPage() {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -18,7 +18,7 @@ export default function AdminMerchPage() {
   const [error, setError] = useState(false);
   const [isModal, setIsModal] = useState(false);
 
-  const accessToken = useSelector(selectAccessToken);
+  const accessToken = useSelector(selectAdminAccessToken);
 
   const fetchProducts = async () => {
     try {

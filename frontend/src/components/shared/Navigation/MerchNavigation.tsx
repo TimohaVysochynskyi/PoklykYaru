@@ -7,9 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
 // redux
-import { openCart } from "../../../redux/cart/slice";
-import { selectIsLoggedIn } from "../../../redux/customerAuth/selectors";
-import { selectCart } from "../../../redux/cart/selectors";
+import { openCart } from "../redux/features/auth/selectors";
+import { selectIsLoggedIn } from "../redux/features/auth/selectors";
+import { selectCart } from "../redux/features/auth/selectors";
 
 import { Link } from "react-router-dom";
 
