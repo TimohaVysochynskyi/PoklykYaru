@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectIsAdminLoggedIn } from "../../../redux/features/adminAuth";
+import { selectIsAdminLoggedIn } from "../redux";
 import { Navigate } from "react-router-dom";
 import { NodeComponentType } from "../types/common.types";
 

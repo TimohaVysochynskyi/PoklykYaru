@@ -16,13 +16,13 @@ import {
 
 // redux
 import { AppDispatch } from "../../redux/store";
-import { refreshCustomer } from "../../redux/features/auth";
-import { fetchCart } from "../../redux/features/cart";
+import { refreshCustomer } from "../../redux";
+import { fetchCart } from "../../redux";
 import {
   selectIsLoggedIn,
   selectIsRefreshing,
-} from "../../redux/features/auth";
-import { selectIsCartOpen } from "../../redux/features/cart";
+} from "../../redux";
+import { selectIsCartOpen } from "../../redux";
 
 // types
 import { CategoryType, ProductType } from "../../types/Product.types";

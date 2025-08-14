@@ -8,7 +8,7 @@ export const selectIsLoggedIn = (state: RootState) => state.customerAuth.isLogge
 
 export const selectCustomer = (state: RootState) => state.customerAuth.customer;
 
-export const selectAdminAccessToken = (state: RootState) => state.customerAuth.accessToken;
+export const selectAccessToken = (state: RootState) => state.customerAuth.accessToken;
 
 export const selectRefreshToken = (state: RootState) => state.customerAuth.refreshToken;
 

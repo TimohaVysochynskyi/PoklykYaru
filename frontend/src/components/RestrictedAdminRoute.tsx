@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectIsAdminLoggedIn } from "../../../redux/features/adminAuth";
+import { selectIsAdminLoggedIn } from "../redux";
 import { NodeComponentType } from "../types/common.types";
 
 export default function RestrictedRoute({ component }: NodeComponentType) {

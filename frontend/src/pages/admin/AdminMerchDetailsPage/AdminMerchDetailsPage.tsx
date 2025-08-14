@@ -12,7 +12,7 @@ import {
 
 import { ProductType } from "../../../types/Product.types";
 
-import { selectAdminAccessToken } from "../../redux/features/adminAuth";
+import { selectAdminAccessToken } from "../../redux";
 
 export default function AdminMerchEditPage() {
   const { productId } = useParams<{ productId: string }>();

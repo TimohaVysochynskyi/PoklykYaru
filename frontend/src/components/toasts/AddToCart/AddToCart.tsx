@@ -3,7 +3,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 // redux
 import { AppDispatch } from "../../../redux/store";
-import { openCart } from "../../../redux/features/cart";
+import { openCart } from "../redux";
 
 import css from "./AddToCart.module.css";
 

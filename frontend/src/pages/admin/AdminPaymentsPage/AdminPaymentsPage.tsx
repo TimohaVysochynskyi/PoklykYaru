@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { fetchAllOrders, AdminOrder } from "../../../services/admin/payments";
-import { selectAdminAccessToken } from "../../redux/features/adminAuth";
+import { selectAdminAccessToken } from "../../redux";
 import { setAuthHeader } from "../../../services/merch";
 
 type SortKey = "createdAt" | "totalPrice" | "status" | "customer" | "invoiceId";

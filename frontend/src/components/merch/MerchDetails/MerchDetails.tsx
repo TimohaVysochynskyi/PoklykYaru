@@ -10,7 +10,7 @@ import AddToCart from "../../toasts/AddToCart/AddToCart";
 
 // redux
 import { AppDispatch } from "../../../redux/store";
-import { addItem } from "../../../redux/features/cart";
+import { addItem } from "../redux";
 
 // types
 import { ProductType } from "../../../types/Product.types";

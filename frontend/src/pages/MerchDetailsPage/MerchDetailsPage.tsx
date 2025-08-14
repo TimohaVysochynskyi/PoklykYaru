@@ -11,13 +11,13 @@ import { fetchProductWithId } from "../../services/merch/products";
 
 // redux
 import { AppDispatch } from "../../redux/store";
-import { refreshCustomer } from "../../redux/features/auth";
+import { refreshCustomer } from "../../redux";
 import {
   selectIsLoggedIn,
   selectIsRefreshing,
-} from "../../redux/features/auth";
-import { fetchCart } from "../../redux/features/cart";
-import { selectIsCartOpen } from "../../redux/features/cart";
+} from "../../redux";
+import { fetchCart } from "../../redux";
+import { selectIsCartOpen } from "../../redux";
 
 // types
 import { ProductType } from "../../types/Product.types";
