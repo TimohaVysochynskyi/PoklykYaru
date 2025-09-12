@@ -24,7 +24,7 @@ export default function AdminLayoutPage() {
   }, [dispatch]);
 
   const navigation = [
-    { name: "Мерчовска", path: "./merch" },
+    { name: "Мерч", path: "./merch" },
     { name: "Оплати", path: "./payments" },
     { name: "Заходи", path: "./events" },
     { name: "Галерея", path: "./gallery" },
