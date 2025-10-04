@@ -28,14 +28,37 @@ export const updateProductWithId = async (id: string, payload: ProductType, acce
 
     return response.data;
 };
+
+export const deleteProduct = async (id: string, accessToken: string) => {
+    setAuthHeader(accessToken);
+    const response = await axios.delete(`${URL}/products/${id}`);
+
+    return response.data;
+};
+
 export const fetchAllCategories = async () => {
     const response = await axios.get(`${URL}/categories`);
 
     return response.data;
-}
+};
+
 export const addCategory = async (payload: CategoryType, accessToken: string) => {
     setAuthHeader(accessToken);
     const response = await axios.post(`${URL}/categories`, payload);
+
+    return response.data;
+};
+
+export const updateCategory = async (id: string, payload: CategoryType, accessToken: string) => {
+    setAuthHeader(accessToken);
+    const response = await axios.put(`${URL}/categories/${id}`, payload);
+
+    return response.data;
+};
+
+export const deleteCategory = async (id: string, accessToken: string) => {
+    setAuthHeader(accessToken);
+    const response = await axios.delete(`${URL}/categories/${id}`);
 
     return response.data;
 };

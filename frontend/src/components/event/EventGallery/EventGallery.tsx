@@ -1,23 +1,27 @@
 import css from "./EventGallery.module.css";
+import { EventType } from "../../../types/Event.types";
 
 type Props = {
-  folder: string;
+  event: EventType | null;
+  isMainPage: boolean;
 };
 
-export default function EventGallery({ folder }: Props) {
-  if (folder == "events") folder = "idle";
+export default function EventGallery({ event, isMainPage }: Props) {
+  // Don't render gallery on main events page
+  if (isMainPage || !event) {
+    return null;
+  }
+
   return (
     <>
       <div className={css.container}>
-        <p className={css.title}>
-          {folder == "events" ? <>Галерея заходів:</> : <>Галерея заходу:</>}
-        </p>
+        <p className={css.title}>Галерея заходу:</p>
         <div className={css.imagesWrapper}>
-          {[1, 2, 3, 4, 5, 6].map((number) => (
+          {event.galleryImages.map((imageUrl, index) => (
             <img
-              key={number}
-              src={`/event/gallery/${folder}/${number}.webp`}
-              alt="Фотографія"
+              key={index}
+              src={imageUrl}
+              alt={`${event.title} - фото ${index + 1}`}
               className={css.image}
             />
           ))}

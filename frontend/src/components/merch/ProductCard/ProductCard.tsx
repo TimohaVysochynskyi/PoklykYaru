@@ -27,7 +27,6 @@ type Props = {
 };
 
 export default function ProductCard({
-  //product,
   product: { _id, name, images, price, variations },
 }: Props) {
   const [size, setSize] = useState(variations.size[0]);
@@ -45,8 +44,7 @@ export default function ProductCard({
   };
 
   const handleShowDropdown = (showDropdown: boolean) => {
-    if (showDropdown == true) setShowDropdown(false);
-    else setShowDropdown(true);
+    setShowDropdown(!showDropdown);
   };
 
   const handleAddToCart = async (cartItem: CartItemType) => {
@@ -58,70 +56,73 @@ export default function ProductCard({
       .catch((err: unknown) => toast.error(String(err)));
   };
 
-  return (
-    <>
-      <div className={css.container}>
-        <Link to={`./${_id}`} state={location} className={css.link}>
-          <img
-            src={`http://${images[0]}`}
-            alt="Картинка"
-            className={css.image}
-          />
-        </Link>
-        <div className={css.description}>
-          <p className={css.name}>{name}</p>
-          <div className={css.row}>
-            <div className={css.priceWrapper}>
-              <span className={css.price}>{price} UAH</span>
-            </div>
-            {isLoggedIn && _id && (
-              <div className={css.col}>
-                <div className={css.size}>
-                  <button
-                    className={clsx(
-                      css.sizeButton,
-                      showDropdown && css.sizeButtonOpened
-                    )}
-                    onClick={() => handleShowDropdown(showDropdown)}
-                  >
-                    {size}
-                    {showDropdown ? (
-                      <IoIosArrowUp className={css.arrow} />
-                    ) : (
-                      <IoIosArrowDown className={css.arrow} />
-                    )}
-                  </button>
-                  {showDropdown && (
-                    <SizeDropdown
-                      sizeSelection={handleChangeSize}
-                      sizes={variations.size}
-                      selectedSize={size}
-                    />
-                  )}
-                </div>
+  // Image URL from Cloudinary (already full URL)
+  const imageUrl = images[0] || "";
 
-                <button
-                  type="button"
-                  onClick={() =>
-                    handleAddToCart({
-                      product: _id,
-                      variation: {
-                        size: [size],
-                        color: [variations.color[0]],
-                      },
-                      quantity: 1,
-                      price: price,
-                    })
-                  }
-                  className={css.cartButton}
-                >
-                  <AiOutlineShoppingCart className={css.cart} />
-                </button>
-              </div>
-            )}
+  return (
+    <div className={css.container}>
+      <Link to={`./${_id}`} state={location} className={css.link}>
+        <img
+          src={imageUrl}
+          alt={name}
+          className={css.image}
+          loading="lazy"
+          decoding="async"
+        />
+      </Link>
+      <div className={css.description}>
+        <p className={css.name}>{name}</p>
+        <div className={css.row}>
+          <div className={css.priceWrapper}>
+            <span className={css.price}>{price} UAH</span>
           </div>
+          {isLoggedIn && _id && (
+            <div className={css.col}>
+              <div className={css.size}>
+                <button
+                  className={clsx(
+                    css.sizeButton,
+                    showDropdown && css.sizeButtonOpened
+                  )}
+                  onClick={() => handleShowDropdown(showDropdown)}
+                >
+                  {size}
+                  {showDropdown ? (
+                    <IoIosArrowUp className={css.arrow} />
+                  ) : (
+                    <IoIosArrowDown className={css.arrow} />
+                  )}
+                </button>
+                {showDropdown && (
+                  <SizeDropdown
+                    sizeSelection={handleChangeSize}
+                    sizes={variations.size}
+                    selectedSize={size}
+                  />
+                )}
+              </div>
+
+              <button
+                type="button"
+                onClick={() =>
+                  handleAddToCart({
+                    product: _id,
+                    variation: {
+                      size: [size],
+                      color: [variations.color[0]],
+                    },
+                    quantity: 1,
+                    price: price,
+                  })
+                }
+                className={css.cartButton}
+              >
+                <AiOutlineShoppingCart className={css.cart} />
+              </button>
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

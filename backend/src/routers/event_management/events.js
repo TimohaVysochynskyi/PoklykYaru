@@ -4,10 +4,12 @@ import { ctrlWrapper } from '../../utils/ctrlWrapper.js';
 import { validateBody } from '../../middlewares/validateBody.js';
 import { isValidId } from '../../middlewares/isValidId.js';
 import { authAdmin } from '../../middlewares/authAdmin.js';
+import { upload } from '../../middlewares/multer.js';
 
 import {
   getAllEventsController,
   getEventByIdController,
+  getEventByPathController,
   addEventController,
   updateEventController,
   deleteEventController,
@@ -20,29 +22,41 @@ import {
 
 const router = Router();
 
-// User
+// User & Admin - Get all events
 router.get('/', ctrlWrapper(getAllEventsController));
 
-// Admin
-router.get(
-  '/events:/id',
-  isValidId,
-  authAdmin,
-  ctrlWrapper(getEventByIdController),
-);
+// User & Admin - Get event by ID
+router.get('/:id', isValidId, ctrlWrapper(getEventByIdController));
+
+// User & Admin - Get event by path
+router.get('/by-path/:path', ctrlWrapper(getEventByPathController));
+
+// Admin - Create event
 router.post(
   '/',
-  validateBody(addEventSchema),
   authAdmin,
+  upload.fields([
+    { name: 'mainImage', maxCount: 1 },
+    { name: 'galleryImages', maxCount: 6 },
+  ]),
+  validateBody(addEventSchema),
   ctrlWrapper(addEventController),
 );
-router.patch(
+
+// Admin - Update event
+router.put(
   '/:id',
   isValidId,
   authAdmin,
+  upload.fields([
+    { name: 'mainImage', maxCount: 1 },
+    { name: 'galleryImages', maxCount: 6 },
+  ]),
   validateBody(updateEventSchema),
   ctrlWrapper(updateEventController),
 );
+
+// Admin - Delete event
 router.delete('/:id', isValidId, authAdmin, ctrlWrapper(deleteEventController));
 
 export default router;

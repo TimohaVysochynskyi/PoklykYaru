@@ -5,7 +5,7 @@ export default function ZmahTitleWrapper() {
     <>
       <div className={css.container}>
         <p className={css.title}>Туристичний змаг</p>
-        <div className={css.button}>Початок березня</div>
+        <div className={css.button}>Початок листопада</div>
       </div>
     </>
   );

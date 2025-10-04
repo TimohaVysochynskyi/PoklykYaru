@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { IoCloseOutline } from "react-icons/io5";
+import toast from "react-hot-toast";
 import { setAuthHeader } from "../../../services/merch";
 import { useSelector } from "react-redux";
 import { selectAdminAccessToken } from "../../../redux";
 import axios from "axios";
 import { apiUrl } from "../../../utils/constants";
-import { ProductType } from "../../../types/Product.types";
+import { CategoryType } from "../../../types/Product.types";
+import { fetchAllCategories } from "../../../services/merch/products";
 
 Modal.setAppElement("#root");
 
@@ -29,7 +31,7 @@ interface ProductData {
 type Props = {
   isOpen: boolean;
   handleModalClose: () => void;
-  onSave: (updatedProduct: ProductType) => void;
+  onSave: () => void;
 };
 
 export default function CreateProduct({
@@ -37,7 +39,7 @@ export default function CreateProduct({
   handleModalClose,
   onSave,
 }: Props) {
-  const [productData, setProductData] = useState<ProductData>({
+  const initialProductData: ProductData = {
     name: "",
     description: "",
     price: 0,
@@ -46,12 +48,37 @@ export default function CreateProduct({
     images: [],
     variations: { size: [], color: [] },
     stock: 0,
-  });
+  };
+
+  const [productData, setProductData] =
+    useState<ProductData>(initialProductData);
+  const [categories, setCategories] = useState<CategoryType[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const accessToken = useSelector(selectAdminAccessToken);
 
+  const resetForm = () => {
+    setProductData(initialProductData);
+  };
+
+  // Load categories on mount
+  useEffect(() => {
+    const loadCategories = async () => {
+      try {
+        const response = await fetchAllCategories();
+        setCategories(response.data);
+      } catch (error) {
+        toast.error("Помилка завантаження категорій");
+        console.error(error);
+      }
+    };
+    loadCategories();
+  }, []);
+
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setProductData((prev) => ({
@@ -122,6 +149,12 @@ export default function CreateProduct({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!productData.category) {
+      toast.error("Оберіть категорію");
+      return;
+    }
+
+    setLoading(true);
     const formData = new FormData();
     formData.append("name", productData.name);
     formData.append("description", productData.description);
@@ -141,24 +174,25 @@ export default function CreateProduct({
     for (let i = 0; i < productData.images.length; i++) {
       formData.append(`images`, productData.images[i]);
     }
-    console.log(productData);
-    if (accessToken)
+
+    if (accessToken) {
       try {
         setAuthHeader(accessToken);
-        const response = await axios.post(
-          apiUrl("/merch/products/"),
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        onSave(response.data);
-        return response.data;
+        await axios.post(apiUrl("/merch/products/"), formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        toast.success("Товар створено");
+        resetForm();
+        onSave();
       } catch (error) {
+        toast.error("Помилка створення товару");
         console.error("Error creating product:", error);
+      } finally {
+        setLoading(false);
       }
+    }
   };
 
   return (
@@ -238,14 +272,20 @@ export default function CreateProduct({
             >
               Категорія
             </label>
-            <input
+            <select
               id="category"
               name="category"
-              type="text"
               className="mt-1 block w-full p-2 border rounded"
               value={productData.category}
               onChange={handleInputChange}
-            />
+            >
+              <option value="">Оберіть категорію</option>
+              {categories.map((category) => (
+                <option key={category._id} value={category.name}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label
@@ -270,55 +310,37 @@ export default function CreateProduct({
               <label className="block text-sm font-medium text-gray-700">
                 {type === "size" ? "Розміри" : "Кольори"}
               </label>
-              {["size", "color"].map((type) => (
-                <div key={type}>
-                  <label className="block text-sm font-medium text-gray-700">
-                    {type === "size" ? "Розміри" : "Кольори"}
-                  </label>
-                  {productData.variations[type as keyof Variations].map(
-                    (value: string, index: number) => (
-                      <div
-                        key={index}
-                        className="flex items-center space-x-2 mt-1"
-                      >
-                        <input
-                          type="text"
-                          className="block w-full p-2 border rounded"
-                          value={value}
-                          onChange={(e) =>
-                            handleVariationsChange(
-                              type as keyof Variations,
-                              e.target.value,
-                              index
-                            )
-                          }
-                        />
-                        <button
-                          type="button"
-                          className="text-red-500"
-                          onClick={() =>
-                            removeVariation(type as keyof Variations, index)
-                          }
-                        >
-                          <IoCloseOutline className="h-5 w-5" />
-                        </button>
-                      </div>
-                    )
-                  )}
-                  <button
-                    type="button"
-                    className="mt-2 text-blue-500"
-                    onClick={() => addVariation(type as keyof Variations)}
-                  >
-                    {type === "size" ? "Додати розмір" : "Додати колір"}
-                  </button>
-                </div>
-              ))}
-
+              {productData.variations[type as keyof Variations].map(
+                (value: string, index: number) => (
+                  <div key={index} className="flex items-center space-x-2 mt-1">
+                    <input
+                      type="text"
+                      className="block w-full p-2 border rounded"
+                      value={value}
+                      onChange={(e) =>
+                        handleVariationsChange(
+                          type as keyof Variations,
+                          e.target.value,
+                          index
+                        )
+                      }
+                    />
+                    <button
+                      type="button"
+                      className="text-red-500"
+                      onClick={() =>
+                        removeVariation(type as keyof Variations, index)
+                      }
+                    >
+                      <IoCloseOutline className="h-5 w-5" />
+                    </button>
+                  </div>
+                )
+              )}
               <button
                 type="button"
                 className="mt-2 text-blue-500"
-                onClick={() => addVariation(type as "size" | "color")}
+                onClick={() => addVariation(type as keyof Variations)}
               >
                 {type === "size" ? "Додати розмір" : "Додати колір"}
               </button>
@@ -362,9 +384,10 @@ export default function CreateProduct({
         </div>
         <button
           type="submit"
-          className="mt-6 bg-black text-white px-4 py-2 rounded hover:bg-gray-700"
+          disabled={loading}
+          className="mt-6 bg-black text-white px-4 py-2 rounded hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Створити товар
+          {loading ? "Створення..." : "Створити товар"}
         </button>
       </form>
     </Modal>

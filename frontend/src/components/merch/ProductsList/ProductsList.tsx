@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import ProductsNavigation from "../ProductsNavigation/ProductsNavigation";
 
@@ -13,27 +13,23 @@ type Props = {
 };
 
 export default function ProductsList({ categories, products }: Props) {
-  const [visibleProducts, setVisibleProducts] =
-    useState<ProductType[]>(products);
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
   const [searchValue, setSearchValue] = useState<string>("");
 
-  useEffect(() => {
-    // Фільтруємо продукти за категорією та пошуком
-    const filteredProducts = products.filter((product) => {
+  // Use useMemo for derived state instead of useEffect
+  const visibleProducts = useMemo(() => {
+    return products.filter((product) => {
       const matchesCategory = category ? product.category === category : true;
       const matchesSearch = searchValue
         ? product.name.toLowerCase().includes(searchValue.toLowerCase())
         : true;
       return matchesCategory && matchesSearch;
     });
-
-    setVisibleProducts(filteredProducts);
   }, [category, searchValue, products]);
 
   const handleSearch = (inputValue: string) => {
-    setSearchValue(inputValue); // Змінюємо значення пошуку
+    setSearchValue(inputValue);
   };
 
   return (

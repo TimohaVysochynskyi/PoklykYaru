@@ -1,0 +1,94 @@
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.title {
+  font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+  color: var(--main-text-color);
+  font-family: "Buduj Black-Height";
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.button {
+  padding: 1rem 1.25rem;
+  background-color: var(--bright-accent-color);
+  border-radius: 100px;
+  font-family: "Futura Bold";
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.875rem);
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  min-width: 250px;
+  max-width: 380px;
+  height: clamp(80px, 10vw + 2rem, 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  flex-shrink: 0;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.arrow {
+  width: clamp(60px, 8vw, 120px);
+  height: clamp(60px, 8vw, 120px);
+  flex-shrink: 0;
+}
+
+.description {
+  font-size: clamp(1rem, 1.25vw + 0.5rem, 1.25rem);
+  font-family: "Futura Heavy";
+  font-weight: 700;
+  color: var(--alt-main-color);
+  margin-top: 40px;
+  text-align: justify;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+.error {
+  text-align: center;
+  font-size: clamp(1rem, 1.25vw + 0.5rem, 1.25rem);
+  font-family: "Futura Heavy";
+  color: var(--alt-main-color);
+  padding: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .titleContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .description {
+    text-align: left;
+  }
+}

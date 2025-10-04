@@ -1,19 +1,46 @@
-.container,
-.layer {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: top;
-}
 .container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  will-change: opacity;
+  isolation: isolate;
 }
+
+.container.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  z-index: 0;
+}
+
 .layer {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
   z-index: 3;
+  pointer-events: none;
 }
+
 .bgFilter {
   width: 100%;
   height: 100%;
@@ -22,10 +49,13 @@
   left: 0;
   background-color: rgba(27, 41, 44, 0.5);
   z-index: 1;
+  pointer-events: none;
 }
+
 .noBgFilter {
   background: none;
 }
+
 .titleWrapper {
   width: 100%;
   height: 100%;
@@ -35,6 +65,7 @@
   position: absolute;
   top: 18vh;
   z-index: 2;
+  pointer-events: none;
 }
 .title {
   font-size: clamp(72px, 7.5vw, 120px);
@@ -59,23 +90,23 @@
 }
 
 @media screen and (max-width: 2560px) {
-  .container,
+  .bgImage,
   .layer {
-    background-position-y: -25vh;
+    object-position: center -25vh;
   }
 }
 
 @media screen and (max-width: 1920px) {
-  .container,
+  .bgImage,
   .layer {
-    background-position-y: -8vh;
+    object-position: center -8vh;
   }
 }
 
 @media screen and (max-width: 1680px) {
-  .container,
+  .bgImage,
   .layer {
-    background-position-y: top;
+    object-position: top;
   }
 }
 

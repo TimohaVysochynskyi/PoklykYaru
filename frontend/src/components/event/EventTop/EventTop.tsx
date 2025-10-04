@@ -1,49 +1,34 @@
 import { Link } from "react-router-dom";
 import css from "./EventTop.module.css";
 import clsx from "clsx";
+import { EventType } from "../../../types/Event.types";
 
 type Props = {
   active: string;
+  events: EventType[];
 };
 
-export default function EventTop({ active }: Props) {
-  const items = [
-    { title: "Літній табір", image: "tabir", path: "tabir" },
-    {
-      title: "Зимовий похід ім. Ю. Горліс-Горського",
-      image: "pohid",
-      path: "pohid",
-    },
-    {
-      title: "Туристичний змаг ім. Василя Чучупаки",
-      image: "zmah",
-      path: "zmah",
-    },
-    {
-      title: "Свято Покрови в Холодному Яру",
-      image: "pokrova",
-      path: "pokrova",
-    },
-  ];
-
+export default function EventTop({ active, events }: Props) {
   return (
     <>
       <ul className={css.list}>
-        {items.map((item) => (
+        {events.map((event) => (
           <li
             className={clsx(
-              active == "events" ? css.item : css.smallItem,
-              item.image == active && css.bigItem
+              active === "events" ? css.item : css.smallItem,
+              event.path === active && css.bigItem
             )}
-            key={item.image}
+            key={event._id}
           >
-            <Link to={item.path}>
+            <Link to={event.path}>
               <img
-                src={`/event/${item.image}.webp`}
-                alt=""
+                src={event.mainImage}
+                alt={event.title}
                 className={css.image}
               />
-              {active == "events" && <p className={css.title}>{item.title}</p>}
+              {active === "events" && (
+                <p className={css.title}>{event.title}</p>
+              )}
             </Link>
           </li>
         ))}

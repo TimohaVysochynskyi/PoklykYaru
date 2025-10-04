@@ -30,7 +30,7 @@ export default function MerchSwiper({ images }: Props) {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className={css.swiperSlide}>
-            <img src={`http://${image}`} alt="Картинка" className={css.image} />
+            <img src={`${image}`} alt="Картинка" className={css.image} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -38,7 +38,7 @@ export default function MerchSwiper({ images }: Props) {
         {images.map((thumbnail, index) => (
           <img
             key={index}
-            src={`http://${thumbnail}`}
+            src={`${thumbnail}`}
             alt="Картинка"
             className={clsx(css.thumbnail, activeIndex === index && css.active)}
             onClick={() => swiperRef.current?.slideTo(index)} // Перемикаємо слайд при натисканні

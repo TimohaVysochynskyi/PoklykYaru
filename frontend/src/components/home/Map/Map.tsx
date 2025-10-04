@@ -12,24 +12,24 @@ import MapDescription from "../MapDescription/MapDescription";
 const pointData = [
   {
     title: "Відповідальність",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum?",
+    text: "Відповідальність — це готовність діяти і відповідати за свої дії, слова, результати. Це не про правильність, а про рішення робити наперекір невизначеності. Саме ця риса є підґрунтям засад нашої системи виховання молоді. Бо ми віримо, що так торується найшвидший шлях до розбудови успішної та сильної держави",
   },
 
   {
     title: "Патріотизм",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum?",
+    text: "Виховання патріотизму стає актуальним лише тоді, коли вихованець усвідомлює важливість двох інших цінностей: побратимства та дисципліни. Патріотичне виховання сприяє створенню в Україні гідної і всебічно розвиненої молоді, яка пишається своє Державою, шанує Родину і Культуру та готова діяти й не боятися викликів долі",
   },
   {
     title: "Дисципліна",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum?",
+    text: "Надзвичайно важливу роль грає дисципліна. Без цієї цінності неможливо побудувати сильну державу та виховати нове покоління. Дисципліна вчить вихованців системності та організованості",
   },
   {
     title: "Побратимство",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum?",
+    text: "Найважливішою цінністю в Поклик Яру є побратимство. Воно закладає основу для всіх інших цінностей і є тим, що об'єднує вихованців у справжню родину однодумців",
   },
   {
     title: "Табір",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium aliquam minus veniam? Enim, id ex. Libero eius fuga consequatur quod, nam tempore ipsa sapiente voluptas dolorum iure hic. Earum?",
+    text: "Саме табір стає відправною точкою на шляху вихованця в Поклик Яру. Тут закладаються основи, формуються цінності та базові навички. На таборі вихованець отримує неймовірний досвід справжнього побратимства, вчиться відповідальності та дисципліні, а також отримує важливі знання на гутірках",
   },
 ];
 

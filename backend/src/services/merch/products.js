@@ -1,7 +1,6 @@
 import { ProductsCollection } from '../../models/merch/product.js';
 import { ProductCategoriesCollection } from '../../models/merch/product_сategories.js';
-
-import { deleteFileFromUploadDir } from '../../utils/deleteFileFromUploadDir.js';
+import { deleteMultipleFromCloudinary } from '../../utils/cloudinary.js';
 
 const populateCategory = async (value) => {
   const category = await ProductCategoriesCollection.findById(value);
@@ -10,6 +9,10 @@ const populateCategory = async (value) => {
 };
 const getIdCategory = async (value) => {
   const category = await ProductCategoriesCollection.findOne({ name: value });
+
+  if (!category) {
+    throw new Error(`Category with name "${value}" not found`);
+  }
 
   return category._id;
 };
@@ -40,6 +43,11 @@ export const getProductById = async (productId) => {
 };
 
 export const addProduct = async (payload) => {
+  // Convert category name to ObjectId before saving
+  if (payload.category) {
+    payload.category = await getIdCategory(payload.category);
+  }
+
   const product = await ProductsCollection.create(payload);
 
   return product;
@@ -57,8 +65,11 @@ export const updateProduct = async (productId, payload, options = {}) => {
 };
 export const deleteProduct = async (productId) => {
   const product = await ProductsCollection.findOneAndDelete({ _id: productId });
-  console.log(product);
-  await deleteFileFromUploadDir(product.images, 'merch');
+
+  if (product && product.images && product.images.length > 0) {
+    // Delete images from Cloudinary
+    await deleteMultipleFromCloudinary(product.images);
+  }
 
   return product;
 };
@@ -71,6 +82,24 @@ export const getAllCategories = async () => {
 
 export const addCategory = async (payload) => {
   const category = await ProductCategoriesCollection.create(payload);
+
+  return category;
+};
+
+export const updateCategory = async (categoryId, payload) => {
+  const category = await ProductCategoriesCollection.findByIdAndUpdate(
+    categoryId,
+    payload,
+    { new: true },
+  );
+
+  return category;
+};
+
+export const deleteCategory = async (categoryId) => {
+  const category = await ProductCategoriesCollection.findByIdAndDelete(
+    categoryId,
+  );
 
   return category;
 };

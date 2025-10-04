@@ -18,6 +18,15 @@ const AdminMerchEditPage = lazy(
 const AdminPaymentsPage = lazy(
   () => import("../pages/admin/AdminPaymentsPage/AdminPaymentsPage")
 );
+const AdminEventsPage = lazy(
+  () => import("../pages/admin/AdminEventsPage/AdminEventsPage")
+);
+const AdminEventNewPage = lazy(
+  () => import("../pages/admin/AdminEventNewPage/AdminEventNewPage")
+);
+const AdminEventEditPage = lazy(
+  () => import("../pages/admin/AdminEventEditPage/AdminEventEditPage")
+);
 
 export default function MerchRouter() {
   return (
@@ -37,6 +46,9 @@ export default function MerchRouter() {
             element={<AdminMerchEditPage />}
           ></Route>
           <Route path="payments" element={<AdminPaymentsPage />}></Route>
+          <Route path="events" element={<AdminEventsPage />}></Route>
+          <Route path="events/new" element={<AdminEventNewPage />}></Route>
+          <Route path="events/:id" element={<AdminEventEditPage />}></Route>
         </Route>
       </Routes>
     </>

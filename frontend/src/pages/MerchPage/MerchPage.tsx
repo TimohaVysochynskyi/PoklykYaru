@@ -18,10 +18,7 @@ import {
 import { AppDispatch } from "../../redux/store";
 import { refreshCustomer } from "../../redux";
 import { fetchCart } from "../../redux";
-import {
-  selectIsLoggedIn,
-  selectIsRefreshing,
-} from "../../redux";
+import { selectIsLoggedIn, selectIsRefreshing } from "../../redux";
 import { selectIsCartOpen } from "../../redux";
 
 // types
@@ -48,12 +45,17 @@ export default function MerchPage() {
   }, [dispatch, isLoggedIn]);
 
   useEffect(() => {
-    async function fetchProducts() {
+    async function fetchData() {
       try {
         setError(false);
         setLoading(true);
-        const response = await fetchAllProducts();
-        setProducts(response.data);
+        // Parallel fetch for better performance
+        const [productsResponse, categoriesResponse] = await Promise.all([
+          fetchAllProducts(),
+          fetchAllCategories(),
+        ]);
+        setProducts(productsResponse.data);
+        setCategories(categoriesResponse.data);
       } catch (e) {
         setError(true);
         console.error(e);
@@ -61,21 +63,7 @@ export default function MerchPage() {
         setLoading(false);
       }
     }
-    async function fetchCategories() {
-      try {
-        setError(false);
-        setLoading(true);
-        const response = await fetchAllCategories();
-        setCategories(response.data);
-      } catch (e) {
-        setError(true);
-        console.error(e);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchProducts();
-    fetchCategories();
+    fetchData();
   }, []);
 
   if (isRefreshing) {

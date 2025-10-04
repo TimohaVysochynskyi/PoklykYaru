@@ -23,7 +23,7 @@
     padding: 30px 100px;
   }
 }
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1200px) {
   .topContainer {
     padding: 30px 40px;
   }
